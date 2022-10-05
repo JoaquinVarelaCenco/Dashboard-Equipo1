@@ -1,1 +1,29 @@
-/* code css */
+.product-new {
+  align-items: center;
+  padding: 20px;
+}
+
+.product-new button {
+  width: 100px;
+}
+
+.product-new__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-new__form input,
+select {
+  width: 300px;
+  height: 30px;
+}
+
+.product-new__form textarea {
+  width: 300px;
+}
+
+.product-new-form__stock button {
+  width: 30px;
+  height: 30px;
+}

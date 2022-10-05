@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/api/";
+const url = "http://localhost:8000/api/";
 const getProducts = () => {
   return fetch(`${url}product`).then((res) => res.json());
 };
@@ -21,4 +21,18 @@ const updateProduct = (body) => {
   }).then((res) => res.json());
 };
 
-module.exports = { getProducts, getProductById, deleteProduct, updateProduct };
+const newProduct = (body) => {
+  return fetch(`${url}product`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  }).then((res) => res.json());
+};
+
+module.exports = {
+  getProducts,
+  getProductById,
+  deleteProduct,
+  updateProduct,
+  newProduct,
+};
