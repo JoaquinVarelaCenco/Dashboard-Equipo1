@@ -1,0 +1,13 @@
+/* code css */
+.sideBar {
+  background-color: aqua;
+  min-width: 296px;
+  /* position: fixed; */
+  height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .sideBar {
+    display: none;
+  }
+}

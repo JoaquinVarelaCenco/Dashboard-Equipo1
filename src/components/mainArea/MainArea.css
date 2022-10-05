@@ -1,0 +1,10 @@
+/* code css */
+.mainArea{
+    background-color: red;
+    width: 100%;
+   
+}
+
+.mainArea__content{
+    margin-top: 72px;
+}
