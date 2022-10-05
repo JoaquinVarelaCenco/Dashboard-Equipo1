@@ -6,7 +6,7 @@ const MainArea = () => {
   return (
     <div className="mainArea">
       <Header/>
-      <div className="mainArea__content">Probando
+      <div className="mainArea__content">
       <AppRouter>
       </AppRouter>
       </div>

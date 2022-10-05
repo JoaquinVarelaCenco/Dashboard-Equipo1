@@ -1,1 +1,10 @@
 /* code css */
+
+.itemRow{
+    display: flex;
+    height: 70px;
+    color: white;
+    background-color: rgb(84, 84, 84);
+    justify-content: space-between;
+    padding: 0 20px;
+}
