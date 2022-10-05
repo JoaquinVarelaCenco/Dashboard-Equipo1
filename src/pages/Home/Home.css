@@ -1,10 +1,26 @@
-/* code css */
+/* Home css */
 
 .itemRow{
     display: flex;
+    align-items: center;
     height: 70px;
+    width: 98%;
+    margin: 10px auto ;
     color: white;
     background-color: rgb(84, 84, 84);
     justify-content: space-between;
     padding: 0 20px;
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.itemRow__count{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.itemRow__count img{
+    width: 45px;
+    filter: invert();
 }

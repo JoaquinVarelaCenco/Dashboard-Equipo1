@@ -28,6 +28,17 @@ const Home = () => {
           <button>Agregar Producto</button>
         </div>
       </div>
+
+      <div className='itemRow'>
+        <div className='itemRow__count'>
+          <img src= {box}/>
+          <p><strong>{totalProducts}</strong> Productos</p>
+        </div>
+        <div className='itemRow__buttons'>
+          <button>Ver Listado</button>
+          <button>Agregar Producto</button>
+        </div>
+      </div>
     </>
   )
 }
