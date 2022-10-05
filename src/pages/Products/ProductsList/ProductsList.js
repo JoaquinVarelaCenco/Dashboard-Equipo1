@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { getProducts} from '../../../services/apiServices'
+import ProductCard from '../../../components/ProductCard/ProductCard';
+import { getProducts} from '../../../services/apiServices';
+import './ProductsList.css'
 
 const ProductsList = () => {
 
@@ -15,8 +17,8 @@ const ProductsList = () => {
   
 
   return (
-    <div>
-      {products.length ? products.map(p => <h4>{p.title}</h4>)
+    <div className='productList__container'>
+      {products.length ? products.map(p => <ProductCard title={p.title} price={p.price} key={p.id} image={p.images[0]}/>)
       : <h1>cargando...</h1>  
     }
     </div>

@@ -1,0 +1,126 @@
+/* TARJETA */
+.main-product__related-product-card {
+    display: flex;
+    border-radius: 16px;
+    background-color: white;
+    /* width: 500px; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .section-article__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  .main-product__related-product-card img {
+    height: 128px;
+    width: 128px;
+    border-radius: 16px;
+  }
+  
+  .section-article__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+  }
+  
+  .desc {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .desc p {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .section-article__price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  
+  .section-article__price p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .puntos {
+    font-size: 8px;
+    font-weight: 300;
+  }
+  
+  .button{
+  width: 100%;
+  }
+  
+
+  
+  .main-product__related-product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* @media (min-width: 785px) {
+    .main-product__related-product {
+      display: flex;
+      flex-direction: row;
+    }
+    .main-product__related-product__low-quantity{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    } */
+  /* } */
+
+  /* @media (min-width: 785px) {
+    .main-product__related-product-card {
+      width: 244px;
+      height: 328px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .section-article__desc {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 8px;
+      align-content: flex-start;
+    }
+  
+    .section-article__price {
+      padding-left: 8px;
+    }
+  
+    .section-article__price:first-child {
+      display: none;
+    }
+  
+    .desc {
+      width: 75%;
+      border-right: solid 1px rgba(0, 0, 0, 0.25);
+    }
+  
+    .section-article__image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+    }
+  
+    .section-article__image img {
+      width: 228px;
+      height: 240px;
+  
+      border-radius: 16px;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }*/
+   
