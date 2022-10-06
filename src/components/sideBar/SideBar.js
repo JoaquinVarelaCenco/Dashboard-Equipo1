@@ -5,17 +5,27 @@ import casita from "../../assets/images/home.svg";
 import profilePic from "../../assets/images/ProfilePic.png";
 import pakage from "../../assets/images/package-variant-closed.svg";
 import store from "../../assets/images/store.svg";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import SwitchToggle from "../SwitchToggle/SwitchToggle";
 
 const Sidebar = () => {
+
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="sideBar">
+    <div className={`sideBar ${theme}`}>
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
-          <NavLink  to="/home" className="sideBar_eachLink"> <img src= {casita} />Inicio</NavLink>
-          <NavLink  to="/products" className="sideBar_eachLink"> <img src= {pakage} />Productos</NavLink>
-          <NavLink  to="/tiendas" className="sideBar_eachLink"> <img src= {store} />Tiendas</NavLink>
+          <NavLink  to="/" className={`sideBar_eachLink ${theme}`}> <img src= {casita} />Inicio</NavLink>
+          <NavLink  to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
+          <NavLink  to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>
+
+
+        <SwitchToggle />
+
       </div>
       <button className="user-button">
         <div className="user-button__profile">

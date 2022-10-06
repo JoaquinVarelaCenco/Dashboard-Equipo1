@@ -4,8 +4,32 @@
     box-sizing: border-box;
 }
 
+:root{
+    --dark-Color: #ffffff;
+    --dark-Background: #343434;
+    --dark-Black: #2b2b2b;
+    --dark-BlackLight: #595959;
+
+    --clear-Color: #343434;
+    --clear-Background: #ffffff;
+    --clear-Black: #595959;
+    --clear-BlackLight: #707070;
+}
+
 .App{
 display: flex;
 /* width: 100vw; */
-height: 100vh;
+min-height: 100vh;
 }
+
+/* DarkMode */
+
+.dark{
+    color: var(--dark-Color);
+    background-color: var(--dark-Background);
+  }
+  
+  .clear{
+    color: var(--clear-Color);
+    background-color: var(--clear-Background);
+  }
