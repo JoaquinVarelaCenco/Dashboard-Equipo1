@@ -5,23 +5,29 @@ import { useContext, useEffect, useState } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from 'react-router-dom';
 import searchImage from '../../assets/images/magnify.svg';
-import menuImage from '../../assets/images/menu.svg';
+import menuImage from '../../assets/images/menu.svg'
+import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import leftArrow from '../../assets/images/chevron-right (1).svg'
 
 
 const Header = () => {
-
+let buttonMenu = useRef();
   const context = useContext(SearchContext);
+
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   // const [productId, setProductId] = useState("");
   const location = useLocation();
+
+  const pageTitle2 ="Products";
+  const {toggleVisibility} = useContext(SideBarContext)
   const actualPage = page;
   let pageTitle ="¡Hola Olivia!";
   let productId = "";
   useEffect(() => {
     currentPage(location.pathname);
   }, [location]);
+  
   if(page==='/products'){
     pageTitle = 'Products';
   }else if(page.includes("/stores")){
@@ -34,10 +40,10 @@ const Header = () => {
   }
 
   return (
-
     <div className={`header ${theme}`}>
       <div className="headerGeneric">
-        <button><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
+        <button ref={buttonMenu} onClick={()=>{
+          toggleVisibility()}} className="header__menu-hamburguesa"><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
         <div className="title"><h2>{pageTitle}</h2></div>
       </div>
       {
