@@ -5,10 +5,16 @@ import casita from "../../assets/images/home.svg";
 import profilePic from "../../assets/images/ProfilePic.png";
 import pakage from "../../assets/images/package-variant-closed.svg";
 import store from "../../assets/images/store.svg";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const Sidebar = () => {
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  console.log(theme)
+
   return (
-    <div className="sideBar">
+    <div className={`sideBar ${theme}`}>
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
@@ -16,6 +22,7 @@ const Sidebar = () => {
           <NavLink  to="/products" className="sideBar_eachLink"> <img src= {pakage} />Productos</NavLink>
           <NavLink  to="/tiendas" className="sideBar_eachLink"> <img src= {store} />Tiendas</NavLink>
         </div>
+        <button onClick={() => toggleTheme()}>Cambiar tema</button>
       </div>
       <button className="user-button">
         <div className="user-button__profile">

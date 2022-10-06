@@ -4,6 +4,14 @@
     width: 100%;
 }
 
+.clear{
+    background-color: #b1b1b1;
+}
+
+.dark{
+    background-color: #242424;
+}
+
 .mainArea__content{
     margin-top: 72px;
     min-height: calc(100vh - 72px);

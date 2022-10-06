@@ -1,6 +1,6 @@
 /* code css */
 .sideBar {
-  background-color: rgba(255, 255, 255, 1);
+  /* background-color: rgba(255, 255, 255, 1); */
   min-width: 296px;
   /* position: fixed; */
   height: 100vh;
@@ -10,6 +10,17 @@
   padding: 16px;
   justify-content: space-between;
 }
+
+.dark .sideBar{
+  color: white;
+  background-color: black;
+}
+
+.clear .sideBar{
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+}
+
 .sideBar__img-logo {
   width: 100%;
   margin-bottom: 30px;
