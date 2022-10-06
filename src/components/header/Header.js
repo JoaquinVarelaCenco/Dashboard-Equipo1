@@ -1,3 +1,4 @@
+import { SearchContext } from "../../context/SearchContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useState } from "react";
@@ -9,13 +10,15 @@ import leftArrow from '../../assets/images/chevron-right (1).svg'
 
 
 const Header = () => {
+
+  const context = useContext(SearchContext);
+  const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   // const [productId, setProductId] = useState("");
   const location = useLocation();
   const actualPage = page;
   let pageTitle ="¡Hola Olivia!";
   let productId = "";
-  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     currentPage(location.pathname);
   }, [location]);
@@ -31,6 +34,7 @@ const Header = () => {
   }
 
   return (
+
     <div className={`header ${theme}`}>
       <div className="headerGeneric">
         <button><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
@@ -40,7 +44,7 @@ const Header = () => {
       page==="/products" ? 
           <div className="headerProducts">
             <div className="header__search-container">
-              <input type="text" class="header__search" placeholder="Buscar productos..." />
+              <input type="text" class="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} />
               <button><img src={searchImage} alt="Lupa de busqueda" /></button>
             </div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Productos</button></Link></div>
