@@ -1,8 +1,7 @@
 /* code css */
 .sideBar {
-  background-color: rgba(255, 255, 255, 1);
   min-width: 296px;
-  /* position: fixed; */
+  position: fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,8 +9,9 @@
   padding: 16px;
   justify-content: space-between;
 }
+
 .sideBar__img-logo {
-  width: 100%;
+  width: 80%;
   margin-bottom: 30px;
 }
 .sideBar__Links {
@@ -19,7 +19,7 @@
   flex-direction: column;
   gap: 10px;
 }
-.user-button {
+.sideBar__user-button {
   width: 100%;
   display: flex;
   border-radius: 16px;
@@ -34,20 +34,20 @@
   align-items: center;
   text-decoration: none;
   gap: 25px;
-  color: black;
   font-size: 15px;
   /* margin-left: 15px; */
-  padding: 6px 0 
+  padding: 6px 0;
 }
+
 .sideBar_eachLink img{
   padding-left: 13px;
 }
-.user-name {
+.sideBar__user-name {
 padding-left: 5px;
 font-size: 15px;
 }
 
-.user-img {
+.sideBar__user-img {
   height: 22px;
   width: 22px;
 }
@@ -55,9 +55,27 @@ font-size: 15px;
   background-color: rgba(0, 0, 255, 0.136);
   border-radius: 6px;
 }
+.hide{ 
+  display: block;
+}
 
 @media (max-width: 1024px) {
   .sideBar {
     display: none;
   }
 }
+
+
+/* Dark Mode */
+
+.sideBar_Link .clear{
+  color: var(--clear-Color);
+}
+
+.sideBar_Link .dark{
+  color: var(--black-Color);
+}
+
+.dark .sideBar_eachLink img{
+  filter: invert();
+} 

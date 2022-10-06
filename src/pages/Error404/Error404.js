@@ -11,7 +11,7 @@ const Error404 = () => {
             <div className='error404__bottom'>
                 <h3>Disculpa, Página No Encontrada</h3>
                 <p>La página que deseas acceder no existe</p>
-                <Link to="/">
+                <Link to="/home">
                     <button>Home</button>
                 </Link>
             </div>

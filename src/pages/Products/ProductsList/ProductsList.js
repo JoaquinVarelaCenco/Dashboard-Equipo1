@@ -5,6 +5,7 @@ import "./ProductsList.css";
 import Spinner from "../../../components/Spinner/Spinner";
 import { SearchContext } from "../../../context/SearchContext";
 
+
 const ProductsList = () => {
   // const [products, setProducts] = useState([]);
   const context = useContext(SearchContext);
