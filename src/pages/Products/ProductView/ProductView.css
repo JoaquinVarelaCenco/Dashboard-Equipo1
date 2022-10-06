@@ -27,3 +27,16 @@ select {
   width: 30px;
   height: 30px;
 }
+
+.product-new__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-new__action {
+  text-align: end;
+}
+
+.product-new__action button {
+  margin-left: 10px;
+}

@@ -17,7 +17,7 @@ const updateProduct = (body) => {
   return fetch(`${url}product`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: body,
+    body: JSON.stringify(body),
   }).then((res) => res.json());
 };
 
