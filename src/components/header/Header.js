@@ -1,6 +1,6 @@
 import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from 'react-router-dom';
 import searchImage from '../../assets/images/magnify.svg';
@@ -10,31 +10,31 @@ import leftArrow from '../../assets/images/chevron-right (1).svg'
 
 const Header = () => {
   const { page, currentPage } = useContext(HeaderContext)
+  // const [productId, setProductId] = useState("");
   const location = useLocation();
   const actualPage = page;
   let pageTitle ="¡Hola Olivia!";
+  let productId = "";
   const { theme } = useContext(ThemeContext);
   useEffect(() => {
     currentPage(location.pathname);
-    
   }, [location]);
   if(page==='/products'){
     pageTitle = 'Products';
   }else if(page.includes("/stores")){
     pageTitle = "Tiendas"
   }else if(page === '/products/new'){
-    pageTitle = "Producto nuevo"
+    pageTitle = "Productos"
   }else if(page.includes('/products/')){
     pageTitle = "Productos"
+    productId = "#"+location.pathname.split('/')[2];
   }
-
-  const title = useRef(null);
 
   return (
     <div className={`header ${theme}`}>
       <div className="headerGeneric">
         <button><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
-        <div className="title"><h2 ref={title}>{pageTitle}</h2></div>
+        <div className="title"><h2>{pageTitle}</h2></div>
       </div>
       {
       page==="/products" ? 
@@ -55,7 +55,7 @@ const Header = () => {
           <>
             <div className="headerEditProduct">
               <img src={leftArrow} alt="" />
-              <h2>#3</h2>
+              <h2>{productId}</h2>
             </div>
             <button className="headerEditProduct__btnDelete">ELIMINAR</button>
           </>

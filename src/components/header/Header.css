@@ -98,6 +98,10 @@
     margin-left: 10px;
 }
 
+.headerEditProduct h2{
+    font-weight: 500;
+}
+
 @media (min-width: 1024px){
     .header{
         width: calc(100% - 296px);
