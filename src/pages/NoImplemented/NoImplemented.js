@@ -15,7 +15,7 @@ const NoImplemented = () => {
             <div className='progress-bar'>
             </div>
         </div>
-        <Link to="/">
+        <Link to="/home">
             <button>Home</button>
         </Link>
     </div>

@@ -11,7 +11,7 @@
 }
 
 .sideBar__img-logo {
-  width: 100%;
+  width: 80%;
   margin-bottom: 30px;
 }
 .sideBar__Links {
@@ -19,7 +19,7 @@
   flex-direction: column;
   gap: 10px;
 }
-.user-button {
+.sideBar__user-button {
   width: 100%;
   display: flex;
   border-radius: 16px;
@@ -42,19 +42,21 @@
 .sideBar_eachLink img{
   padding-left: 13px;
 }
-
-.user-name {
+.sideBar__user-name {
 padding-left: 5px;
 font-size: 15px;
 }
 
-.user-img {
+.sideBar__user-img {
   height: 22px;
   width: 22px;
 }
 .active {
   background-color: rgba(0, 0, 255, 0.136);
   border-radius: 6px;
+}
+.hide{ 
+  display: block;
 }
 
 @media (max-width: 1024px) {

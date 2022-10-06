@@ -3,7 +3,6 @@ import "./MainArea.css";
 import Header from "../header/Header"
 import { ThemeContext } from "../../context/ThemeContext";
 import AppRouter from "../../routes/AppRouter";
-import { HeaderContext } from "../../context/HeaderContext";
 
 const MainArea = () => {
   const { theme } = useContext(ThemeContext);
