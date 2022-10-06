@@ -1,9 +1,14 @@
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
 import "./Header.css"
 
 const Header = () => {
+
+const context = useContext(SearchContext);
     
   return (
-    <div className='header'>Header</div>
+    <div className='header'>
+      <input type="text" placeholder="Search..." value={context.searchTerm} onChange={context.handleSearch} /> Header</div>
   )
 }
 
