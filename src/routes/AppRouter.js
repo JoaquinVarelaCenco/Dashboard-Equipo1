@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Error404 from "../pages/Error404/Error404";
 import Home from "../pages/Home/Home";
 import NoImplemented from "../pages/NoImplemented/NoImplemented";
@@ -10,7 +10,7 @@ const AppRouter = () => {
   return (
     
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/home" element={<Home/>}/>
         <Route path="/products" element={<ProductsList/>}/>
         <Route path="/products/:id" element={<ProductView/>}/>
         <Route path="/products/new" element={<ProductView/>}/>

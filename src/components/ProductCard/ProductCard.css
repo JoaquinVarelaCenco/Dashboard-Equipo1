@@ -44,6 +44,7 @@
   .desc p {
     margin-top: 0;
     padding-top: 0;
+    text-align: left;
   }
   
   .section-article__price {
@@ -84,6 +85,11 @@
 
   .section-article__goToProduct img{
     width: 40px;
+  }
+
+  .product-card-link{
+    text-decoration: none;
+    color: black;
   }
   /* @media (min-width: 785px) {
     .main-product__related-product {
