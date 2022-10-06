@@ -6,38 +6,30 @@ import Spinner from "../../../components/Spinner/Spinner";
 import { SearchContext } from "../../../context/SearchContext";
 
 const ProductsList = () => {
-
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const context = useContext(SearchContext);
 
-  const filterProducts = (searchTerm) => {
-     return products.filter((val) => {
-      if (searchTerm === "") {
-        return val;
-      } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-        return val;
-      }
-    });
-  };
+  // const filterProducts = (searchTerm) => {
+  //   return products.filter((val) => {
+  //     if (searchTerm === "") {
+  //       return val;
+  //     } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+  //       return val;
+  //     }
+  //   });
+  // };
 
-  useEffect(() => {
-    getProducts().then((data) => {
-      setProducts(data);
-    });
-  },[]);
+  // useEffect(() => {
+  //   getProducts().then((data) => {
+  //     setProducts(data);
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    if (context.searchTerm === "") {
-      // codigo que vuelva a cargar el array
-    } else {
-      setProducts(filterProducts(context.searchTerm));
-    }
-  }, [context.searchTerm]);
 
   return (
     <div className="productList__container">
-      {products.length ? (
-        products.map((p) => (
+      {context.products.length ? (
+        context.products.map((p) => (
           <ProductCard
             title={p.title}
             price={p.price}

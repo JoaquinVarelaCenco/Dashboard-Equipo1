@@ -8,7 +8,7 @@ const context = useContext(SearchContext);
     
   return (
     <div className='header'>
-      <input type="text" placeholder="Search..." value={context.searchTerm} onChange={context.handleSearch} /> Header</div>
+      <input type="text" placeholder="Search..." onChange={context.handleSearch} /> Header</div>
   )
 }
 
