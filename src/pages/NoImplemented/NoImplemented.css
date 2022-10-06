@@ -1,0 +1,70 @@
+.noImplemented{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    height: calc(100vh - 72px);
+    width: 100%;
+    /* color: rgb(199, 199, 199); */
+}
+
+.noImplemented h3{
+    font-size: 70px;
+    text-transform: uppercase;
+}
+.noImplemented h3 span{
+    display: block;
+}
+
+.noImplemented p{
+    font-size: 28px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.progress{
+    height: 20px;
+    width: 30%;
+    border: 1px solid #428bca;
+    border-radius: 5px;
+    background-color: #e6f3fa;
+    margin-bottom: 15px;
+}
+
+.progress-bar{
+    height: 100%;
+    width: 75%;
+    background: #428bca;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    animation-name: loopProgress;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loopProgress {
+    0%{
+        width: 0%;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+
+
+.noImplemented button{
+    background-color: #5b5d5d ;
+    border: none;
+    padding: 8px 10px;
+    font-size: 16px;
+    color: white;
+    margin: 0 6px;
+    border-radius: 15px;
+    min-width: 150px;
+}

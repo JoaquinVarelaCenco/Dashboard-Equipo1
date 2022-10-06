@@ -1,9 +1,18 @@
-/* code css */
-.mainArea {
-  /* background-color: red; */
-  width: 100%;
+
+.mainArea{
+    width: calc(100% - 296px);
+    margin-left: 296px;
 }
 
-.mainArea__content {
-  margin-top: 72px;
+.mainArea__content{
+    margin-top: 72px;
+    min-height: calc(100vh - 72px);
 }
+
+@media(max-width:1024px){
+    .mainArea{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
