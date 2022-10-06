@@ -1,9 +1,10 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import ProductCard from '../../../components/ProductCard/ProductCard';
 import { getProducts} from '../../../services/apiServices';
 import './ProductsList.css';
 import Spinner from '../../../components/Spinner/Spinner'
+
+
 
 const ProductsList = () => {
 

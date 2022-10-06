@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import "./SideBar.css";
 import logo from "../../assets/images/MiEcommerce.png";
-import house from "../../assets/images/home.svg";
+import casita from "../../assets/images/home.svg";
 import profilePic from "../../assets/images/ProfilePic.png";
-import paquete from "../../assets/images/package-variant-closed.svg";
+import pakage from "../../assets/images/package-variant-closed.svg";
 import store from "../../assets/images/store.svg";
 import { useRef } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import SwitchToggle from "../SwitchToggle/SwitchToggle";
 
 const Sidebar = () => {
   let sideBar = useRef();
@@ -30,17 +33,22 @@ const Sidebar = () => {
   }
   })
 
+
+  const { theme } = useContext(ThemeContext);
+
   return (
-    
-    <div ref={sideBar} className="sideBar">
-   
+    <div className={`sideBar ${theme}`}>
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
-          <NavLink  to="/home" className="sideBar_eachLink"> <img src= {house} />Inicio</NavLink>
-          <NavLink  to="/products" className="sideBar_eachLink"> <img src= {paquete} />Productos</NavLink>
-          <NavLink  to="/stores" className="sideBar_eachLink"> <img src= {store} />Tiendas</NavLink>
+          <NavLink  to="/home" className={`sideBar_eachLink ${theme}`}> <img src= {casita} />Inicio</NavLink>
+          <NavLink  to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
+          <NavLink  to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>
+
+
+        <SwitchToggle />
+
       </div>
       <button className="sideBar__user-button">
         <div className="sideBar__user-button__profile">
