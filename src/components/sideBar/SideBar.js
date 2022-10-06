@@ -13,17 +13,17 @@ import { SideBarContext } from "../../context/SideBarContext";
 
 const Sidebar = () => {
 
-  const {visibility} = useContext(SideBarContext)
-  const { theme } = useContext(ThemeContext);
-console.log(visibility);
+  const {visibility, hideSideBar} = useContext(SideBarContext)
+  const { theme } = useContext(ThemeContext); 
+
   return (
     <div className={`sideBar ${theme} ${visibility}`}>
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
-          <NavLink  to="/home" className={`sideBar_eachLink ${theme}`}> <img src= {casita} />Inicio</NavLink>
-          <NavLink  to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
-          <NavLink  to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
+          <NavLink onClick={hideSideBar} to="/home" className={`sideBar_eachLink ${theme}`}> <img src= {casita} />Inicio</NavLink>
+          <NavLink onClick={hideSideBar} to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
+          <NavLink onClick={hideSideBar} to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>
 
 

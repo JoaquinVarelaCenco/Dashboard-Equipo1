@@ -8,7 +8,8 @@ export const SideBarProvider = ({children}) => {
 
     const value = {
         visibility,
-        toggleVisibility: () => setVisibility(prev => prev === 'unhide' ? 'hide' : 'unhide')
+        toggleVisibility: () => setVisibility(prev => prev === 'unhide' ? 'hide' : 'unhide'),
+        hideSideBar:() => setVisibility(prev => prev === 'unhide' ? 'hide' : '')
     }
 
 
