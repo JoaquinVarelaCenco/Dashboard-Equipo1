@@ -11,7 +11,7 @@ import SwitchToggle from "../SwitchToggle/SwitchToggle";
 
 const Sidebar = () => {
 
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={`sideBar ${theme}`}>
@@ -22,9 +22,9 @@ const Sidebar = () => {
           <NavLink  to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
           <NavLink  to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>
- 
 
-        <SwitchToggle onClick={() => toggleTheme()}/>
+
+        <SwitchToggle />
 
       </div>
       <button className="user-button">
