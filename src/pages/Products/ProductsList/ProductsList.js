@@ -19,7 +19,7 @@ const ProductsList = () => {
 
   return (
     <div className='productList__container'>
-      {products.length ? products.map(p => <ProductCard title={p.title} price={p.price} key={p.id} image={p.images[0]}/>)
+      {products.length ? products.map(p => <ProductCard title={p.title} price={p.price} key={p.id} image={p.images[0]} id={p.id}/>)
       : <Spinner/>
     }
     </div>
