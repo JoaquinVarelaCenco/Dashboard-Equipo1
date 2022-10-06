@@ -18,7 +18,7 @@ const Sidebar = () => {
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
-          <NavLink  to="/" className={`sideBar_eachLink ${theme}`}> <img src= {casita} />Inicio</NavLink>
+          <NavLink  to="/home" className={`sideBar_eachLink ${theme}`}> <img src= {casita} />Inicio</NavLink>
           <NavLink  to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
           <NavLink  to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>

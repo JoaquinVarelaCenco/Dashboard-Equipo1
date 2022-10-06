@@ -6,9 +6,6 @@ import AppRouter from "../../routes/AppRouter";
 import { HeaderContext } from "../../context/HeaderContext";
 
 const MainArea = () => {
-  const { page } = useContext(HeaderContext)
-
-const MainArea = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -23,4 +20,4 @@ const MainArea = () => {
   );
 };
 
-export default MainArea;
+export default MainArea
