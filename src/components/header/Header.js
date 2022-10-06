@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useRef } from "react";
@@ -11,11 +10,9 @@ const Header = () => {
   const { page, currentPage } = useContext(HeaderContext)
   const location = useLocation();
   const pageTitle ="Products";
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     currentPage(location.pathname);
-
-  const { theme } = useContext(ThemeContext);
-
     
   }, [location]);
 
@@ -24,7 +21,7 @@ const Header = () => {
   const title = useRef(null);
 
   return (
-    <div className='header'>
+    <div className={`header ${theme}`}>
       <div className="headerGeneric">
         <button><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
         <div className="title"><h2 ref={title}>{pageTitle}</h2></div>
@@ -41,8 +38,9 @@ const Header = () => {
       :
       <h1>Chau juan</h1>
     }
+    
     </div>
-    <div className={`header ${theme}`}>Header</div>
+    
   )
 }
 
