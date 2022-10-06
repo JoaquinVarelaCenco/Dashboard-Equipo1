@@ -7,8 +7,7 @@ import ProductsList from "../pages/Products/ProductsList/ProductsList";
 import ProductView from "../pages/Products/ProductView/ProductView";
 
 const AppRouter = () => {
-  return (
-    
+  return ( 
       <Routes>
         <Route path="/home" element={<Home/>}/>
         <Route path="/products" element={<ProductsList/>}/>

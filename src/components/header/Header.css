@@ -5,7 +5,7 @@
     height: 72px;
     display: flex;
     padding: 0 10px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* opacity: 0.9; */
     /* box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.75) */
 }
@@ -13,13 +13,14 @@
 .headerGeneric{
     display: flex;
 }
-.hamburguerMenu{
+
+.headerGeneric button{
     background: none;
+    border: none;
 }
 
 .title{
     padding-left: 20px;
-    color: white;
     align-self: center;
 }
 
@@ -27,9 +28,12 @@
     font-weight:500;
 }
 
+
+/* HEADER PRODUCTS */
 .headerProducts{
     display: flex;
-
+    width: 100%;
+    justify-content: flex-end;
 }
 
 .header__search-container{
@@ -55,6 +59,13 @@
     border: none;
 }
 
+.headerProducts-ContainerAgregar{
+    align-self: center;
+}
+
+.headerProducts-ContainerAgregar a{
+    text-decoration: none;
+}
 .headerProducts__btnAgregar{
     display: none;
     height: 32px;
@@ -64,6 +75,31 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 16px;
     margin-left: 10px;
+    text-decoration: none;
+}
+
+/* HEADER EDIT PRODUCTS */
+.headerEditProduct{
+    display: flex;
+    align-self: center;
+}
+
+.headerEditProduct img{
+    filter: invert();
+}
+
+.headerEditProduct__btnDelete{
+    height: 32px;
+    width: 100px;
+    padding: 8px;
+    align-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    margin-left: 10px;
+}
+
+.headerEditProduct h2{
+    font-weight: 500;
 }
 .header__menu-hamburguesa{
     margin-top: 20px;
