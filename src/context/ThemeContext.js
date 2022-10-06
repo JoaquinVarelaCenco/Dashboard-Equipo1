@@ -4,9 +4,9 @@ export const ThemeContext = createContext('clear');
 
 export const ThemeProvider = ({children}) => {
     
-    // const initialMode = (localStorage.getItem("darkMode")) ? localStorage.getItem("darkMode") : 'clear';
+    const initialMode = (localStorage.getItem("darkMode")) ? localStorage.getItem("darkMode") : 'clear';
 
-    const [ theme, setTheme ] = useState('clear');
+    const [ theme, setTheme ] = useState(initialMode);
 
     const value = {
         theme,

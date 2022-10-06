@@ -17,6 +17,7 @@ const SwitchToggle = () => {
                 type="checkbox" 
                 ref={checkbox}
                 onChange={handleChange}
+                checked={(theme === 'dark')}
             />
             <span className="slider round"></span>
         </label>
