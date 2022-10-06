@@ -14,8 +14,8 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 }
 @keyframes aparecer{
-  0%{transform: translateX(600px);}
-  100%{transform: translateX(0)}
+  0%{transform: translateX(-600px);}
+  100%{transform: translateX(0px)}
 }
 .sideBar__img-logo {
   width: 80%;
