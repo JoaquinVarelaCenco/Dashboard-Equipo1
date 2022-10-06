@@ -3,10 +3,8 @@ import "./MainArea.css";
 import Header from "../header/Header"
 import { ThemeContext } from "../../context/ThemeContext";
 import AppRouter from "../../routes/AppRouter";
-import { HeaderContext } from "../../context/HeaderContext";
 
 const MainArea = () => {
-  const { page } = useContext(HeaderContext)
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -21,4 +19,4 @@ const MainArea = () => {
   );
 };
 
-export default MainArea;
+export default MainArea

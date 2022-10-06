@@ -11,9 +11,9 @@ const Header = () => {
   const { page, currentPage } = useContext(HeaderContext)
   const location = useLocation();
   const pageTitle ="Products";
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     currentPage(location.pathname);
-
     
   }, [location]);
 
@@ -39,8 +39,8 @@ const Header = () => {
       :
       <h1>Chau juan</h1>
     }
+    
     </div>
-
   )
 }
 
