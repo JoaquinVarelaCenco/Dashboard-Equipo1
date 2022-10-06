@@ -36,12 +36,13 @@
   gap: 25px;
   font-size: 15px;
   /* margin-left: 15px; */
-  padding: 6px 0 
+  padding: 6px 0;
 }
 
 .sideBar_eachLink img{
   padding-left: 13px;
 }
+
 .user-name {
 padding-left: 5px;
 font-size: 15px;
@@ -61,3 +62,18 @@ font-size: 15px;
     display: none;
   }
 }
+
+
+/* Dark Mode */
+
+.sideBar_Link .clear{
+  color: var(--clear-Color);
+}
+
+.sideBar_Link .dark{
+  color: var(--black-Color);
+}
+
+.dark .sideBar_eachLink img{
+  filter: invert();
+} 
