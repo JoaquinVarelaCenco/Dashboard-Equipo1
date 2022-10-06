@@ -82,6 +82,7 @@ const ProductView = () => {
         console.log(res);
       });
     }
+    navigate("/");
   }
 
   function handleDeleteProd() {
@@ -109,7 +110,7 @@ const ProductView = () => {
       </div>
       <h1>Informacion</h1>
       <form onSubmit={handleSubmit} className="product-new__form">
-        <p>Nombre</p>
+        <p className="product-new__input-title">Nombre</p>
         <input
           type="text"
           name="title"
@@ -118,7 +119,7 @@ const ProductView = () => {
           onChange={handleInputChange}
           required
         />
-        <p>Valor</p>
+        <p className="product-new__input-title">Valor</p>
         <input
           type="number"
           name="price"
@@ -126,7 +127,7 @@ const ProductView = () => {
           onChange={handleInputChange}
           required
         />
-        <p>Stock</p>
+        <p className="product-new__input-title">Stock</p>
         <div className="product-new-form__stock">
           <button onClick={() => handleInputChangeStock("-")} type="button">
             -
@@ -137,7 +138,7 @@ const ProductView = () => {
           </button>
         </div>
 
-        <p>Descripcion</p>
+        <p className="product-new__input-title">Descripcion</p>
         <textarea
           type="number"
           name="description"
@@ -146,14 +147,14 @@ const ProductView = () => {
           onChange={handleInputChange}
           required
         />
-        <p>Categoria</p>
+        <p className="product-new__input-title">Categoria</p>
         <select
           name="category"
           value={product.category}
           onChange={handleInputChange}
-          required
+          required class="form-control"
         >
-          <option value="DEFAULT" disabled>
+          <option value="" disabled selected>
             Seleccione categoria
           </option>
           <option value="categoria-1">categoria-1</option>
@@ -161,12 +162,9 @@ const ProductView = () => {
           <option value="categoria-3">categoria-3</option>
           <option value="categoria-4">categoria-4</option>
         </select>
-        <p>Tienda</p>
-        <select
-          name="store"
-          required
-        >
-          <option value="DEFAULT" disabled>
+        <p className="product-new__input-title">Tienda</p>
+        <select name="store" required class="form-control">
+          <option value="" disabled selected>
             Seleccione una tienda
           </option>
           <option value="tienda-1">tienda-1</option>
@@ -175,19 +173,24 @@ const ProductView = () => {
           <option value="tienda-4">tienda-4</option>
         </select>
         <h3>Galeria de imagenes</h3>
-        <p>Nueva imagen</p>
-        <input type="text" name="image" id="input-img-add" />
-        <button onClick={() => handleAddImage()} type="button">
-          Add image
-        </button>
-        <p>Imagenes actuales</p>
+        <p className="product-new__input-title">Nueva imagen</p>
+        <div className="prueba">
+          <input type="text" name="image" id="input-img-add" />
+          <button onClick={() => handleAddImage()} type="button">
+            Add
+          </button>
+        </div>
+        <p className="product-new__input-title">Imagenes actuales</p>
 
         {product.images.map((img, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="product-new-form__card-image">
+              {/* <div className="product-new-form__card-image__info-img"> */}
+              <img src={img} alt="imagen producto" />
               <p>{img}</p>
+              {/* </div> */}
               <button onClick={() => handleRemoveImage(index)} type="button">
-                X
+                Quitar
               </button>
             </div>
           );
