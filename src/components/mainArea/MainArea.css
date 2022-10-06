@@ -1,10 +1,10 @@
 /* code css */
 .mainArea{
-    background-color: lightgray;
+    background-color: #242424;
     width: 100%;
-   
 }
 
 .mainArea__content{
     margin-top: 72px;
+    min-height: calc(100vh - 72px);
 }
