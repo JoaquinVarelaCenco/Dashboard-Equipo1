@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import "./MainArea.css";
 import Header from "../header/Header"
-import AppRouter from "../../routes/AppRouter"
-import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import AppRouter from "../../routes/AppRouter";
+import { HeaderContext } from "../../context/HeaderContext";
+
+const MainArea = () => {
+  const { page } = useContext(HeaderContext)
 
 const MainArea = () => {
   const { theme } = useContext(ThemeContext);
@@ -14,7 +18,7 @@ const MainArea = () => {
       <AppRouter>
       </AppRouter>
       </div>
-      </div> 
+    </div> 
       
   );
 };
