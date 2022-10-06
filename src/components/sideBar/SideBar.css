@@ -1,8 +1,7 @@
 /* code css */
 .sideBar {
-  /* background-color: rgba(255, 255, 255, 1); */
   min-width: 296px;
-  /* position: fixed; */
+  position: fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,11 +34,11 @@
   align-items: center;
   text-decoration: none;
   gap: 25px;
-  color: black;
   font-size: 15px;
   /* margin-left: 15px; */
   padding: 6px 0 
 }
+
 .sideBar_eachLink img{
   padding-left: 13px;
 }
