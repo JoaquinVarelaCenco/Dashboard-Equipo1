@@ -55,12 +55,16 @@ font-size: 15px;
   background-color: rgba(0, 0, 255, 0.136);
   border-radius: 6px;
 }
-.hide{ 
-  display: block;
-}
+
 
 @media (max-width: 1024px) {
   .sideBar {
+    display: none;
+  }
+ .hide{ 
+    display: flex;
+  }
+ .unhide{
     display: none;
   }
 }

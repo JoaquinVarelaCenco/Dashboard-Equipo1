@@ -5,16 +5,18 @@ import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation } from 'react-router-dom';
 import searchImage from '../../assets/images/magnify.svg';
 import menuImage from '../../assets/images/menu.svg'
+import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 
 const Header = () => {
+  let buttonMenu = useRef();
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   const location = useLocation();
   const pageTitle ="Products";
-  const { theme } = useContext(ThemeContext);
+  const {toggleVisibility} = useContext(SideBarContext)
+  
   useEffect(() => {
     currentPage(location.pathname);
-    
   }, [location]);
 
   // page==='/home' ? pageTitle = "¡Hola Olivia!" :  pageTitle = 'Products'
@@ -22,9 +24,11 @@ const Header = () => {
   const title = useRef(null);
 
   return (
+  
     <div className={`header ${theme}`}>
       <div className="headerGeneric">
-        <button><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
+        <button ref={buttonMenu} onClick={()=>{
+          toggleVisibility()}} className="header__menu-hamburguesa"><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
         <div className="title"><h2 ref={title}>{pageTitle}</h2></div>
       </div>
       {

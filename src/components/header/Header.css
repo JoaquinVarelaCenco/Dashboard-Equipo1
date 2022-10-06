@@ -65,14 +65,20 @@
     border-radius: 16px;
     margin-left: 10px;
 }
-
-@media (min-width: 1024px){
+.header__menu-hamburguesa{
+    margin-top: 20px;
+    height: 32px;
+    width: 32px;
+}
+@media (min-width: 1025px){
     .header{
         width: calc(100% - 296px);
     }
     .headerProducts__btnAgregar{
         display: block;
     }
-
+    .header__menu-hamburguesa{
+        display: none;
+    }
 
 }
