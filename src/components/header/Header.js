@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
@@ -11,6 +13,9 @@ const Header = () => {
   const pageTitle ="Products";
   useEffect(() => {
     currentPage(location.pathname);
+
+  const { theme } = useContext(ThemeContext);
+
     
   }, [location]);
 
@@ -37,7 +42,7 @@ const Header = () => {
       <h1>Chau juan</h1>
     }
     </div>
-    
+    <div className={`header ${theme}`}>Header</div>
   )
 }
 

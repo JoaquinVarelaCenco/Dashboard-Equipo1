@@ -1,8 +1,7 @@
 /* code css */
 .sideBar {
-  background-color: rgba(255, 255, 255, 1);
   min-width: 296px;
-  /* position: fixed; */
+  position: fixed;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,6 +9,7 @@
   padding: 16px;
   justify-content: space-between;
 }
+
 .sideBar__img-logo {
   width: 100%;
   margin-bottom: 30px;
@@ -34,14 +34,15 @@
   align-items: center;
   text-decoration: none;
   gap: 25px;
-  color: black;
   font-size: 15px;
   /* margin-left: 15px; */
-  padding: 6px 0 
+  padding: 6px 0;
 }
+
 .sideBar_eachLink img{
   padding-left: 13px;
 }
+
 .user-name {
 padding-left: 5px;
 font-size: 15px;
@@ -61,3 +62,18 @@ font-size: 15px;
     display: none;
   }
 }
+
+
+/* Dark Mode */
+
+.sideBar_Link .clear{
+  color: var(--clear-Color);
+}
+
+.sideBar_Link .dark{
+  color: var(--black-Color);
+}
+
+.dark .sideBar_eachLink img{
+  filter: invert();
+} 
