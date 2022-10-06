@@ -152,7 +152,7 @@ const ProductView = () => {
           name="category"
           value={product.category}
           onChange={handleInputChange}
-          required class="form-control"
+          required className="form-control"
         >
           <option value="" disabled selected>
             Seleccione categoria
@@ -163,7 +163,7 @@ const ProductView = () => {
           <option value="categoria-4">categoria-4</option>
         </select>
         <p className="product-new__input-title">Tienda</p>
-        <select name="store" required class="form-control">
+        <select name="store" className="form-control" required>
           <option value="" disabled selected>
             Seleccione una tienda
           </option>

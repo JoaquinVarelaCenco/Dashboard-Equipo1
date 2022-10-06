@@ -1,7 +1,7 @@
 import { SearchContext } from "../../context/SearchContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from 'react-router-dom';
 import searchImage from '../../assets/images/magnify.svg';
