@@ -36,7 +36,8 @@
 }
 
 .error404__bottom p{
-    font-size: 25px;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 .error404__bottom button{
