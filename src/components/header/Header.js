@@ -2,14 +2,16 @@ import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import searchImage from '../../assets/images/magnify.svg';
-import menuImage from '../../assets/images/menu.svg'
+import menuImage from '../../assets/images/menu.svg';
+import leftArrow from '../../assets/images/chevron-right (1).svg'
+
 
 const Header = () => {
-  const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   const location = useLocation();
+  const actualPage = page;
   let pageTitle ="¡Hola Olivia!";
   const { theme } = useContext(ThemeContext);
   useEffect(() => {
@@ -18,8 +20,12 @@ const Header = () => {
   }, [location]);
   if(page==='/products'){
     pageTitle = 'Products';
-  }else if(page === "/stores"){
+  }else if(page.includes("/stores")){
     pageTitle = "Tiendas"
+  }else if(page === '/products/new'){
+    pageTitle = "Producto nuevo"
+  }else if(page.includes('/products/')){
+    pageTitle = "Productos"
   }
 
   const title = useRef(null);
@@ -37,10 +43,24 @@ const Header = () => {
               <input type="text" class="header__search" placeholder="Buscar productos..." />
               <button><img src={searchImage} alt="Lupa de busqueda" /></button>
             </div>
-            <button className="headerProducts__btnAgregar">Agregar Productos</button>
+            <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Productos</button></Link></div>
           </div> 
       :
-      <h1>Chau juan</h1>
+      page === '/products/new'? 
+          <div className="headerEditProduct">
+            <img src={leftArrow} alt="" />
+            <h2>Nuevo Producto</h2>
+          </div>
+      : page.includes('/products/')? 
+          <>
+            <div className="headerEditProduct">
+              <img src={leftArrow} alt="" />
+              <h2>#3</h2>
+            </div>
+            <button className="headerEditProduct__btnDelete">ELIMINAR</button>
+          </>
+      :
+        ""
     }
     
     </div>
