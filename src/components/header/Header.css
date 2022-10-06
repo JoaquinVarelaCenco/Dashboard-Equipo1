@@ -13,13 +13,14 @@
 .headerGeneric{
     display: flex;
 }
-.hamburguerMenu{
+
+.headerGeneric button{
     background: none;
+    border: none;
 }
 
 .title{
     padding-left: 20px;
-    color: white;
     align-self: center;
 }
 

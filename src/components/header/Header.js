@@ -10,14 +10,17 @@ const Header = () => {
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   const location = useLocation();
-  const pageTitle ="Products";
+  let pageTitle ="¡Hola Olivia!";
   const { theme } = useContext(ThemeContext);
   useEffect(() => {
     currentPage(location.pathname);
     
   }, [location]);
-
-  // page==='/home' ? pageTitle = "¡Hola Olivia!" :  pageTitle = 'Products'
+  if(page==='/products'){
+    pageTitle = 'Products';
+  }else if(page === "/stores"){
+    pageTitle = "Tiendas"
+  }
 
   const title = useRef(null);
 

@@ -25,7 +25,7 @@ const ProductCard = ({ title, price, image, id }) => {
             </div>
 
             <div className="section-article__price">
-              <p className="valorNumerico">#{price}</p>
+              <p className="valorNumerico">#{id}</p>
             </div>
           </div>
       </div>
