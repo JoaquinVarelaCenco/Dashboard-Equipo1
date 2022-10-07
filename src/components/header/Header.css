@@ -82,10 +82,6 @@
     align-self: center;
 }
 
-.headerEditProduct img{
-    filter: invert();
-}
-
 .headerEditProduct__btnDelete{
     height: 32px;
     width: 100px;
@@ -115,4 +111,11 @@
         display: none;
     }
 
+}
+
+/* Dark Mode */
+
+.dark .headerEditProduct img,
+.dark .header__menu-hamburguesa{
+    filter: invert();
 }
