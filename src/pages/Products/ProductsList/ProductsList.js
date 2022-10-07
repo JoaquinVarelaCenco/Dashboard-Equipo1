@@ -1,31 +1,15 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect } from "react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
-import { getProducts } from "../../../services/apiServices";
 import "./ProductsList.css";
 import Spinner from "../../../components/Spinner/Spinner";
 import { SearchContext } from "../../../context/SearchContext";
 
-
 const ProductsList = () => {
-  // const [products, setProducts] = useState([]);
   const context = useContext(SearchContext);
 
-  // const filterProducts = (searchTerm) => {
-  //   return products.filter((val) => {
-  //     if (searchTerm === "") {
-  //       return val;
-  //     } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-  //       return val;
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   getProducts().then((data) => {
-  //     setProducts(data);
-  //   });
-  // }, []);
-
+  useEffect(() => {
+    context.getAllProducts();
+  }, []);
 
   return (
     <div className="productList__container">
@@ -39,9 +23,7 @@ const ProductsList = () => {
             id={p.id}
           />
         ))
-      ) : (
-        <Spinner />
-      )}
+      ) : context.products.length===0 ? <p>No se encontraron productos!!</p> : <Spinner /> }
     </div>
   );
 };
