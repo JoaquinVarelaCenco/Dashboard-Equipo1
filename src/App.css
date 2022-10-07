@@ -19,7 +19,7 @@
 .App{
   display: flex;
   min-height: 100vh;
-  background-color: var(--clear-Background);
+  background-color: var(--dark-Background);
 }
 
 /* DarkMode */

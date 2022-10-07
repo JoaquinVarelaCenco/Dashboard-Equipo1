@@ -81,3 +81,8 @@
 .dark .error404__top h2{
     color: var(--dark-BlackLight);
 }
+
+.dark .error404__bottom button{
+    background-color: var(--dark-Background);
+    color: var(--dark-Color);
+}

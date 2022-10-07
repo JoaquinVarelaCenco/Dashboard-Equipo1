@@ -1,5 +1,4 @@
 import { SearchContext } from "../../context/SearchContext";
-import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
@@ -14,7 +13,6 @@ const Header = () => {
 let buttonMenu = useRef();
   const context = useContext(SearchContext);
 
-  const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   // const [productId, setProductId] = useState("");
   const location = useLocation();
@@ -40,7 +38,7 @@ let buttonMenu = useRef();
   }
 
   return (
-    <div className={`header ${theme}`}>
+    <div className="header">
       <div className="headerGeneric">
         <button ref={buttonMenu} onClick={()=>{
           toggleVisibility()}} className="header__menu-hamburguesa"><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
