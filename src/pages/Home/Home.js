@@ -5,6 +5,8 @@ import HomeCard from '../../components/HomeCard/HomeCard';
 import './Home.css'
 import box from '../../assets/images/package-variant-closed.svg';
 import store from '../../assets/images/store.svg';
+import ChartBar from '../../components/ChartBar/ChartBar';
+import PieCharts from '../../components/ChartPie/ChartPie';
 
 const Home = () => {
 
@@ -20,27 +22,38 @@ const Home = () => {
 
 
   return (
-    <>
+      <div className='home-container'>
 
-      <HomeCard 
-        count={totalProducts}
-        title={"Productos"}
-        linkBtnList= {"/products"}
-        textBtnAdd = {"Agregar Producto"}
-        linkBtnAdd = {"/products/new"}
-        img = {box}
-      />
+        <div className='home-cards'>
+          <HomeCard 
+            count={totalProducts}
+            title={"Productos"}
+            linkBtnList= {"/products"}
+            textBtnAdd = {"Agregar Producto"}
+            linkBtnAdd = {"/products/new"}
+            img = {box}
+          />
 
-      <HomeCard 
-        count={12}
-        title={"Tiendas"}
-        linkBtnList= {"/stores"}
-        textBtnAdd = {"Agregar Tiendas"}
-        linkBtnAdd = {"/stores/new"}
-        img = {store}
-      />
+          <HomeCard 
+            count={12}
+            title={"Tiendas"}
+            linkBtnList= {"/stores"}
+            textBtnAdd = {"Agregar Tiendas"}
+            linkBtnAdd = {"/stores/new"}
+            img = {store}
+          />
+        </div>
 
-    </>
+        <div className='home-charts'>
+          <div className='home-charts__bar'>
+            <ChartBar />
+          </div>
+          <div className='home-charts__pie'>
+            <PieCharts />
+          </div>
+        </div>
+
+      </div>
   )
 }
 
