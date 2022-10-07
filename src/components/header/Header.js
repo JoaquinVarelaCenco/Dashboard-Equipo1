@@ -7,7 +7,9 @@ import searchImage from "../../assets/images/magnify.svg";
 import menuImage from "../../assets/images/menu.svg";
 import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
-import leftArrow from "../../assets/images/chevron-right (1).svg";
+import leftArrow from '../../assets/images/chevron-right (1).svg'
+
+
 
 const Header = () => {
   let buttonMenu = useRef();
@@ -16,6 +18,7 @@ const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
   const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext);
+
   // const [productId, setProductId] = useState("");
   const location = useLocation();
 
@@ -115,6 +118,7 @@ const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
           <h2>{pageTitle}</h2>
         </div>
       </div>
+
       {page === "/products" ? (
         <div className="headerProducts">
           <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
