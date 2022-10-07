@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./SideBar.css";
 import logo from "../../assets/images/MiEcommerce.png";
 import casita from "../../assets/images/home.svg";
@@ -39,7 +39,17 @@ const Sidebar = () => {
           </div>
         </button>
       </div>
-      
+      <Link to={"/profile"}>
+      <button className="sideBar__user-button">
+        <div className="sideBar__user-button__profile">
+          <img className="sideBar__user-img" src={profilePic} />
+        </div>
+        <div>
+          <p className="sideBar__user-name">Olivia</p>
+        </div>
+      </button>
+      </Link>
+
     </div>
   );
 };

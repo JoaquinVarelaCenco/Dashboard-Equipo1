@@ -14,6 +14,7 @@ const AppRouter = () => {
         <Route path="/products/:id" element={<ProductView/>}/>
         <Route path="/products/new" element={<ProductView/>}/>
         <Route path="/stores/*" element={<NoImplemented/>}/>
+        <Route path="/profile" element={<NoImplemented/>}/>
         <Route path="/*" element={<Error404/>}/>
       </Routes>
   );

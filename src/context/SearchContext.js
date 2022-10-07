@@ -6,12 +6,18 @@ export const SearchContext = createContext();
 export const SearchProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
+  const [productsExist, setProductsExist] = useState(true)
   const [helpProducts, setHelpProducts] = useState([]);
 
   useEffect(() => {
-    getProducts().then((data) => {
+      getProducts()
+    .then((data) => {
+      setProductsExist(true)
       setProducts(data);
       setHelpProducts(data);
+    })
+    .catch(e =>{
+      setProductsExist(false)
     });
   }, []);
 
@@ -38,7 +44,7 @@ export const SearchProvider = ({ children }) => {
   };
 
   return (
-    <SearchContext.Provider value={{ handleSearch, products }}>
+    <SearchContext.Provider value={{ handleSearch, products, productsExist }}>
       {children}
     </SearchContext.Provider>
   );

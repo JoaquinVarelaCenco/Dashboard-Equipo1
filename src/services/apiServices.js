@@ -1,6 +1,6 @@
 const url = "http://localhost:5000/api/";
 const getProducts = () => {
-  return fetch(`${url}product`).then((res) => res.json());
+  return fetch(`${url}product`).then((res) => res.json())
 };
 
 const getProductById = (id) => {
