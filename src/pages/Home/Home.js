@@ -26,16 +26,16 @@ const Home = () => {
   
 
   products.sort((a,b) =>{
-    if(a.rating.rate < b.rating.rate){
+    if(a.rating.count < b.rating.count){
       return 1;
-    }else  if(a.rating.rate > b.rating.rate){
+    }else  if(a.rating.count > b.rating.count){
       return -1;
     }else{
       return 0;
     }
   });
 
-  const eightMostRate = products.slice(0,8);
+  const eightMostCount = products.slice(0,8);
 
   products.sort((a,b) =>{
     if(a.stock < b.stock){
@@ -82,9 +82,9 @@ const Home = () => {
           </div>
 
           <div className='home-charts__pie'>
-            <h2>Productos con mayor Rating</h2>
+            <h2>Productos con mayor Visitas</h2>
               <PieCharts 
-                products = {eightMostRate}
+                products = {eightMostCount}
               />
           </div>
 
