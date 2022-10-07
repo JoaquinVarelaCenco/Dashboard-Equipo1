@@ -6,6 +6,7 @@ import { useLocation, Link } from 'react-router-dom';
 import searchImage from '../../assets/images/magnify.svg';
 import menuImage from '../../assets/images/menu.svg'
 import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import leftArrow from '../../assets/images/chevron-right (1).svg'
 
 
@@ -14,6 +15,7 @@ let buttonMenu = useRef();
 // const btnSearch = useRef(null);
 
   const context = useContext(SearchContext);
+  const { theme } = useContext(ThemeContext);
 
   const { page, currentPage } = useContext(HeaderContext)
   // const [productId, setProductId] = useState("");
@@ -71,7 +73,7 @@ const expandSearchInput = ()=>{
           <div className="headerProducts">
             <div className="header__search-container" ref={inputSearchContainer}>
               <button onClick={ expandSearchInput} className="search-container__btnClose" ref={btnClose}>X</button>
-              <input type="text" class="header__search" placeholder="Buscar productos..." ref={inputSearch} onChange={context.handleSearch} ></input>
+              <input type="text" className="header__search" placeholder="Buscar productos..." ref={inputSearch} onChange={context.handleSearch} ></input>
               <button onClick={ expandSearchInput} className="search-container__btnSearch"><img src={searchImage} alt="Lupa de busqueda" /></button>
 
             </div>
