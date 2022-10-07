@@ -50,7 +50,7 @@ let buttonMenu = useRef();
       page==="/products" ? 
           <div className="headerProducts">
             <div className="header__search-container">
-              <input type="text" class="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} />
+              <input type="text" className="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} />
               <button><img src={searchImage} alt="Lupa de busqueda" /></button>
             </div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Productos</button></Link></div>
