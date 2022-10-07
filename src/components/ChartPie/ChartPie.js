@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Group A', value: 400 },
+  { name: 'Group A', value: 800 },
   { name: 'Group B', value: 300 },
   { name: 'Group C', value: 300 },
   { name: 'Group D', value: 200 },
@@ -75,8 +75,8 @@ const PieCharts = ()=> {
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={60}
-            outerRadius={80}
+            innerRadius={70}
+            outerRadius={120}
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={onPieEnter}

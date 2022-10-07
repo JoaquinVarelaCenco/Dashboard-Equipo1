@@ -46,9 +46,11 @@ const Home = () => {
 
         <div className='home-charts'>
           <div className='home-charts__bar'>
+          <h2>Productos mayor Stock</h2>
             <ChartBar />
           </div>
           <div className='home-charts__pie'>
+          <h2>Productos más visitados</h2>
             <PieCharts />
           </div>
         </div>
