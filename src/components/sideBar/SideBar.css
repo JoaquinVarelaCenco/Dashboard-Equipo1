@@ -8,9 +8,10 @@
   padding: 16px;
   justify-content: space-between;
   transition: all 0.5s ease-in-out;
-  z-index: 99;
+  z-index: 200;
   animation: aparecer 0.5s linear;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
 }
 
 @keyframes aparecer{

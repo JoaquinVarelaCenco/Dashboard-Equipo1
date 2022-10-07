@@ -51,10 +51,10 @@ a{
   .dark textarea::placeholder{
     color: var(--dark-Color);
   }
-
+/* No se tiene q aplicar a los botones con clase headerBtn  */
   .dark button{
     border: none;
-    background-color: var(--clear-Black);
+    /* background-color: var(--clear-Black); */
     color: var(--dark-Color);
   }
 
