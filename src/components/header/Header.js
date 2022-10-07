@@ -12,6 +12,8 @@ import leftArrow from '../../assets/images/chevron-right (1).svg'
 
 const Header = () => {
 let buttonMenu = useRef();
+// const btnSearch = useRef(null);
+
   const context = useContext(SearchContext);
 
   const { theme } = useContext(ThemeContext);
@@ -37,11 +39,23 @@ let buttonMenu = useRef();
   }else if(page.includes('/products/')){
     pageTitle = "Productos"
     productId = "#"+location.pathname.split('/')[2];
+  }else{
+    pageTitle ="";
   }
+
+
+  //Logica expandir input de búsqueda
+  const titleContainer = useRef('');
+const expandSearchInput = ()=>{
+  let width = window.screen.width;
+  if(width<=500){
+    titleContainer.current.style.display = "none"
+  }
+}
 
   return (
     <div className={`header ${theme}`}>
-      <div className="headerGeneric">
+      <div className="headerGeneric" ref={titleContainer}>
         <button ref={buttonMenu} onClick={()=>{
           toggleVisibility()}} className="header__menu-hamburguesa"><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
         <div className="title"><h2>{pageTitle}</h2></div>
@@ -50,10 +64,11 @@ let buttonMenu = useRef();
       page==="/products" ? 
           <div className="headerProducts">
             <div className="header__search-container">
-              <input type="text" class="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} />
-              <button><img src={searchImage} alt="Lupa de busqueda" /></button>
+              <input type="text" class="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} ></input>
+              <button onClick={ expandSearchInput}><img src={searchImage} alt="Lupa de busqueda" /></button>
             </div>
-            <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Productos</button></Link></div>
+            <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Producto</button></Link></div>
+            <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregarAlternative">+</button></Link></div>
           </div> 
       :
       page === '/products/new'? 
@@ -70,7 +85,7 @@ let buttonMenu = useRef();
             <button className="headerEditProduct__btnDelete">ELIMINAR</button>
           </>
       :
-        ""
+        "" 
     }
     
     </div>
