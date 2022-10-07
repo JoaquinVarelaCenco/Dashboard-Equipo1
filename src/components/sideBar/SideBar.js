@@ -18,6 +18,7 @@ const Sidebar = () => {
 
   return (
     <div className={`sideBar ${theme} ${visibility}`}>
+
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
@@ -25,19 +26,20 @@ const Sidebar = () => {
           <NavLink onClick={hideSideBar} to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
           <NavLink onClick={hideSideBar} to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>
-
-
-        <SwitchToggle />
-
       </div>
-      <button className="sideBar__user-button">
-        <div className="sideBar__user-button__profile">
-          <img className="sideBar__user-img" src={profilePic} />
-        </div>
-        <div>
-          <p className="sideBar__user-name">Olivia</p>
-        </div>
-      </button>
+
+      <div>
+        <SwitchToggle />
+        <button className="sideBar__user-button">
+          <div className="sideBar__user-button__profile">
+            <img className="sideBar__user-img" src={profilePic} />
+          </div>
+          <div>
+            <p className="sideBar__user-name">Olivia</p>
+          </div>
+        </button>
+      </div>
+      
     </div>
   );
 };

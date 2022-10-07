@@ -93,7 +93,8 @@
 /* DarkMode */
 
 .dark .main-product__related-product-card {
-  background-color: var(--dark-BlackLight);
+  background-color: #3c3c3c;
+  color: var(--dark-Color);
   box-shadow: 0px 4px 4px rgba(79, 79, 79, 0.25);
 }
 
