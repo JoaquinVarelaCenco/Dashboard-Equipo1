@@ -14,9 +14,11 @@ export const SearchProvider = ({ children }) => {
 ///empieza lo de marquitos
       getProducts()
     .then((data) => {
+     setTimeout(()=>{
       setProductsExist(true)
       setProducts(data);
       setHelpProducts(data);
+     }, 1500)
     })
     .catch(e =>{
       setProductsExist(false)
