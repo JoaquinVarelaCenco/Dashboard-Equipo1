@@ -1,6 +1,6 @@
 import { SearchContext } from "../../context/SearchContext";
 import "./Header.css";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from "react-router-dom";
 import searchImage from "../../assets/images/magnify.svg";
@@ -12,7 +12,7 @@ import leftArrow from "../../assets/images/chevron-right (1).svg";
 const Header = () => {
   let buttonMenu = useRef();
   // const btnSearch = useRef(null);
-
+const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
   const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext);
@@ -29,6 +29,11 @@ const Header = () => {
   useEffect(() => {
     currentPage(location.pathname);
     titleContainer.current.style.display="flex";
+    if(window.screen.width<501){
+      setTimeout(()=>{
+        inputSearch.current.placeholder = "";
+      }, 100)
+    }
   }, [location]);
 
  
@@ -56,11 +61,14 @@ const Header = () => {
   const expandSearchInput = () => {
     let width = window.screen.width;
     if (width <= 500) {
+      // inputSearch.current.style.width = "100%";
+      // inputSearchContainer.current.style.width = "100%";
+
       titleContainer.current.style.display = "none";
-      inputSearch.current.style.width = "100%";
-      inputSearchContainer.current.style.width = "100%";
+      inputSearch.current.placeholder = "Buscar productos...";
       btnClose.current.style.display = "block";
-      containerAddProduct.current.style.display = "none"
+      containerAddProduct.current.style.display = "none";
+      setStyleSearchAnimation('expandSearchBarStyle')
     } else {
       titleContainer.current.style.display = "flex";
     }
@@ -68,10 +76,12 @@ const Header = () => {
 
   const closeSearchInput = () => {
     titleContainer.current.style.display = "flex";
-    inputSearch.current.style.width = "45px";
+    // inputSearch.current.style.width = "45px";
+    inputSearch.current.placeholder = "";
     inputSearchContainer.current.style.width = "45px";
     btnClose.current.style.display = "none";
-    containerAddProduct.current.style.display = "block"
+    containerAddProduct.current.style.display = "block";
+    setStyleSearchAnimation('')
   };
 
    //useEffect para saber si screen width es mayor a 500px
@@ -79,6 +89,7 @@ const Header = () => {
     if(window.screen.width> 500){
       closeSearchInput();
       inputSearch.current.style.width = "280px";
+      inputSearch.current.placeholder = "Buscar productos...";
       inputSearchContainer.current.style.width = "280px";
     }else{
       closeSearchInput();
@@ -106,24 +117,25 @@ const Header = () => {
       </div>
       {page === "/products" ? (
         <div className="headerProducts">
-          <div className="header__search-container" ref={inputSearchContainer}>
+          <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
             <button
               onClick={closeSearchInput}
-              className="search-container__btnClose"
+              className="search-container__btnClose headerBtn"
               ref={btnClose}
             >
               X
             </button>
             <input
               type="text"
-              className="header__search"
+              className={`header__search  ${styleSearchAnimation}`}
               placeholder="Buscar productos..."
               ref={inputSearch}
               onChange={context.handleSearch}
             />
             <button
               onClick={expandSearchInput}
-              className="search-container__btnSearch"
+              className="search-container__btnSearch headerBtn"
+              
             >
               <img src={searchImage} alt="Lupa de busqueda" />
             </button>
@@ -154,7 +166,9 @@ const Header = () => {
             <img src={leftArrow} alt="" />
             <h2>{productId}</h2>
           </div>
-          <button className="headerEditProduct__btnDelete">ELIMINAR</button>
+          <div className="headerEditProduct__btnDeleteContainer">
+            <button className="headerEditProduct__btnDelete">ELIMINAR</button>
+          </div>
         </>
       ) : (
         ""

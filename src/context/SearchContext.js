@@ -12,9 +12,11 @@ export const SearchProvider = ({ children }) => {
   useEffect(() => {
       getProducts()
     .then((data) => {
+     setTimeout(()=>{
       setProductsExist(true)
       setProducts(data);
       setHelpProducts(data);
+     }, 1500)
     })
     .catch(e =>{
       setProductsExist(false)
