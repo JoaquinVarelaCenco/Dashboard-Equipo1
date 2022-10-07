@@ -40,8 +40,16 @@
     display: flex;
     align-items: center;
     position: relative;
-    width: 280px;
+    width: 42px;
   }
+
+  .header__search-container .hideComponent{
+    display: none;
+}
+
+.header__search-container .showComponent{
+    display: block;
+}
 
   .search-container__btnClose{
     display: none;
@@ -161,14 +169,17 @@
         display: none;
     }
 
+    .header__search-container{
+        width: 280px;
+    }
     .header__search-container input:placeholder{
         display: block;
     }
 }
 
-@media (max-width: 500px){
+@media (min-width: 501px){
     .header__search-container{
-        width: 42px;
+        width: 280px;
     }
 
 }
@@ -186,5 +197,9 @@
 }
 
 .headerProducts .expandSearchBarStyle{
+    width: 100%;
+}
+
+.expandSearchBarStyle input{
     width: 100%;
 }
