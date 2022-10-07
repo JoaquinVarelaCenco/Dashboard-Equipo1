@@ -6,6 +6,10 @@ const data = [
   { name: 'Group B', value: 300 },
   { name: 'Group C', value: 300 },
   { name: 'Group D', value: 200 },
+  { name: 'Group A', value: 800 },
+  { name: 'Group B', value: 300 },
+  { name: 'Group C', value: 300 },
+  { name: 'Group D', value: 200 },
 ];
 
 const renderActiveShape = (props) => {

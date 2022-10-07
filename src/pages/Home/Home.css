@@ -1,21 +1,28 @@
 /* Home css */
+.home-cards{
+    margin-top: 80px;
+}
 
 .home-charts{
     display: flex;
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 .home-charts__bar{
     width: 50%;
     height: 500px;
-    padding: 10px;
 }
 
 .home-charts__pie{
     width: 50%;
     height: 500px;
+}
+
+.home-charts h2{
+    top: 0;
 }
 
 @media (max-width: 830px){

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../services/apiServices';
 import HomeCard from '../../components/HomeCard/HomeCard';
 
@@ -11,15 +11,43 @@ import PieCharts from '../../components/ChartPie/ChartPie';
 const Home = () => {
 
   const [ totalProducts, setTotalProducts ] = useState(0);
-  
-    getProducts()
-    .then((res)=>{
-      setTotalProducts(res.length)
-    })
-    .catch((error)=>{
-      console.log(error);
-    });
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+      getProducts()
+      .then(res =>{
+        setProducts(res)
+        setTotalProducts(res.length);
+      })
+      .catch(error =>{
+        console.log(error);
+      })
+  }, [])
+  
+
+  products.sort((a,b) =>{
+    if(a.rating.rate < b.rating.rate){
+      return 1;
+    }else  if(a.rating.rate > b.rating.rate){
+      return -1;
+    }else{
+      return 0;
+    }
+  });
+
+  const eightMostRate = products.slice(0,8);
+
+  products.sort((a,b) =>{
+    if(a.stock < b.stock){
+      return 1;
+    }else  if(a.stock > b.stock){
+      return -1;
+    }else{
+      return 0;
+    }
+  });
+
+  const eightMostStock = products.slice(0,8);
 
   return (
       <div className='home-container'>
@@ -45,14 +73,21 @@ const Home = () => {
         </div>
 
         <div className='home-charts'>
+
           <div className='home-charts__bar'>
-          <h2>Productos mayor Stock</h2>
-            <ChartBar />
+            <h2>Productos con mayor Stock</h2>
+              <ChartBar 
+                products = {eightMostStock}
+              />
           </div>
+
           <div className='home-charts__pie'>
-          <h2>Productos más visitados</h2>
-            <PieCharts />
+            <h2>Productos con mayor Rating</h2>
+              <PieCharts 
+                products = {eightMostRate}
+              />
           </div>
+
         </div>
 
       </div>
