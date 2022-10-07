@@ -34,3 +34,23 @@
     background-color: var(--clear-Background);
   }
 
+  .dark input,
+  .dark select,
+  .dark textarea{
+    border: none;
+    background-color: var(--clear-BlackLight);
+    color: var(--dark-Color);
+  }
+
+  .dark input::placeholder,
+  .dark select::placeholder,
+  .dark textarea::placeholder{
+    color: var(--dark-Color);
+  }
+
+  .dark button{
+    border: none;
+    background-color: var(--clear-Black);
+    color: var(--dark-Color);
+  }
+
