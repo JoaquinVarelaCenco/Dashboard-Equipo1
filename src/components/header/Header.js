@@ -1,5 +1,4 @@
 import { SearchContext } from "../../context/SearchContext";
-import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
@@ -14,7 +13,6 @@ const Header = () => {
 let buttonMenu = useRef();
   const context = useContext(SearchContext);
 
-  const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   // const [productId, setProductId] = useState("");
   const location = useLocation();
@@ -40,7 +38,7 @@ let buttonMenu = useRef();
   }
 
   return (
-    <div className={`header ${theme}`}>
+    <div className="header">
       <div className="headerGeneric">
         <button ref={buttonMenu} onClick={()=>{
           toggleVisibility()}} className="header__menu-hamburguesa"><img src={menuImage} alt="Menú hamburguesa" className="hamburguerMenu"/></button>
@@ -50,7 +48,7 @@ let buttonMenu = useRef();
       page==="/products" ? 
           <div className="headerProducts">
             <div className="header__search-container">
-              <input type="text" class="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} />
+              <input type="text" className="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} />
               <button><img src={searchImage} alt="Lupa de busqueda" /></button>
             </div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Productos</button></Link></div>
