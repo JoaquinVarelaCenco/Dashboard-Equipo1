@@ -30,26 +30,17 @@ const Sidebar = () => {
 
       <div>
         <SwitchToggle />
-        <button className="sideBar__user-button">
-          <div className="sideBar__user-button__profile">
-            <img className="sideBar__user-img" src={profilePic} />
-          </div>
-          <div>
-            <p className="sideBar__user-name">Olivia</p>
-          </div>
-        </button>
+        <Link to={"/profile"}>
+          <button className="sideBar__user-button">
+            <div className="sideBar__user-button__profile">
+              <img className="sideBar__user-img" src={profilePic} />
+            </div>
+            <div>
+              <p className="sideBar__user-name">Olivia</p>
+            </div>
+          </button>
+        </Link>
       </div>
-      <Link to={"/profile"}>
-      <button className="sideBar__user-button">
-        <div className="sideBar__user-button__profile">
-          <img className="sideBar__user-img" src={profilePic} />
-        </div>
-        <div>
-          <p className="sideBar__user-name">Olivia</p>
-        </div>
-      </button>
-      </Link>
-
     </div>
   );
 };
