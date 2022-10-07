@@ -10,7 +10,6 @@ export const SearchProvider = ({ children }) => {
   const [helpProducts, setHelpProducts] = useState([]);
 
   useEffect(() => {
-    setTimeout(()=>{
       getProducts()
     .then((data) => {
       setProductsExist(true)
@@ -20,7 +19,6 @@ export const SearchProvider = ({ children }) => {
     .catch(e =>{
       setProductsExist(false)
     });
-    }, 500)
   }, []);
 
   const filterProducts = (searchTerm) => {

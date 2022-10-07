@@ -46,10 +46,18 @@ let buttonMenu = useRef();
 
   //Logica expandir input de búsqueda
   const titleContainer = useRef('');
+  const inputSearch = useRef('');
+  const inputSearchContainer = useRef('');
+  const btnClose = useRef('')
 const expandSearchInput = ()=>{
   let width = window.screen.width;
   if(width<=500){
     titleContainer.current.style.display = "none"
+    inputSearch.current.style.width = "100%"
+    inputSearchContainer.current.style.width = "100%";
+    btnClose.current.style.display = "block"
+  }else{
+    titleContainer.current.style.display = "flex"
   }
 }
 
@@ -63,9 +71,10 @@ const expandSearchInput = ()=>{
       {
       page==="/products" ? 
           <div className="headerProducts">
-            <div className="header__search-container">
-              <input type="text" class="header__search" placeholder="Buscar productos..." onChange={context.handleSearch} ></input>
-              <button onClick={ expandSearchInput}><img src={searchImage} alt="Lupa de busqueda" /></button>
+            <div className="header__search-container" ref={inputSearchContainer}>
+              <button onClick={ expandSearchInput} className="search-container__btnClose" ref={btnClose}>X</button>
+              <input type="text" class="header__search" placeholder="Buscar productos..." ref={inputSearch} onChange={context.handleSearch} ></input>
+              <button onClick={ expandSearchInput} className="search-container__btnSearch"><img src={searchImage} alt="Lupa de busqueda" /></button>
             </div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Producto</button></Link></div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregarAlternative">+</button></Link></div>

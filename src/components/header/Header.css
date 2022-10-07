@@ -40,6 +40,23 @@
     position: relative;
     width: 280px;
   }
+
+  .search-container__btnClose{
+    display: none;
+    height: 32px;
+    width: 18px;
+    align-self: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
   
 .header__search-container input{
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -50,7 +67,7 @@
 }
   
 
-.header__search-container button{
+.search-container__btnSearch{
     position: absolute;
     right: 8px;
     background: none;
@@ -74,7 +91,6 @@
     border-radius: 16px;
     margin-left: 10px;
     text-decoration: none;
-    background-color: white;
 }
 
 .headerProducts__btnAgregarAlternative{
