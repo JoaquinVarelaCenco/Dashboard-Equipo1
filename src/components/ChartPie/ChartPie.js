@@ -42,8 +42,8 @@ const renderActiveShape = (props) => {
       
       <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
       <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+      {/* <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`PV ${value}`}</text> */}
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#82ca9d">
         {payload.title}
       </text>
     </g>
@@ -53,8 +53,6 @@ const renderActiveShape = (props) => {
 const PieCharts = ({ products })=> {
 
     const [ state, setState ] = useState (0);
-
-console.log(products);
 
     const onPieEnter = (_, index) => {
     setState (index);
