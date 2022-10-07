@@ -1,10 +1,10 @@
 import { useState, createContext } from 'react'
 
-export const SideBarContext = createContext('unhide');
+export const SideBarContext = createContext('');
 
 export const SideBarProvider = ({children}) => {
 
-    const [ visibility, setVisibility ] = useState('unhide');
+    const [ visibility, setVisibility ] = useState('');
 
     const value = {
         visibility,

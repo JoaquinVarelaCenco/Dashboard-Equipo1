@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./SideBar.css";
 import logo from "../../assets/images/MiEcommerce.png";
 import casita from "../../assets/images/home.svg";
@@ -18,6 +18,7 @@ const Sidebar = () => {
 
   return (
     <div className={`sideBar ${theme} ${visibility}`}>
+
       <div>
         <img className="sideBar__img-logo" src={logo} />
         <div className="sideBar__Links">
@@ -25,11 +26,20 @@ const Sidebar = () => {
           <NavLink onClick={hideSideBar} to="/products" className={`sideBar_eachLink ${theme}`}> <img src= {pakage} />Productos</NavLink>
           <NavLink onClick={hideSideBar} to="/stores" className={`sideBar_eachLink ${theme}`}> <img src= {store} />Tiendas</NavLink>
         </div>
-
-
-        <SwitchToggle />
-
       </div>
+
+      <div>
+        <SwitchToggle />
+        <button className="sideBar__user-button">
+          <div className="sideBar__user-button__profile">
+            <img className="sideBar__user-img" src={profilePic} />
+          </div>
+          <div>
+            <p className="sideBar__user-name">Olivia</p>
+          </div>
+        </button>
+      </div>
+      <Link to={"/profile"}>
       <button className="sideBar__user-button">
         <div className="sideBar__user-button__profile">
           <img className="sideBar__user-img" src={profilePic} />
@@ -38,6 +48,8 @@ const Sidebar = () => {
           <p className="sideBar__user-name">Olivia</p>
         </div>
       </button>
+      </Link>
+
     </div>
   );
 };

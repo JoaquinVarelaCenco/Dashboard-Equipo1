@@ -5,9 +5,9 @@
     height: 72px;
     display: flex;
     padding: 0 10px;
-    /* justify-content: space-between; */
-    /* opacity: 0.9; */
-    /* box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.75) */
+    opacity: .985;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75)
+
 }
 
 .headerGeneric{
@@ -20,7 +20,6 @@
 }
 
 .title{
-    padding-left: 20px;
     align-self: center;
 }
 
@@ -42,6 +41,23 @@
     position: relative;
     width: 280px;
   }
+
+  .search-container__btnClose{
+    display: none;
+    height: 32px;
+    width: 18px;
+    align-self: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
   
 .header__search-container input{
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -52,7 +68,7 @@
 }
   
 
-.header__search-container button{
+.search-container__btnSearch{
     position: absolute;
     right: 8px;
     background: none;
@@ -78,14 +94,24 @@
     text-decoration: none;
 }
 
+.headerProducts__btnAgregarAlternative{
+    display: block;
+    height: 32px;
+    width: 30px;
+    align-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    margin-left: 10px;
+    text-decoration: none;
+    background-color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
 /* HEADER EDIT PRODUCTS */
 .headerEditProduct{
     display: flex;
     align-self: center;
-}
-
-.headerEditProduct img{
-    filter: invert();
 }
 
 .headerEditProduct__btnDelete{
@@ -96,6 +122,7 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 16px;
     margin-left: 10px;
+    
 }
 
 .headerEditProduct h2{
@@ -105,7 +132,10 @@
     margin-top: 20px;
     height: 32px;
     width: 32px;
+    padding-right: 20px;
 }
+
+
 @media (min-width: 1025px){
     .header{
         width: calc(100% - 296px);
@@ -117,4 +147,22 @@
         display: none;
     }
 
+    .headerProducts__btnAgregarAlternative{
+        display: none;
+    }
+
+}
+
+@media (max-width: 500px){
+    .header__search-container input, .header__search-container{
+        width: 45px;
+    }
+
+}
+
+/* Dark Mode */
+
+.dark .headerEditProduct img,
+.dark .header__menu-hamburguesa{
+    filter: invert();
 }

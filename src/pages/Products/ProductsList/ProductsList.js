@@ -13,17 +13,27 @@ const ProductsList = () => {
 
   return (
     <div className="productList__container">
-      {context.products.length ? (
-        context.products.map((p) => (
-          <ProductCard
-            title={p.title}
-            price={p.price}
-            key={p.id}
-            image={p.images[0]}
-            id={p.id}
-          />
-        ))
-      ) : context.products.length===0 ? <p>No se encontraron productos!!</p> : <Spinner /> }
+      {
+      context.productsExist?
+        
+        context.products.length != 0 ? 
+        
+          context.products.map((p) => 
+          
+            <ProductCard
+              title={p.title}
+              price={p.price}
+              key={p.id}
+              image={p.images[0]}
+              id={p.id}
+            />
+          )
+
+        : 
+           <Spinner />
+      :
+      <h1>No hay productos</h1>
+      }
     </div>
   );
 };
