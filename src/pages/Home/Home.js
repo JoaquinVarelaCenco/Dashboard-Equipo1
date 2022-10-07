@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../services/apiServices';
 import HomeCard from '../../components/HomeCard/HomeCard';
-
-import './Home.css'
 import box from '../../assets/images/package-variant-closed.svg';
 import store from '../../assets/images/store.svg';
 import ChartBar from '../../components/ChartBar/ChartBar';
 import PieCharts from '../../components/ChartPie/ChartPie';
+import { orderByKey, orderByKeyDouble } from '../../utils/orderProducts';
+import './Home.css'
 
 const Home = () => {
 
@@ -25,29 +25,14 @@ const Home = () => {
   }, [])
   
 
-  products.sort((a,b) =>{
-    if(a.rating.count < b.rating.count){
-      return 1;
-    }else  if(a.rating.count > b.rating.count){
-      return -1;
-    }else{
-      return 0;
-    }
-  });
 
-  const eightMostCount = products.slice(0,8);
 
-  products.sort((a,b) =>{
-    if(a.stock < b.stock){
-      return 1;
-    }else  if(a.stock > b.stock){
-      return -1;
-    }else{
-      return 0;
-    }
-  });
+  const eightMostCount = orderByKeyDouble(products,"rating", "count" ).slice(0,8)
+  const eightMostStock = orderByKey(products, "stock").slice(0 , 8);
 
-  const eightMostStock = products.slice(0,8);
+
+  console.log(eightMostCount);
+  console.log(eightMostStock);
 
   return (
       <div className='home-container'>
