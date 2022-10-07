@@ -7,6 +7,7 @@
     padding: 0 10px;
     opacity: .985;
     box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75)
+
 }
 
 .headerGeneric{
@@ -113,10 +114,6 @@
     align-self: center;
 }
 
-.headerEditProduct img{
-    filter: invert();
-}
-
 .headerEditProduct__btnDelete{
     height: 32px;
     width: 100px;
@@ -161,4 +158,11 @@
         width: 45px;
     }
 
+}
+
+/* Dark Mode */
+
+.dark .headerEditProduct img,
+.dark .header__menu-hamburguesa{
+    filter: invert();
 }

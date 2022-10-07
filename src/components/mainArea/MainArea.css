@@ -2,6 +2,8 @@
 .mainArea{
     width: calc(100% - 296px);
     margin-left: 296px;
+    transition: all .7s ease-in-out;
+
 }
 
 .mainArea__content{

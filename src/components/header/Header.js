@@ -1,5 +1,4 @@
 import { SearchContext } from "../../context/SearchContext";
-import { ThemeContext } from "../../context/ThemeContext";
 import "./Header.css"
 import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
@@ -16,7 +15,6 @@ let buttonMenu = useRef();
 
   const context = useContext(SearchContext);
 
-  const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   // const [productId, setProductId] = useState("");
   const location = useLocation();
@@ -75,6 +73,7 @@ const expandSearchInput = ()=>{
               <button onClick={ expandSearchInput} className="search-container__btnClose" ref={btnClose}>X</button>
               <input type="text" class="header__search" placeholder="Buscar productos..." ref={inputSearch} onChange={context.handleSearch} ></input>
               <button onClick={ expandSearchInput} className="search-container__btnSearch"><img src={searchImage} alt="Lupa de busqueda" /></button>
+
             </div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregar">Agregar Producto</button></Link></div>
             <div className="headerProducts-ContainerAgregar"><Link to={"/products/new"}><button className="headerProducts__btnAgregarAlternative">+</button></Link></div>

@@ -1,6 +1,7 @@
 .error404__Main{
     display: flex;
     flex-direction: column;
+    text-align: center;
     height: calc(100vh - 72px);
     width: 100%;
 }
@@ -13,7 +14,8 @@
     height: 50%;
     background-color: aliceblue;
 }
-.error404__top p{
+
+.error404__top h2{
     margin-bottom: -75px;
     font-size: 350px;
     font-weight: bold;
@@ -31,11 +33,11 @@
     background-color: gainsboro;
 }
 
-.error404__bottom h3{
+.error404__bottom p{
     font-size: 35px;
 }
 
-.error404__bottom p{
+.error404__bottom p:nth-child(2){
     font-size: 22px;
     text-transform: uppercase;
 }
@@ -49,4 +51,38 @@
     margin: 0 6px;
     border-radius: 15px;
     min-width: 150px;
+}
+
+@media (max-width: 690px){
+    .error404__top h2{
+        font-size: 200px;
+        margin-bottom: -50px;
+    }
+    .error404__bottom p{
+        font-size: 25px;
+    }
+    
+    .error404__bottom p:nth-child(2){
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+}
+
+/* DarkMode */
+
+.dark .error404__top{
+    background-color: var(--dark-Background);
+}
+
+.dark .error404__bottom{
+    background-color: var(--dark-BlackLight);
+}
+
+.dark .error404__top h2{
+    color: var(--dark-BlackLight);
+}
+
+.dark .error404__bottom button{
+    background-color: var(--dark-Background);
+    color: var(--dark-Color);
 }
