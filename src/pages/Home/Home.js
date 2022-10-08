@@ -30,10 +30,6 @@ const Home = () => {
   const eightMostCount = orderByKeyDouble(products,"rating", "count" ).slice(0,8)
   const eightMostStock = orderByKey(products, "stock").slice(0 , 8);
 
-
-  console.log(eightMostCount);
-  console.log(eightMostStock);
-
   return (
       <div className='home-container'>
 

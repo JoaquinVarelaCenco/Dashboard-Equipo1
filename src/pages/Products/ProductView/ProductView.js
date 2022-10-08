@@ -47,7 +47,6 @@ const ProductView = () => {
 
   function handleDeleteProd() {
     deleteProduct(productId).then((res) => {
-      console.log(res);
       navigate("/");
     });
   }
