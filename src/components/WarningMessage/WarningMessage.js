@@ -19,7 +19,12 @@ function WarningMessage({ text, search }) {
           </div>
         </>
       ) : (
-        false
+        <>
+          {/* <img src={retryImage} className="textMessageContainer__img" alt="" /> */}
+          <div className="textMessageContainer__container">
+            <p className="textMessageContainer__container__text">{text}</p>
+          </div>
+        </>
       )}
     </div>
   );

@@ -7,6 +7,7 @@ export const SearchProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productsExist, setProductsExist] = useState(true);
   const [helpProducts, setHelpProducts] = useState([]);
+  const [searchTermValue, setSearchTermValue] = useState('')
 
   useEffect(() => {
     getAllProducts();
@@ -28,6 +29,7 @@ export const SearchProvider = ({ children }) => {
 
   const handleSearch = (e) => {
     const newFilter = filterProducts(e.target.value);
+    setSearchTermValue(e.target.value);
     const newFilterOrderByPoints = [...newFilter].sort((a, b) => (a.price > b.price ? 1 : a.price < b.price ? -1 : 0))
     console.log(newFilterOrderByPoints);
     setProducts([...newFilter].sort((a, b) => (a.price > b.price ? 1 : a.price < b.price ? -1 : 0)));
@@ -37,8 +39,8 @@ export const SearchProvider = ({ children }) => {
     getProducts()
       .then((data) => {
         setProductsExist(true);
-        setProducts(data);
-        setHelpProducts(data);
+          setProducts(data);
+          setHelpProducts(data);
       })
       .catch((e) => {
         setProductsExist(false);
@@ -53,6 +55,7 @@ export const SearchProvider = ({ children }) => {
         productsExist,
         getAllProducts,
         helpProducts,
+        searchTermValue
       }}
     >
       {children}

@@ -37,9 +37,7 @@ const context = useContext(SearchContext);
     currentPage(location.pathname);
     titleContainer.current.style.display="flex";
     if(window.screen.width<501){
-      setTimeout(()=>{
         inputSearch.current.placeholder = "";
-      }, 100)
     }
   }, [location]);
 
