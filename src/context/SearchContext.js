@@ -19,6 +19,8 @@ export const SearchProvider = ({ children }) => {
         val.title.toLowerCase().includes(searchTerm.toLowerCase())
       ) {
         return val;
+      }else if(val.description.toLowerCase().includes(searchTerm.toLowerCase())){
+        return val;
       }
     });
     return newProducts;
@@ -26,7 +28,9 @@ export const SearchProvider = ({ children }) => {
 
   const handleSearch = (e) => {
     const newFilter = filterProducts(e.target.value);
-    setProducts(newFilter);
+    const newFilterOrderByPoints = [...newFilter].sort((a, b) => (a.price > b.price ? 1 : a.price < b.price ? -1 : 0))
+    console.log(newFilterOrderByPoints);
+    setProducts([...newFilter].sort((a, b) => (a.price > b.price ? 1 : a.price < b.price ? -1 : 0)));
   };
 
   const getAllProducts = () => {

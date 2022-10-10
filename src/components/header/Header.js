@@ -39,10 +39,6 @@ const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
     }
   }, [location]);
 
- 
- 
-
-
   if (page === "/products") {
     pageTitle = "Products";
   } else if (page.includes("/stores")) {
