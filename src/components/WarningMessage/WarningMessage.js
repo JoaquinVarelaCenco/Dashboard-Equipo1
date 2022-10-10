@@ -14,7 +14,7 @@ function WarningMessage({ text, search }) {
             <p className="textMessageContainer__container__text">{text}</p>
             <ul className="textMessageContainer__container__list-search">
               <li>Revisa la ortografia</li>
-              <li>Realiza una busqeuda mas generica</li>
+              <li>Realiza una busqueda mas generica</li>
             </ul>
           </div>
         </>
