@@ -21,7 +21,7 @@
   }
   
   .main-product__related-product-card img {
-    height: 80px;
+    height: 70px;
     width: 80px;
     border-radius: 16px;
   }
@@ -100,6 +100,20 @@
 
 .dark .section-article__goToProduct img{
   filter: invert();
+}
+
+.section-article__image .hideImage, .section-article__image .hideSpinner{
+  display: none;
+}
+
+.section-article__image .showImage, .section-article__image .showImage{
+  display: block;
+}
+
+.spinnerWrapper{
+  display: flex;
+  align-items: center;
+  height: 70px;
 }
 
 

@@ -17,7 +17,7 @@ const ProductsList = () => {
   );
 
   useEffect(() => {
-    context.getAllProducts();
+      context.getAllProducts();
   }, []);
 
   return (
@@ -33,12 +33,14 @@ const ProductsList = () => {
               id={p.id}
             />
           ))
-        ) : context.products.length === 0 ? (
+        ) :  (context.searchTermValue !== '' && context.products.length===0) ?(
           <WarningMessage text="No hay productos que coincidan con tu busqueda" search={true}/>
-        ) : (
-          <Spinner />
-        )
-      ) : (
+      ) : 
+            <div className="productList__spinner-container">
+            <Spinner />
+          </div>
+      )
+      :(
         <WarningMessage text="No existen productos" search={false}/>
       )}
     </div>
