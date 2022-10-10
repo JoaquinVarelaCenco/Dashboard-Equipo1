@@ -1,0 +1,27 @@
+.textMessageContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-BlackLight);
+  margin: 30px auto;
+  border-radius: 5px;
+}
+
+.textMessageContainer__container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.textMessageContainer__container__text {
+  font-size: 35px;
+}
+
+.textMessageContainer__container__list-search {
+  text-align: left;
+  padding-left: 12px;
+}
+
+.textMessageContainer__img {
+  height: 100px;
+  padding: 15px;
+}

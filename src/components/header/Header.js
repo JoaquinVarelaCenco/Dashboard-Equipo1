@@ -43,10 +43,6 @@ const context = useContext(SearchContext);
     }
   }, [location]);
 
- 
- 
-
-
   if (page === "/products") {
     pageTitle = "Products";
   } else if (page.includes("/stores")) {

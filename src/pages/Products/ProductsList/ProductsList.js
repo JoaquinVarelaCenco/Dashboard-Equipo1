@@ -2,10 +2,19 @@ import { useContext, useEffect } from "react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import "./ProductsList.css";
 import Spinner from "../../../components/Spinner/Spinner";
+import WarningMessage from "../../../components/WarningMessage/WarningMessage";
 import { SearchContext } from "../../../context/SearchContext";
 
 const ProductsList = () => {
   const context = useContext(SearchContext);
+
+  context.products.sort((a, b) =>
+    a.rating.count < b.rating.count
+      ? 1
+      : a.rating.count > b.rating.count
+      ? -1
+      : 0
+  );
 
   useEffect(() => {
     context.getAllProducts();
@@ -13,13 +22,9 @@ const ProductsList = () => {
 
   return (
     <div className="productList__container">
-      {
-      context.productsExist?
-        
-        context.products.length != 0 ? 
-        
-          context.products.map((p) => 
-          
+      {context.productsExist ? (
+        context.products.length !== 0 ? (
+          context.products.map((p) => (
             <ProductCard
               title={p.title}
               price={p.price}
@@ -27,13 +32,15 @@ const ProductsList = () => {
               image={p.images[0]}
               id={p.id}
             />
-          )
-
-        : 
-           <Spinner />
-      :
-      <h1>No hay productos</h1>
-      }
+          ))
+        ) : context.products.length === 0 ? (
+          <WarningMessage text="No hay productos que coincidan con tu busqueda" search={true}/>
+        ) : (
+          <Spinner />
+        )
+      ) : (
+        <WarningMessage text="No existen productos" search={false}/>
+      )}
     </div>
   );
 };
