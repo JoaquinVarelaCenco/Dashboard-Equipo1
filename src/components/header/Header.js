@@ -14,8 +14,12 @@ import leftArrow from '../../assets/images/chevron-right (1).svg'
 const Header = () => {
   let buttonMenu = useRef();
   // const btnSearch = useRef(null);
+
+  //Estados para cambiar estilos
 const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
-  const context = useContext(SearchContext);
+const [styleDisplayNone, setStyleDisplayNone ] = useState("")
+
+const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext);
 
@@ -64,38 +68,35 @@ const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
   const expandSearchInput = () => {
     let width = window.screen.width;
     if (width <= 500) {
-      // inputSearch.current.style.width = "100%";
-      // inputSearchContainer.current.style.width = "100%";
-
-      titleContainer.current.style.display = "none";
       inputSearch.current.placeholder = "Buscar productos...";
-      btnClose.current.style.display = "block";
+      
+      //este elemento depende del evento || NO del mediaQuery - 
+      titleContainer.current.style.display = "none";
       containerAddProduct.current.style.display = "none";
-      setStyleSearchAnimation('expandSearchBarStyle')
+
+      setStyleSearchAnimation('expandSearchBarStyle');
+      setStyleDisplayNone("showComponent")
     } else {
       titleContainer.current.style.display = "flex";
     }
   };
 
   const closeSearchInput = () => {
-    titleContainer.current.style.display = "flex";
-    // inputSearch.current.style.width = "45px";
     inputSearch.current.placeholder = "";
-    inputSearchContainer.current.style.width = "45px";
-    btnClose.current.style.display = "none";
+
+    titleContainer.current.style.display = "flex";
     containerAddProduct.current.style.display = "block";
+
     setStyleSearchAnimation('')
+    setStyleDisplayNone('')
+    setStyleDisplayNone("hideComponent")
   };
 
-   //useEffect para saber si screen width es mayor a 500px
+   //al cambiar tamaño de pantalla se ejecutan las funciones 
    window.onresize = ()=>{
-    if(window.screen.width> 500){
-      closeSearchInput();
-      inputSearch.current.style.width = "280px";
+    closeSearchInput();
+    if(window.screen.width> 500){ 
       inputSearch.current.placeholder = "Buscar productos...";
-      inputSearchContainer.current.style.width = "280px";
-    }else{
-      closeSearchInput();
     }
   }
   return (
@@ -124,7 +125,7 @@ const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
           <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
             <button
               onClick={closeSearchInput}
-              className="search-container__btnClose headerBtn"
+              className={`search-container__btnClose headerBtn ${styleDisplayNone}`}
               ref={btnClose}
             >
               X
