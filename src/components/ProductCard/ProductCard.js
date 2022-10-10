@@ -11,11 +11,9 @@ const ProductCard = ({ title, price, image, id }) => {
   const [hideSpinner, setHideSpinner] = useState("showSpinner")
 
   const imageLoaded = ()=>{
-    setTimeout(()=>{
       setImagePlaceHolder(true);
     setHideImage("showImage");
     setHideSpinner("hideSpinner");
-    }, 2000)
   }
 
   return (
@@ -49,7 +47,7 @@ const ProductCard = ({ title, price, image, id }) => {
       </div>
     </article>
     </Link>
-    
+    //subir bot
   );
 };
 
