@@ -1,7 +1,7 @@
 .textMessageContainer {
   display: flex;
   align-items: center;
-  background-color: var(--dark-BlackLight);
+  background-color: var(--clear-BlackLight);
   margin: 30px auto;
   border-radius: 5px;
 }
@@ -13,7 +13,9 @@
 }
 
 .textMessageContainer__container__text {
-  font-size: 35px;
+  font-size: 25px;
+  text-align: left;
+  padding-bottom: 10px;
 }
 
 .textMessageContainer__container__list-search {

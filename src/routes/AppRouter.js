@@ -1,5 +1,4 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Error404 from "../pages/Error404/Error404";
 import Home from "../pages/Home/Home";
 import NoImplemented from "../pages/NoImplemented/NoImplemented";
@@ -9,6 +8,7 @@ import ProductView from "../pages/Products/ProductView/ProductView";
 const AppRouter = () => {
   return ( 
       <Routes>
+        <Route path="/" element={ <Navigate to="/home" /> } />
         <Route path="/home" element={<Home/>}/>
         <Route path="/products" element={<ProductsList/>}/>
         <Route path="/products/:id" element={<ProductView/>}/>
