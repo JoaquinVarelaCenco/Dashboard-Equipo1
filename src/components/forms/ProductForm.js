@@ -71,12 +71,14 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
               click={() => handleInputChangeStock("-")}
               type={"button"}
               title={"-"}
+              classN={"noHoverEffect"}
             />
           <span>{product.stock}</span>
             <Button 
               click={() => handleInputChangeStock("+")}
               type={"button"}
               title={"+"}
+              classN={"noHoverEffect"}
             />
         </div>
 
@@ -124,7 +126,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         <div className="prueba">
           <input type="text" name="image" id="input-img-add" />
           <Button 
-            title={"Add"}
+            title={"Cargar"}
             click={() => handleAddImage()}
             type="button"
           />

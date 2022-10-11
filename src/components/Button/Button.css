@@ -1,5 +1,6 @@
 button{
     border: none;
+    position: relative;
 }
 
 button{
@@ -10,4 +11,24 @@ background-color: var(--clear-Black);
 .dark button{
     background-color: var(--clear-Black);
     color: var(--dark-Color);
+}
+
+button:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.174);
+    transition: all 1s ease;
+}
+
+button:hover:before {
+    width: 100%;
+}
+
+.noHoverEffect:hover::before{
+    width: 0;
 }

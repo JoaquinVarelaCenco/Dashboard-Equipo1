@@ -111,7 +111,7 @@
     border-radius: 50%;
     margin-left: 10px;
     text-decoration: none;
-    background-color: white;
+    background-color: var(--clear-Black);
     font-size: 25px;
     font-weight: 700;
 }
