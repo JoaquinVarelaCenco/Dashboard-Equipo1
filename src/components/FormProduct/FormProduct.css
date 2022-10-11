@@ -1,0 +1,98 @@
+.product-new button {
+    border-radius: 16px;
+    padding: 8px;
+    margin-left: 10px;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.product-new__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-new__form input,
+select {
+    max-width: 300px;
+}
+
+.product-new__form textarea {
+    max-width: 500px;
+    height: 200px;
+    padding-top: 5px;
+}
+
+.product-new-form__stock {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid black;
+    border-radius: 16px;
+    max-width: 100px;
+    height: 30px;
+}
+
+.product-new-form__stock button {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    margin-left: 0px;
+    min-width: 0px;
+}
+
+.product-new-form__stock button:hover {
+    transform: scale(1.6);
+    cursor: pointer;
+}
+
+.product-new__form input,
+select,
+textarea {
+    border-radius: 16px;
+    padding: 0px 15px 0px 15px;
+    height: 30px;
+}
+
+.product-new__input-title {
+    margin-top: 20px;
+}
+
+.product-new-form__card-image {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 5px;
+    max-width: 500px;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 10px 0px 10px 0px;
+}
+
+.product-new-form__card-image p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.product-new-form__card-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    margin-right: 10px;
+}
+
+.product-new__action {
+    text-align: end;
+} 
+
+.image-newProd {
+    display: flex;
+    align-items: center;
+}
+
+.image-newProd input {
+    width: 100%;
+}

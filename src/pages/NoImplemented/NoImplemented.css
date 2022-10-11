@@ -5,13 +5,14 @@
     justify-content: center;
     text-align: center;
     gap: 15px;
-    height: calc(100vh - 72px);
+    min-height: calc(100vh - 72px);
+    margin-top: 72px;
+    height: 100vh;
     width: 100%;
-    /* color: rgb(199, 199, 199); */
 }
 
 .noImplemented h3{
-    font-size: 70px;
+    font-size: 4.5rem;
     text-transform: uppercase;
 }
 
@@ -75,10 +76,17 @@
 
 @media ( max-width:560px){
     .noImplemented h3{
-        font-size: 40px;
+        font-size: 3rem;
     }
 
     .noImplemented p{
         font-size: 20px;
     }
+}
+
+@media ( max-width:360px){
+    .noImplemented h3{
+        font-size: 2rem;
+    }
+
 }

@@ -1,6 +1,7 @@
 import { updateProduct } from "../../services/apiServices";
 import { newProduct } from "../../services/apiServices";
 import { Link, useNavigate } from "react-router-dom";
+import './FormProduct.css';
 
 const FormProduct = ({product, setProduct, productId, lastState}) => {
 
@@ -115,7 +116,7 @@ const FormProduct = ({product, setProduct, productId, lastState}) => {
 
             <h3>Galeria de imagenes</h3>
             <p className="product-new__input-title">Nueva imagen</p>
-            <div className="prueba">
+            <div className="image-newProd">
                 <input type="text" name="image" id="input-img-add" />
                 <button onClick={() => handleAddImage()} type="button">Add</button>
             </div>
@@ -124,10 +125,8 @@ const FormProduct = ({product, setProduct, productId, lastState}) => {
             {product.images.map((img, index) => {
                 return (
                     <div key={index} className="product-new-form__card-image">
-                        {/* <div className="product-new-form__card-image__info-img"> */}
                         <img src={img} alt="imagen producto" />
                         <p>{img}</p>
-                        {/* </div> */}
                         <button onClick={() => handleRemoveImage(index)} type="button">
                         Quitar
                         </button>
