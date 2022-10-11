@@ -10,6 +10,7 @@ import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
+import Button from "../button/Button";
 
 
 const Header = () => {
@@ -53,19 +54,17 @@ const Header = () => {
       <div className={`headerGeneric ${titleContainer}`}>
         
 
-        <button
+        <Button 
+          f={() => {toggleVisibility()}}
+          classN={"header__menu-hamburguesa"}
           ref={buttonMenu}
-          onClick={() => {
-            toggleVisibility();
-          }}
-          className="header__menu-hamburguesa"
         >
           <img
             src={menuImage}
             alt="Menú hamburguesa"
             className="hamburguerMenu"
           />
-        </button>
+        </Button>
         <div className="title">
           <Link to={titleLink}><h2>{pageTitle}</h2></Link>
         </div>

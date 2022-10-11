@@ -4,6 +4,7 @@ import { SearchContext } from "../../context/SearchContext";
 import { HeaderContext } from '../../context/HeaderContext';
 import searchImage from "../../assets/images/magnify.svg";
 import './HeaderProducts.css'
+import Button from '../button/Button';
 
 
 
@@ -94,13 +95,14 @@ useEffect(()=>{
 return (
     <div className="headerProducts">
           <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
-            <button
-              onClick={closeSearchInput}
-              className={`search-container__btnClose headerBtn ${styleDisplayNone}`}
+
+            <Button
+              f={closeSearchInput}
+              classN={`search-container__btnClose headerBtn ${styleDisplayNone}`}
+              title={"X"}
               ref={btnClose}
-            >
-              X
-            </button>
+            />
+
             <input
               type="text"
               className={`header__search  ${styleSearchAnimation}`}
@@ -108,26 +110,29 @@ return (
               ref={inputSearch}
               onChange={context.handleSearch}
             />
-            <button
-              onClick={expandSearchInput}
-              className="search-container__btnSearch headerBtn"
-              
+
+            <Button
+              f={expandSearchInput}
+              classN={"search-container__btnSearch headerBtn"}
             >
               <img src={searchImage} alt="Lupa de busqueda" className='search-container__btnImage'/>
-            </button>
+            </Button>
+
           </div>
           <div className="headerProducts-ContainerAgregar" >
             <Link to={"/products/new"}>
-              <button className="headerProducts__btnAgregar">
-                Agregar Producto
-              </button>
+              <Button 
+                title={"Agregar Producto"}
+                classN={"headerProducts__btnAgregar"}
+              />
             </Link>
           </div>
           <div className="headerProducts-ContainerAgregar" >
             <Link to={"/products/new"} ref={containerAddProduct}>
-              <button className="headerProducts__btnAgregarAlternative">
-                +
-              </button>
+              <Button 
+                classN={"headerProducts__btnAgregarAlternative"}
+                title={"+"}
+              />
             </Link>
           </div>
         </div>
