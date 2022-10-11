@@ -1,72 +1,78 @@
 import {useRef, useEffect, useState, useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { SearchContext } from "../../context/SearchContext";
+import { HeaderContext } from '../../context/HeaderContext';
 import searchImage from "../../assets/images/magnify.svg";
+import './HeaderProducts.css'
 
 
-const HeaderProducts = ({titleContainer}) => {
 
-    //Context
-    const context = useContext(SearchContext);
 
-    //Estados para cambiar estilos
-  const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
-  const [styleDisplayNone, setStyleDisplayNone ] = useState("")
+const HeaderProducts = () => {
+
+//Context
+const context = useContext(SearchContext);
+const {currentTitleContainer } = useContext(HeaderContext);
+
+//Estados para cambiar estilos
+const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
+const [styleDisplayNone, setStyleDisplayNone ] = useState("")
 
 useEffect(() => {
-    titleContainer.current.style.display="flex";
-    if(window.screen.width<501){
-        setTimeout(()=>{
-          inputSearch.current.placeholder = "";
-        }, 100)
-      }
+    currentTitleContainer("displayFlex")
 }, [])
 
 
 //Logica expandir input de búsqueda
-titleContainer.current.style.display="flex";
 const inputSearch = useRef("");
 const inputSearchContainer = useRef("");
 const btnClose = useRef("");
 const containerAddProduct = useRef("");
 
+//cambiamos estilos al expandir searchBar
 const expandSearchInput = () => {
-  let width = window.screen.width;
-  if (width <= 500) {
-    inputSearch.current.placeholder = "Buscar productos...";
-    
-    //este elemento depende del evento || NO del mediaQuery - 
-    titleContainer.current.style.display = "none";
-    containerAddProduct.current.style.display = "none";
-
-    setStyleSearchAnimation('expandSearchBarStyle');
-    setStyleDisplayNone("showComponent")
-  } else {
-    titleContainer.current.style.display = "flex";
-  }
+    let width = window.screen.width;
+    if (width <= 500) {
+        inputSearch.current.placeholder = "Buscar productos...";
+        
+        //este elemento depende del evento || NO del mediaQuery - 
+        currentTitleContainer("displayNone")
+        containerAddProduct.current.style.display = "none";
+        
+        setStyleSearchAnimation('expandSearchBarStyle');
+        setStyleDisplayNone("showComponent")
+    } else {
+        currentTitleContainer("displayFlex")
+    }
 };
 
+//cambiamos estilos al cerrar searchBar
 const closeSearchInput = () => {
-  inputSearch.current.placeholder = "";
-
-  titleContainer.current.style.display = "flex";
-  containerAddProduct.current.style.display = "block";
-
-  setStyleSearchAnimation('')
-  setStyleDisplayNone('')
-  setStyleDisplayNone("hideComponent")
+    inputSearch.current.placeholder = "";
+    currentTitleContainer("displayFlex")
+    containerAddProduct.current.style.display = "block";
+    
+    setStyleSearchAnimation('')
+    setStyleDisplayNone('')
+    setStyleDisplayNone("hideComponent")
 };
 
- //al cambiar tamaño de pantalla se ejecutan las funciones expand || close search input
- window.onresize = ()=>{
-  closeSearchInput();
-  if(window.screen.width> 500){ 
-    inputSearch.current.placeholder = "Buscar productos...";
-  }
+//al cambiar tamaño de pantalla se ejecutan las funciones expand || close search input
+window.onresize = ()=>{
+    closeSearchInput();
+    if(window.screen.width> 500){ 
+        inputSearch.current.placeholder = "Buscar productos...";
+    }
 }
 
+//Borramos placeholder de buscador en caso de que el componente se cargue en pantalla pequeña
+useEffect(()=>{
+    if(window.screen.width<501){
+            inputSearch.current.placeholder = "";
+    }
+}, [inputSearch])
 
-  return (
+return (
     <div className="headerProducts">
           <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
             <button

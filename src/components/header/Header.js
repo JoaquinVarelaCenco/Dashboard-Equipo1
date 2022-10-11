@@ -9,6 +9,7 @@ import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import leftArrow from '../../assets/images/chevron-right (1).svg'
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
+import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
 
 
 
@@ -23,7 +24,7 @@ const Header = () => {
   //Contextos : tema - page - buscador
   // const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
-  const { page, currentPage } = useContext(HeaderContext);
+  const { page, currentPage, titleContainer, currentTitleContainer } = useContext(HeaderContext);
 
   const location = useLocation();
   const { toggleVisibility } = useContext(SideBarContext);
@@ -38,12 +39,9 @@ const Header = () => {
   //USe effect para setear la url en la que me encuentro
   useEffect(() => {
     currentPage(location.pathname);
-    titleContainer.current.style.display="flex";
-    // if(window.screen.width<501){
-    //   setTimeout(()=>{
-    //     inputSearch.current.placeholder = "";
-    //   }, 100)
-    // }
+    // titleContainer.current.style.display="flex";
+    currentTitleContainer("displayFlex")
+    
   }, [location]);
 
   if (page === "/products") {
@@ -61,51 +59,9 @@ const Header = () => {
     productId = "#" + location.pathname.split("/")[2];
   }
 
-  //Logica expandir input de búsqueda
-  const titleContainer = useRef("");
-  // const inputSearch = useRef("");
-  // const inputSearchContainer = useRef("");
-  // const btnClose = useRef("");
-  // const containerAddProduct = useRef("");
-
-  // const expandSearchInput = () => {
-  //   let width = window.screen.width;
-  //   if (width <= 500) {
-  //     inputSearch.current.placeholder = "Buscar productos...";
-      
-  //     //este elemento depende del evento || NO del mediaQuery - 
-  //     titleContainer.current.style.display = "none";
-  //     containerAddProduct.current.style.display = "none";
-
-  //     setStyleSearchAnimation('expandSearchBarStyle');
-  //     setStyleDisplayNone("showComponent")
-  //   } else {
-  //     titleContainer.current.style.display = "flex";
-  //   }
-  // };
-
-  // const closeSearchInput = () => {
-  //   inputSearch.current.placeholder = "";
-
-  //   titleContainer.current.style.display = "flex";
-  //   containerAddProduct.current.style.display = "block";
-
-  //   setStyleSearchAnimation('')
-  //   setStyleDisplayNone('')
-  //   setStyleDisplayNone("hideComponent")
-  // };
-
-   //al cambiar tamaño de pantalla se ejecutan las funciones expand || close search input
-  //  window.onresize = ()=>{
-  //   closeSearchInput();
-  //   if(window.screen.width> 500){ 
-  //     inputSearch.current.placeholder = "Buscar productos...";
-  //   }
-  // }
-
   return (
     <div className={`header ${theme}`}>
-      <div className="headerGeneric" ref={titleContainer}>
+      <div className={`headerGeneric ${titleContainer}`}>
         <button
           ref={buttonMenu}
           onClick={() => {
@@ -125,61 +81,11 @@ const Header = () => {
       </div>
 
       {page === "/products" ? (
-        <HeaderProducts titleContainer={titleContainer}/>
-        // <div className="headerProducts">
-        //   <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
-        //     <button
-        //       onClick={closeSearchInput}
-        //       className={`search-container__btnClose headerBtn ${styleDisplayNone}`}
-        //       ref={btnClose}
-        //     >
-        //       X
-        //     </button>
-        //     <input
-        //       type="text"
-        //       className={`header__search  ${styleSearchAnimation}`}
-        //       placeholder="Buscar productos..."
-        //       ref={inputSearch}
-        //       onChange={context.handleSearch}
-        //     />
-        //     <button
-        //       onClick={expandSearchInput}
-        //       className="search-container__btnSearch headerBtn"
-              
-        //     >
-        //       <img src={searchImage} alt="Lupa de busqueda" />
-        //     </button>
-        //   </div>
-        //   <div className="headerProducts-ContainerAgregar" >
-        //     <Link to={"/products/new"}>
-        //       <button className="headerProducts__btnAgregar">
-        //         Agregar Producto
-        //       </button>
-        //     </Link>
-        //   </div>
-        //   <div className="headerProducts-ContainerAgregar" >
-        //     <Link to={"/products/new"} ref={containerAddProduct}>
-        //       <button className="headerProducts__btnAgregarAlternative">
-        //         +
-        //       </button>
-        //     </Link>
-        //   </div>
-        // </div>
+        <HeaderProducts/>
       ) : page === "/products/new" ? (
-        <div className="headerEditProduct">
-          <img src={leftArrow} alt="" />
-          <h2>Nuevo Producto</h2>
-        </div>
+        <HeaderEditAddProduct productContent="Nuevo Producto" editProduct={false}/>
       ) : page.includes("/products/") ? (
-        <>
-          <div className="headerEditProduct">
-            <img src={leftArrow} alt="" />
-            <h2>{productId}</h2>
-          </div>
-          <div className="headerEditProduct__btnDeleteContainer">
-            <button className="headerEditProduct__btnDelete">ELIMINAR</button>
-          </div>
-        </>
+        <HeaderEditAddProduct productContent={productId} editProduct={true}/>
       ) : (
         ""
       )}
