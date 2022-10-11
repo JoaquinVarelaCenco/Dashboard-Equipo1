@@ -31,7 +31,9 @@ const Sidebar = () => {
 
       <div>
         <SwitchToggle />
-        <Link to={"/profile"}>
+        
+
+       <Link to={"/profile"} className={`sideBar_eachLink ${theme}`} >
           <Button
             classN={"sideBar__user-button"}
           >
