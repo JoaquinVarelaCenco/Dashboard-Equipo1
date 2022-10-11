@@ -14,7 +14,7 @@
 }
 
 .productList__container__sort i{
-    font-size: 15px;
+    font-size: 13px;
   }
 
 .select-control-products{
@@ -22,6 +22,7 @@
     border: none;
     padding: 0 0 0 5px;
     outline: none;
+    font-size: 12px;
 }
 
 .productList__spinner-container{
