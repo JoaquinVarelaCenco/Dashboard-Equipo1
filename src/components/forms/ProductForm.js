@@ -28,7 +28,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
             <h2>Productos - #{productId}</h2>
             <Button
               title={"Eliminar"}
-              f={handleDeleteProd}
+              click={handleDeleteProd}
             ></Button>
           </>
         ) : (
@@ -62,13 +62,13 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         <p className="product-new__input-title">Stock</p>
         <div className="product-new-form__stock">
             <Button 
-              f={() => handleInputChangeStock("-")}
+              click={() => handleInputChangeStock("-")}
               type={"button"}
               title={"-"}
             />
           <span>{product.stock}</span>
             <Button 
-              f={() => handleInputChangeStock("+")}
+              click={() => handleInputChangeStock("+")}
               type={"button"}
               title={"+"}
             />
@@ -116,7 +116,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <input type="text" name="image" id="input-img-add" />
           <Button 
             title={"Add"}
-            f={() => handleAddImage()}
+            click={() => handleAddImage()}
             type="button"
           />
         </div>
@@ -130,7 +130,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
 
               <Button
                 type={"button"}
-                f={() => handleRemoveImage(index)}
+                click={() => handleRemoveImage(index)}
                 title={"Quitar"}
               />
             </div>
@@ -151,7 +151,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
             <Button 
               type={"reset"}
               title={"Cancelar"}
-              f={resetCamps}
+              click={resetCamps}
             />
         </div>
       </form>

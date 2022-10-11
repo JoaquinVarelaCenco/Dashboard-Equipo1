@@ -55,7 +55,7 @@ const Header = () => {
         
 
         <Button 
-          f={() => {toggleVisibility()}}
+          click={() => {toggleVisibility()}}
           classN={"header__menu-hamburguesa"}
           ref={buttonMenu}
         >

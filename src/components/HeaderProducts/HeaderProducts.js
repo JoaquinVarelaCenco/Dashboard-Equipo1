@@ -97,7 +97,7 @@ return (
           <div className={`header__search-container  ${styleSearchAnimation}`} ref={inputSearchContainer}>
 
             <Button
-              f={closeSearchInput}
+              click={closeSearchInput}
               classN={`search-container__btnClose headerBtn ${styleDisplayNone}`}
               title={"X"}
               ref={btnClose}
@@ -112,7 +112,7 @@ return (
             />
 
             <Button
-              f={expandSearchInput}
+              click={expandSearchInput}
               classN={"search-container__btnSearch headerBtn"}
             >
               <img src={searchImage} alt="Lupa de busqueda" className='search-container__btnImage'/>
