@@ -19,6 +19,10 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
     };
   }, []);
 
+  useEffect(() => {
+    console.log(product);
+  }, [product]);
+
   return product ? (
     <div className="product-new">
       <div className="product-new__nav">
@@ -31,6 +35,21 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <h2>Productos - Nuevo Producto</h2>
         )}
       </div>
+
+      {productId ? (
+        <div className="product-new__view-card">
+          <img src={product.images[0]} alt="imagen producto" />
+          <div className="product-new__view-card__content">
+            <h2>{product.title}</h2>
+            <div className="product-new__view-card__info">
+              <p>{product.price}</p>
+              <span>PUNTOS SUPERCLUB</span>
+              <p>{product.stock}</p>
+              <span>STOCK DISPONIBLE</span>
+            </div>
+          </div>
+        </div>
+      ) : null}
       <h1>Informacion</h1>
       <form
         onSubmit={() => handleSubmit(product)}
@@ -76,13 +95,15 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           required
         />
         <p className="product-new__input-title">Categoria</p>
+
         <select
           name="category"
           value={product.category}
           onChange={handleInputChange}
           required
-          class="form-control"
-          defaultValue={product.category} 
+          className="form-control"
+          // defaultValue={product.category}
+          // defaultValue="categoria-3"
         >
           <option value="" disabled>
             Seleccione categoria...
@@ -92,7 +113,9 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <option value="categoria-3">categoria-3</option>
           <option value="categoria-4">categoria-4</option>
         </select>
+
         <p className="product-new__input-title">Tienda</p>
+
         <select name="store" class="form-control" defaultValue="">
           <option value="" disabled>
             Seleccione una tienda
@@ -102,6 +125,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <option value="tienda-3">tienda-3</option>
           <option value="tienda-4">tienda-4</option>
         </select>
+
         <h3>Galeria de imagenes</h3>
         <p className="product-new__input-title">Nueva imagen</p>
         <div className="prueba">
