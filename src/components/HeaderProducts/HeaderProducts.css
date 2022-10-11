@@ -130,7 +130,6 @@
 
 .headerProducts .expandSearchBarStyle{
     width: 100%;
-    /* animation: increase 1s; */
     transition: width, 1s;
 }
 
@@ -138,11 +137,13 @@
     width: 100%;
 }
 
-@keyframes increase {
-    from{
-        width: 50%;
-    }to{
-        width: 100%;
-    }
+.headerProducts .closeSearchBarAnimation{
+    transition: width, 1s;
 }
+
+.headerProducts .closeSearchBarAnimation:hover{
+    width: 42px;
+}
+
+
 

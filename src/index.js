@@ -6,16 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import { SearchProvider } from './context/SearchContext';
 import { HeaderProvider } from "./context/HeaderContext";
 import { ProductProvider } from "./context/ProductContext";
+import { WidthScreenProvider } from "./context/WidthScreenContext";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <SearchProvider>
+    <WidthScreenProvider>
     <HeaderProvider>
       <ProductProvider>
         <App />
       </ProductProvider>
     </HeaderProvider>
+    </WidthScreenProvider>
     </SearchProvider>
   </React.StrictMode>
 );
