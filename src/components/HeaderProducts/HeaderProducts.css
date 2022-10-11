@@ -1,4 +1,14 @@
 /* HEADER PRODUCTS */
+
+.dark .headerBtn{
+    background-color: var(--clear-BlackLight);
+}
+
+.dark .headerProducts-search-container__btnClose{
+    background-color: var(--dark-Background);
+    color: var(--dark-Color);
+}
+
 .headerProducts-search-container__btnImage{
     opacity: .6;
 }
