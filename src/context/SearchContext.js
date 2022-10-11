@@ -7,16 +7,16 @@ export const SearchProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productsExist, setProductsExist] = useState(true);
   const [helpProducts, setHelpProducts] = useState([]);
-  const [searchTermValue, setSearchTermValue] = useState('')
+  const [searchTermValue, setSearchTermValue] = useState("");
   const [orderBy, setOrderBy] = useState("Mas relevantes");
 
   const getAllProducts = () => {
     getProducts()
       .then((data) => {
         setProductsExist(true);
-        orderByMostRelevants(data)
-          setProducts(data);
-          setHelpProducts(data);
+        orderProductsPrueba(data);
+        setProducts(data);
+        setHelpProducts(data);
       })
       .catch(() => {
         setProductsExist(false);
@@ -30,7 +30,9 @@ export const SearchProvider = ({ children }) => {
         val.title.toLowerCase().includes(searchTerm.toLowerCase())
       ) {
         return val;
-      }else if(val.description.toLowerCase().includes(searchTerm.toLowerCase())){
+      } else if (
+        val.description.toLowerCase().includes(searchTerm.toLowerCase())
+      ) {
         return val;
       }
     });
@@ -43,14 +45,14 @@ export const SearchProvider = ({ children }) => {
     setProducts(newFilter);
   };
 
-  const orderByHighPrice = () => {
-    products.sort((a, b) =>
+  const orderByHighPrice = (arrayData) => {
+    arrayData.sort((a, b) =>
       a.price < b.price ? 1 : a.price > b.price ? -1 : 0
     );
   };
 
-  const orderByLowPrice = () => {
-    products.sort((a, b) =>
+  const orderByLowPrice = (arrayData) => {
+    arrayData.sort((a, b) =>
       a.price > b.price ? 1 : a.price < b.price ? -1 : 0
     );
   };
@@ -65,26 +67,59 @@ export const SearchProvider = ({ children }) => {
     );
   };
 
+  const orderByAlphabet = (arrayData) => {
+    arrayData.sort((a, b) =>
+      a.title > b.title ? 1 : a.title < b.title ? -1 : 0
+    );
+  };
+
   const orderProducts = (e) => {
     switch (e.target.value) {
       case "Mayor precio":
-        orderByHighPrice();
         setOrderBy("Mayor precio");
+        orderByHighPrice(products);
         break;
       case "Menor precio":
-        orderByLowPrice();
         setOrderBy("Menor precio");
+        orderByLowPrice(products);
         break;
       case "Mas relevantes":
-        orderByMostRelevants(products);
         setOrderBy("Mas relevantes");
+        orderByMostRelevants(products);
+        break;
+      case "A-Z":
+        setOrderBy("A-Z");
+        orderByAlphabet(products);
         break;
     }
   };
 
+  const orderProductsPrueba = (data) => {
+    
+    switch (orderBy) {
+      case "Mayor precio":
+        setOrderBy("Mayor precio");
+        orderByHighPrice(data);
+        break;
+      case "Menor precio":
+        setOrderBy("Menor precio");
+        orderByLowPrice(data);
+        break;
+      case "Mas relevantes":
+        setOrderBy("Mas relevantes");
+        orderByMostRelevants(data);
+        break;
+      case "A-Z":
+        setOrderBy("A-Z");
+        orderByAlphabet(data);
+        break;
+    }
+  };
+
+
+
   useEffect(() => {
     getAllProducts();
-    console.log(products);
   }, []);
 
   return (
@@ -96,11 +131,11 @@ export const SearchProvider = ({ children }) => {
         getAllProducts,
         helpProducts,
         searchTermValue,
-        orderProducts,
+        orderBy,
+        orderProducts
       }}
     >
       {children}
     </SearchContext.Provider>
   );
 };
- 
