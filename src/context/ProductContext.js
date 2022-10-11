@@ -17,7 +17,6 @@ export const ProductProvider = ({ children }) => {
   };
 
   const [product, setProduct] = useState(defaultValues);
-
   const [lastState, setLastState] = useState(defaultValues);
 
   const value = {
@@ -25,7 +24,7 @@ export const ProductProvider = ({ children }) => {
     currentProduct: (p) => setProduct(p),
     lastState,
     currentLastProduct: (i) => setLastState(i),
-    resetCamps: () => setProduct(lastState),
+    resetCamps: () => setProduct({ ...product, ...lastState }),
     resetForm: () => {
       setProduct(defaultValues);
       setLastState(defaultValues);
