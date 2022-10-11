@@ -51,12 +51,12 @@ const Header = () => {
           onClick={() => {
             toggleVisibility();
           }}
-          className="header__menu-hamburguesa"
+          className="header__hamburguer-menu-btn"
         >
           <img
             src={menuImage}
             alt="Menú hamburguesa"
-            className="hamburguerMenu"
+            className="header__hamburguer-menu-img"
           />
         </button>
         <div className="title">

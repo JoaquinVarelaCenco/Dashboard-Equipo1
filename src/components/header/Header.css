@@ -51,7 +51,7 @@
 }
 
 /* Inicio mediaqueries */
-.header__menu-hamburguesa{
+.header__hamburguer-menu-btn{
     margin-top: 22px;
     height: 32px;
     width: 32px;
@@ -64,7 +64,7 @@
         width: calc(100% - 296px);
     }
     
-    .header__menu-hamburguesa{
+    .header__hamburguer-menu-btn{
         display: none;
     }
 
@@ -73,7 +73,7 @@
 /* Dark Mode */
 
 .dark .headerEditProduct img,
-.dark .header__menu-hamburguesa {
+.dark .header__hamburguer-menu-btn {
     filter: invert();
 }
 

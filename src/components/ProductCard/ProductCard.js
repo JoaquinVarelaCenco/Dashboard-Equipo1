@@ -34,8 +34,7 @@ const ProductCard = ({ title, price, image, id }) => {
             <div className={`spinnerWrapper ${hideSpinner}`}>
               <Spinner />
             </div>
-          </div>
-
+        </div>
           <div className="section-article__desc">
             <div className="desc">
               <p>{title}</p>

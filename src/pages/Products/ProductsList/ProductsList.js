@@ -4,6 +4,7 @@ import "./ProductsList.css";
 import Spinner from "../../../components/Spinner/Spinner";
 import WarningMessage from "../../../components/WarningMessage/WarningMessage";
 import { SearchContext } from "../../../context/SearchContext";
+import ProductsSortMenu from "../../../components/ProductsSortMenu/ProductsSortMenu";
 
 const ProductsList = () => {
   const context = useContext(SearchContext);
@@ -14,24 +15,11 @@ const ProductsList = () => {
 
   return (
     <div className="productList__container">
-      <div className="productList__container__sort">
-        <i>Ordenar por</i>
-        <select
-          name="category"
-          required
-          value={context.orderBy}
-          className="select-control"
-          onChange={context.orderProducts}
-        >
-          <option value="Mayor precio">Mayor precio</option>
-          <option value="Menor precio">Menor precio</option>
-          <option value="Mas relevantes" selected>Mas relevantes</option>
-          <option value="A-Z">A-Z</option>
-        </select>
-      </div>
+      <ProductsSortMenu/>
       {context.productsExist ? (
         context.products.length !== 0 ? (
           context.products.map((p) => (
+            
             <ProductCard
               title={p.title}
               price={p.price}

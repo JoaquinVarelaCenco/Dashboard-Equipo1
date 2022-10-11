@@ -1,0 +1,18 @@
+.productList__container__sort{
+    width: 50%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.productList__container__sort i{
+  padding-right: 8px;
+}
+
+.select-control{
+    background: transparent;
+    border: none;
+}
+
+.dark .select-control{
+    background: transparent;
+}
