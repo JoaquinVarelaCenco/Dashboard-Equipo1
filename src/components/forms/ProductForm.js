@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
+import Button from "../Button/Button";
 import "./ProductForm.css";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
@@ -29,7 +30,10 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         {productId ? (
           <>
             <h2>Productos - #{productId}</h2>
-            <button onClick={handleDeleteProd}>Eliminar</button>
+            <Button
+              title={"Eliminar"}
+              click={handleDeleteProd}
+            ></Button>
           </>
         ) : (
           <h2>Productos - Nuevo Producto</h2>
@@ -76,13 +80,17 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         />
         <p className="product-new__input-title">Stock</p>
         <div className="product-new-form__stock">
-          <button onClick={() => handleInputChangeStock("-")} type="button">
-            -
-          </button>
+            <Button 
+              click={() => handleInputChangeStock("-")}
+              type={"button"}
+              title={"-"}
+            />
           <span>{product.stock}</span>
-          <button onClick={() => handleInputChangeStock("+")} type="button">
-            +
-          </button>
+            <Button 
+              click={() => handleInputChangeStock("+")}
+              type={"button"}
+              title={"+"}
+            />
         </div>
 
         <p className="product-new__input-title">Descripcion</p>
@@ -128,9 +136,11 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         <p className="product-new__input-title">Nueva imagen</p>
         <div className="prueba">
           <input type="text" name="image" id="input-img-add" />
-          <button onClick={() => handleAddImage()} type="button">
-            Add
-          </button>
+          <Button 
+            title={"Add"}
+            click={() => handleAddImage()}
+            type="button"
+          />
         </div>
         <p className="product-new__input-title">Imagenes actuales</p>
 
@@ -139,21 +149,32 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
             <div key={index} className="product-new-form__card-image">
               <img src={img} alt="imagen producto" />
               <p>{img}</p>
-              <button onClick={() => handleRemoveImage(index)} type="button">
-                Quitar
-              </button>
+
+              <Button
+                type={"button"}
+                click={() => handleRemoveImage(index)}
+                title={"Quitar"}
+              />
             </div>
           );
         })}
         <div className="product-new__action">
           {productId ? (
-            <button type="submit">Editar</button>
+            <Button 
+              type={"submit"}
+              title={"Editar"}
+            />
           ) : (
-            <button type="submit">Crear</button>
+            <Button 
+              type={"submit"}
+              title={"Crear"}
+            />
           )}
-          <button type="reset" onClick={resetCamps}>
-            Cancelar
-          </button>
+            <Button 
+              type={"reset"}
+              title={"Cancelar"}
+              click={resetCamps}
+            />
         </div>
       </form>
     </div>

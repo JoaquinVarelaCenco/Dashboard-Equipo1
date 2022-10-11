@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Button from '../../components/Button/Button'
 import './NoImplemented.css'
 
 const NoImplemented = () => {
@@ -12,7 +13,9 @@ const NoImplemented = () => {
             </div>
         </div>
         <Link to="/home">
-            <button>Home</button>
+            <Button 
+              title={"Inicio"}
+            />
         </Link>
     </div>
   )

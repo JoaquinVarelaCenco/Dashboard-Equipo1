@@ -1,0 +1,13 @@
+button{
+    border: none;
+}
+
+button{
+color: var(--clear-Background);
+background-color: var(--clear-Black);
+}
+
+.dark button{
+    background-color: var(--clear-Black);
+    color: var(--dark-Color);
+}

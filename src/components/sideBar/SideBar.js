@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import SwitchToggle from "../SwitchToggle/SwitchToggle";
 import { SideBarContext } from "../../context/SideBarContext";
+import Button from "../Button/Button";
 
 const Sidebar = () => {
 
@@ -31,14 +32,17 @@ const Sidebar = () => {
       <div>
         <SwitchToggle />
         <Link to={"/profile"}>
-          <button className="sideBar__user-button">
+          <Button
+            classN={"sideBar__user-button"}
+          >
             <div className="sideBar__user-button__profile">
               <img className="sideBar__user-img" src={profilePic} />
             </div>
             <div>
               <p className="sideBar__user-name">Olivia</p>
             </div>
-          </button>
+          </Button>
+
         </Link>
       </div>
     </div>

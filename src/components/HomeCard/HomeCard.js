@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Button from '../Button/Button';
 
 import './HomeCard.css'
 
@@ -19,10 +20,14 @@ const HomeCard = (props) => {
         </div>
         <div className='itemRow__buttons'>
             <Link to={linkBtnList}>
-                <button>Ver Listado</button>
+                <Button 
+                    title={"Ver listado"}
+                />
             </Link>
             <Link to={linkBtnAdd}>
-                <button>{textBtnAdd}</button>
+                <Button 
+                    title={textBtnAdd}
+                />
             </Link>
         </div>
     </div>

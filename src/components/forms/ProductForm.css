@@ -58,6 +58,10 @@ textarea {
   min-width: 0px;
 }
 
+.clear .product-new-form__stock button{
+  color: var(--clear-Color);
+}
+
 .product-new-form__stock button:hover {
   transform: scale(1.6);
   cursor: pointer;
