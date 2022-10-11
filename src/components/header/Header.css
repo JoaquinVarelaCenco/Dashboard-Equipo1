@@ -30,6 +30,11 @@
 
 
 /* HEADER PRODUCTS */
+.search-container__btnImage{
+    opacity: .6;
+}
+
+
 .headerProducts{
     display: flex;
     width: 100%;
