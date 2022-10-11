@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import "./ProductsList.css";
 import Spinner from "../../../components/Spinner/Spinner";
@@ -8,20 +8,27 @@ import { SearchContext } from "../../../context/SearchContext";
 const ProductsList = () => {
   const context = useContext(SearchContext);
 
-  context.products.sort((a, b) =>
-    a.rating.count < b.rating.count
-      ? 1
-      : a.rating.count > b.rating.count
-      ? -1
-      : 0
-  );
-
   useEffect(() => {
-      context.getAllProducts();
+    context.getAllProducts();
   }, []);
 
   return (
     <div className="productList__container">
+      <div className="productList__container__sort">
+        <i>Ordenar por</i>
+        <select
+          name="category"
+          required
+          className="select-control"
+          onChange={context.orderProducts}
+        >
+          <option value="Mayor precio">Mayor precio</option>
+          <option value="Menor precio">Menor precio</option>
+          <option value="Mas relevantes" selected>
+            Mas relevantes
+          </option>
+        </select>
+      </div>
       {context.productsExist ? (
         context.products.length !== 0 ? (
           context.products.map((p) => (
@@ -33,15 +40,18 @@ const ProductsList = () => {
               id={p.id}
             />
           ))
-        ) :  (context.searchTermValue !== '' && context.products.length===0) ?(
-          <WarningMessage text="No hay productos que coincidan con tu busqueda" search={true}/>
-      ) : 
-            <div className="productList__spinner-container">
+        ) : context.searchTermValue !== "" && context.products.length === 0 ? (
+          <WarningMessage
+            text="No hay productos que coincidan con tu busqueda"
+            search={true}
+          />
+        ) : (
+          <div className="productList__spinner-container">
             <Spinner />
           </div>
-      )
-      :(
-        <WarningMessage text="No existen productos" search={false}/>
+        )
+      ) : (
+        <WarningMessage text="No existen productos" search={false} />
       )}
     </div>
   );

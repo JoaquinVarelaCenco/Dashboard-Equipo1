@@ -63,11 +63,8 @@ const context = useContext(SearchContext);
     let width = window.screen.width;
     if (width <= 500) {
       inputSearch.current.placeholder = "Buscar productos...";
-      
-      //este elemento depende del evento || NO del mediaQuery - 
       titleContainer.current.style.display = "none";
       containerAddProduct.current.style.display = "none";
-
       setStyleSearchAnimation('expandSearchBarStyle');
       setStyleDisplayNone("showComponent")
     } else {
@@ -77,10 +74,8 @@ const context = useContext(SearchContext);
 
   const closeSearchInput = () => {
     inputSearch.current.placeholder = "";
-
     titleContainer.current.style.display = "flex";
     containerAddProduct.current.style.display = "block";
-
     setStyleSearchAnimation('')
     setStyleDisplayNone('')
     setStyleDisplayNone("hideComponent")
