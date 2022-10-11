@@ -82,7 +82,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           onChange={handleInputChange}
           required
           class="form-control"
-          defaultValue={product.category}
+          defaultValue={product.category} 
         >
           <option value="" disabled>
             Seleccione categoria...
