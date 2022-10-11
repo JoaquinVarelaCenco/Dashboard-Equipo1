@@ -3,7 +3,7 @@ import leftArrow from '../../assets/images/chevron-right (1).svg'
 import { Link } from "react-router-dom";
 import Spinner from '../Spinner/Spinner';
 import { useState } from "react";
-
+import noImage from '../../assets/images/no-image.jpeg'
 
 const ProductCard = ({ title, price, image, id }) => {
   const [imagePlaceHolder, setImagePlaceHolder] = useState(false);
@@ -11,9 +11,13 @@ const ProductCard = ({ title, price, image, id }) => {
   const [hideSpinner, setHideSpinner] = useState("showSpinner")
 
   const imageLoaded = ()=>{
-      setImagePlaceHolder(true);
+    setImagePlaceHolder(true);
     setHideImage("showImage");
     setHideSpinner("hideSpinner");
+  }
+
+  if(image == undefined || image ==null){
+    image = noImage;
   }
 
   return (

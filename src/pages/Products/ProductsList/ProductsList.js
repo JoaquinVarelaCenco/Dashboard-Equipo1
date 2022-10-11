@@ -29,7 +29,7 @@ const ProductsList = () => {
               title={p.title}
               price={p.price}
               key={p.id}
-              image={p.images[0]}
+              image={p.images!=null? p.images[0] : null}
               id={p.id}
             />
           ))

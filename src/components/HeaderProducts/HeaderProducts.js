@@ -19,7 +19,23 @@ const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
 const [styleDisplayNone, setStyleDisplayNone ] = useState("")
 
 useEffect(() => {
-    currentTitleContainer("displayFlex")
+    currentTitleContainer("displayFlex");
+
+    
+}, [])
+
+useEffect(() => {
+  const handleResize = ()=>{
+    window.addEventListener('resize', ()=>{
+      // console.log(window.screen.width);
+        closeSearchInput();
+        if(window.innerWidth> 500){ 
+          // console.log(window.screen.width);
+            inputSearch.current.placeholder = "Buscar productos...";
+        }
+    })
+  }
+  handleResize()
 }, [])
 
 
@@ -31,7 +47,7 @@ const containerAddProduct = useRef("");
 
 //cambiamos estilos al expandir searchBar
 const expandSearchInput = () => {
-    let width = window.screen.width;
+    let width = window.innerWidth;
     if (width <= 500) {
         inputSearch.current.placeholder = "Buscar productos...";
         
@@ -42,6 +58,7 @@ const expandSearchInput = () => {
         setStyleSearchAnimation('expandSearchBarStyle');
         setStyleDisplayNone("showComponent")
     } else {
+      inputSearch.current.placeholder = "";
         currentTitleContainer("displayFlex")
     }
 };
@@ -58,14 +75,14 @@ const closeSearchInput = () => {
 };
 
 //al cambiar tamaño de pantalla se ejecutan las funciones expand || close search input
-window.onresize = ()=>{
-  console.log(window.screen.width);
-    closeSearchInput();
-    if(window.screen.width> 500){ 
-      console.log(window.screen.width);
-        inputSearch.current.placeholder = "Buscar productos...";
-    }
-}
+// window.onresize = ()=>{
+//   console.log(window.screen.width);
+//     closeSearchInput();
+//     if(window.screen.width> 500){ 
+//       console.log(window.screen.width);
+//         inputSearch.current.placeholder = "Buscar productos...";
+//     }
+// }
 
 //Borramos placeholder de buscador en caso de que el componente se cargue en pantalla pequeña
 useEffect(()=>{
