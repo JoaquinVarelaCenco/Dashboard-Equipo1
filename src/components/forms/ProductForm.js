@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
+import Button from "../Button/Button";
 import "./ProductForm.css";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
@@ -19,18 +20,40 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
     };
   }, []);
 
+  useEffect(() => {
+    console.log(product);
+  }, [product]);
+
   return product ? (
     <div className="product-new">
       <div className="product-new__nav">
         {productId ? (
           <>
             <h2>Productos - #{productId}</h2>
-            <button onClick={handleDeleteProd}>Eliminar</button>
+            <Button
+              title={"Eliminar"}
+              click={handleDeleteProd}
+            ></Button>
           </>
         ) : (
           <h2>Productos - Nuevo Producto</h2>
         )}
       </div>
+
+      {productId ? (
+        <div className="product-new__view-card">
+          <img src={product.images[0]} alt="imagen producto" />
+          <div className="product-new__view-card__content">
+            <h2>{product.title}</h2>
+            <div className="product-new__view-card__info">
+              <p>{product.price}</p>
+              <span>PUNTOS SUPERCLUB</span>
+              <p>{product.stock}</p>
+              <span>STOCK DISPONIBLE</span>
+            </div>
+          </div>
+        </div>
+      ) : null}
       <h1>Informacion</h1>
       <form
         onSubmit={() => handleSubmit(product)}
@@ -57,13 +80,17 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         />
         <p className="product-new__input-title">Stock</p>
         <div className="product-new-form__stock">
-          <button onClick={() => handleInputChangeStock("-")} type="button">
-            -
-          </button>
+            <Button 
+              click={() => handleInputChangeStock("-")}
+              type={"button"}
+              title={"-"}
+            />
           <span>{product.stock}</span>
-          <button onClick={() => handleInputChangeStock("+")} type="button">
-            +
-          </button>
+            <Button 
+              click={() => handleInputChangeStock("+")}
+              type={"button"}
+              title={"+"}
+            />
         </div>
 
         <p className="product-new__input-title">Descripcion</p>
@@ -76,13 +103,13 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           required
         />
         <p className="product-new__input-title">Categoria</p>
+
         <select
           name="category"
           value={product.category}
           onChange={handleInputChange}
           required
           className="form-control"
-          defaultValue={product.category} 
         >
           <option value="" disabled>
             Seleccione categoria...
@@ -92,7 +119,9 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <option value="categoria-3">categoria-3</option>
           <option value="categoria-4">categoria-4</option>
         </select>
+
         <p className="product-new__input-title">Tienda</p>
+
         <select name="store" className="form-control" defaultValue="">
           <option value="" disabled>
             Seleccione una tienda
@@ -102,13 +131,16 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <option value="tienda-3">tienda-3</option>
           <option value="tienda-4">tienda-4</option>
         </select>
+
         <h3>Galeria de imagenes</h3>
         <p className="product-new__input-title">Nueva imagen</p>
         <div className="prueba">
           <input type="text" name="image" id="input-img-add" />
-          <button onClick={() => handleAddImage()} type="button">
-            Add
-          </button>
+          <Button 
+            title={"Add"}
+            click={() => handleAddImage()}
+            type="button"
+          />
         </div>
         <p className="product-new__input-title">Imagenes actuales</p>
 
@@ -117,21 +149,32 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
             <div key={index} className="product-new-form__card-image">
               <img src={img} alt="imagen producto" />
               <p>{img}</p>
-              <button onClick={() => handleRemoveImage(index)} type="button">
-                Quitar
-              </button>
+
+              <Button
+                type={"button"}
+                click={() => handleRemoveImage(index)}
+                title={"Quitar"}
+              />
             </div>
           );
         })}
         <div className="product-new__action">
           {productId ? (
-            <button type="submit">Editar</button>
+            <Button 
+              type={"submit"}
+              title={"Editar"}
+            />
           ) : (
-            <button type="submit">Crear</button>
+            <Button 
+              type={"submit"}
+              title={"Crear"}
+            />
           )}
-          <button type="reset" onClick={resetCamps}>
-            Cancelar
-          </button>
+            <Button 
+              type={"reset"}
+              title={"Cancelar"}
+              click={resetCamps}
+            />
         </div>
       </form>
     </div>

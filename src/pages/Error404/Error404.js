@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 import './Error404.css';
 
 const Error404 = () => {
@@ -12,7 +13,9 @@ const Error404 = () => {
                 <p>Disculpa, Página No Encontrada</p>
                 <p>La página que deseas acceder no existe</p>
                 <Link to="/home">
-                    <button>Home</button>
+                    <Button 
+                        title={"Inicio"}
+                    />
                 </Link>
             </div>
         </div>

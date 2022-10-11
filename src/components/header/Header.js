@@ -1,6 +1,3 @@
-// import { SearchContext } from "../../context/SearchContext";
-// import searchImage from "../../assets/images/magnify.svg";
-// import leftArrow from '../../assets/images/chevron-right (1).svg'
 import "./Header.css";
 import { useContext, useEffect, useRef, useState } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
@@ -10,30 +7,28 @@ import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
-
-
+import Button from "../Button/Button";
 
 const Header = () => {
   let buttonMenu = useRef();
 
-  //Contextos : tema - page - buscador
+  //Contextos : tema - page
   const { theme } = useContext(ThemeContext);
-  const { page, currentPage, titleContainer, currentTitleContainer } = useContext(HeaderContext);
-
-  const location = useLocation();
   const { toggleVisibility } = useContext(SideBarContext);
+  const { page, currentPage, titleContainer, currentTitleContainer } = useContext(HeaderContext);
+  const location = useLocation();
+  
+  //USe effect para setear la url en la que me encuentro
+  useEffect(() => {
+    currentPage(location.pathname);
+    currentTitleContainer("displayFlex")
+  }, [location]);
+  
   let pageTitle = "¡Hola Olivia!";
   let productId = "";
   let titleLink = "/home";
 
-  //USe effect para setear la url en la que me encuentro
-  useEffect(() => {
-    currentPage(location.pathname);
-    // titleContainer.current.style.display="flex";
-    currentTitleContainer("displayFlex")
-    
-  }, [location]);
-
+  //Lógica para establecer el pathname en que nos encontramos
   if (page === "/products") {
     pageTitle = "Products";
     titleLink =page;
@@ -52,19 +47,19 @@ const Header = () => {
   return (
     <div className={`header ${theme}`}>
       <div className={`headerGeneric ${titleContainer}`}>
-        <button
+        
+
+        <Button 
+          click={() => {toggleVisibility()}}
+          classN={"header__hamburguer-menu-btn"}
           ref={buttonMenu}
-          onClick={() => {
-            toggleVisibility();
-          }}
-          className="header__menu-hamburguesa"
         >
           <img
             src={menuImage}
             alt="Menú hamburguesa"
-            className="hamburguerMenu"
+            className="header__hamburguer-menu-img"
           />
-        </button>
+        </Button>
         <div className="title">
           <Link to={titleLink}><h2>{pageTitle}</h2></Link>
         </div>
