@@ -7,7 +7,6 @@ import searchImage from '../../assets/images/magnify.svg';
 import menuImage from '../../assets/images/menu.svg'
 
 const Header = () => {
-  const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext)
   const location = useLocation();
   let pageTitle ="¡Hola Olivia!";

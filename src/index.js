@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { HeaderProvider } from './context/HeaderContext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { HeaderProvider } from "./context/HeaderContext";
+import { ProductProvider } from "./context/ProductContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <HeaderProvider>
-      <App />
+      <ProductProvider>
+        <App />
+      </ProductProvider>
     </HeaderProvider>
-    
   </React.StrictMode>
 );
 
