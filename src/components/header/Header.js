@@ -16,10 +16,11 @@ const Header = () => {
   // const btnSearch = useRef(null);
 
   //Estados para cambiar estilos
-const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
-const [styleDisplayNone, setStyleDisplayNone ] = useState("")
+  const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
+  const [styleDisplayNone, setStyleDisplayNone ] = useState("")
 
-const context = useContext(SearchContext);
+  //Contextos : tema
+  const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext);
 
@@ -37,7 +38,9 @@ const context = useContext(SearchContext);
     currentPage(location.pathname);
     titleContainer.current.style.display="flex";
     if(window.screen.width<501){
+      setTimeout(()=>{
         inputSearch.current.placeholder = "";
+      }, 100)
     }
   }, [location]);
 
@@ -93,6 +96,8 @@ const context = useContext(SearchContext);
       inputSearch.current.placeholder = "Buscar productos...";
     }
   }
+
+  console.log(page);
   return (
     <div className={`header ${theme}`}>
       <div className="headerGeneric" ref={titleContainer}>
@@ -110,7 +115,7 @@ const context = useContext(SearchContext);
           />
         </button>
         <div className="title">
-          <h2>{pageTitle}</h2>
+          <Link to={'/home'}><h2>{pageTitle}</h2></Link>
         </div>
       </div>
 

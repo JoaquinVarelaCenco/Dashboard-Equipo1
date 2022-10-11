@@ -193,16 +193,6 @@
 
 }
 
-/* Dark Mode */
-
-.dark .headerEditProduct img,
-.dark .header__menu-hamburguesa {
-    filter: invert();
-}
-
-.dark .headerBtn{
-    border: none;
-}
 
 .headerProducts .expandSearchBarStyle{
     width: 100%;
@@ -214,12 +204,26 @@
     width: 100%;
 }
 
-
-
 @keyframes increase {
     from{
         width: 50%;
     }to{
         width: 100%;
     }
+}
+
+.title a{
+    text-decoration: none;
+    color: rgb(30, 24, 24);
+}
+
+/* Dark Mode */
+
+.dark .headerEditProduct img,
+.dark .header__menu-hamburguesa {
+    filter: invert();
+}
+
+.dark .headerBtn{
+    border: none;
 }
