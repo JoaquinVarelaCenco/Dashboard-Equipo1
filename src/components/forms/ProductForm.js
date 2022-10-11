@@ -1,102 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { newProduct } from "../../../services/apiServices";
-import { getProductById } from "../../../services/apiServices";
-import { updateProduct } from "../../../services/apiServices";
-import { deleteProduct } from "../../../services/apiServices";
-import "./ProductView.css";
+import React, { useContext, useEffect } from "react";
+import { ProductContext } from "../../context/ProductContext";
+import useForm from "../../hooks/UseForm";
+import "./ProductForm.css";
 
-const ProductView = () => {
-  const navigate = useNavigate();
+const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
+  const { product, resetCamps, resetForm } = useContext(ProductContext);
 
-  let defaultValues = {
-    title: "",
-    price: 0,
-    stock: 0,
-    description: "",
-    category: "",
-    images: [],
-    rating: {
-      rate: 0,
-      count: 0,
-    },
-  };
-
-  const [product, setProduct] = useState(defaultValues);
-  const [lastState, setLastState] = useState(defaultValues);
-
-  let productId = useParams().id;
+  const {
+    handleInputChange,
+    handleInputChangeStock,
+    handleAddImage,
+    handleRemoveImage,
+  } = useForm();
 
   useEffect(() => {
-    if (productId) {
-      getProductById(productId).then((res) => {
-        if (res.status === 404) {
-          alert("Producto no encontrado");
-          navigate("/");
-        }
-        delete res.isActive;
-        delete res.lastModified;
-        delete res.createdAt;
-        setProduct(res);
-        setLastState(res);
-      });
-    }
-  }, [productId]);
+    return () => {
+      resetForm();
+    };
+  }, []);
 
-  const handleInputChange = ({ target }) => {
-    if (target.name === "price") {
-      setProduct({ ...product, [target.name]: Number(target.value) });
-    } else {
-      setProduct({ ...product, [target.name]: target.value });
-    }
-  };
-
-  const handleInputChangeStock = (operation) => {
-    if (operation === "+") {
-      setProduct({ ...product, stock: product.stock + 1 });
-    } else if (operation === "-" && product.stock > 0) {
-      setProduct({ ...product, stock: product.stock - 1 });
-    }
-  };
-
-  const handleAddImage = () => {
-    let imageValue = document.getElementById("input-img-add").value;
-    let aux = product.images;
-    aux.push(imageValue);
-    setProduct({ ...product, images: aux });
-  };
-
-  const handleRemoveImage = (index) => {
-    let aux = product.images;
-    aux.splice(index, 1);
-    setProduct({ ...product, images: aux });
-  };
-
-  function handleSubmit() {
-    if (productId) {
-      updateProduct(product).then((res) => {
-        console.log(res);
-      });
-    } else {
-      newProduct(product).then((res) => {
-        console.log(res);
-      });
-    }
-    navigate("/");
-  }
-
-  function handleDeleteProd() {
-    deleteProduct(productId).then((res) => {
-      console.log(res);
-      navigate("/");
-    });
-  }
-
-  function resetCamps() {
-    setProduct(lastState);
-  }
-
-  return (
+  return product ? (
     <div className="product-new">
       <div className="product-new__nav">
         {productId ? (
@@ -109,7 +32,10 @@ const ProductView = () => {
         )}
       </div>
       <h1>Informacion</h1>
-      <form onSubmit={handleSubmit} className="product-new__form">
+      <form
+        onSubmit={() => handleSubmit(product)}
+        className="product-new__form"
+      >
         <p className="product-new__input-title">Nombre</p>
         <input
           type="text"
@@ -117,6 +43,7 @@ const ProductView = () => {
           value={product.title}
           placeholder="Nombre"
           onChange={handleInputChange}
+          minLength="3"
           required
         />
         <p className="product-new__input-title">Valor</p>
@@ -125,6 +52,7 @@ const ProductView = () => {
           name="price"
           value={product.price}
           onChange={handleInputChange}
+          min="0"
           required
         />
         <p className="product-new__input-title">Stock</p>
@@ -152,10 +80,12 @@ const ProductView = () => {
           name="category"
           value={product.category}
           onChange={handleInputChange}
-          required className="form-control"
+          required
+          className="form-control"
+          defaultValue={product.category} 
         >
-          <option value="" disabled selected>
-            Seleccione categoria
+          <option value="" disabled>
+            Seleccione categoria...
           </option>
           <option value="categoria-1">categoria-1</option>
           <option value="categoria-2">categoria-2</option>
@@ -163,8 +93,8 @@ const ProductView = () => {
           <option value="categoria-4">categoria-4</option>
         </select>
         <p className="product-new__input-title">Tienda</p>
-        <select name="store" className="form-control" required>
-          <option value="" disabled selected>
+        <select name="store" className="form-control" defaultValue="">
+          <option value="" disabled>
             Seleccione una tienda
           </option>
           <option value="tienda-1">tienda-1</option>
@@ -185,10 +115,8 @@ const ProductView = () => {
         {product.images.map((img, index) => {
           return (
             <div key={index} className="product-new-form__card-image">
-              {/* <div className="product-new-form__card-image__info-img"> */}
               <img src={img} alt="imagen producto" />
               <p>{img}</p>
-              {/* </div> */}
               <button onClick={() => handleRemoveImage(index)} type="button">
                 Quitar
               </button>
@@ -207,7 +135,7 @@ const ProductView = () => {
         </div>
       </form>
     </div>
-  );
+  ) : null;
 };
 
-export default ProductView;
+export default ProductForm;
