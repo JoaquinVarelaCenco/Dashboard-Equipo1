@@ -5,6 +5,7 @@ import { HeaderContext } from '../../context/HeaderContext';
 import { WidthScreenContext } from '../../context/WidthScreenContext';
 import searchImage from "../../assets/images/magnify.svg";
 import './HeaderProducts.css'
+import Button from '../Button/Button';
 
 const HeaderProducts = () => {
 
@@ -89,13 +90,16 @@ const closeSearchInput = () => {
 return (
     <div className="headerProducts">
           <div className={`headerProducts__search-container  ${styleSearchAnimation} ${styleCloseSearchAnimation} `} ref={inputSearchContainer}>
-            <button
-              onClick={closeSearchInput}
-              className={`headerProducts-search-container__btnClose headerBtn ${styleDisplayNone}`}
+           
+         
+
+            <Button
+              click={closeSearchInput}
+              classN={`headerProducts-search-container__btnClose headerBtn ${styleDisplayNone}`}
+              title={"X"}
               ref={btnClose}
-            >
-              X
-            </button>
+            />
+
             <input
               type="text"
               className={`header__search  ${styleSearchAnimation}`}
@@ -103,26 +107,29 @@ return (
               ref={inputSearch}
               onChange={context.handleSearch}
             />
-            <button
-              onClick={expandSearchInput}
-              className="headerProducts-search-container__btnSearch headerBtn"
-              
+
+            <Button
+              click={expandSearchInput}
+              classN={"headerProducts-search-container__btnSearch headerBtn"}
             >
               <img src={searchImage} alt="Lupa de busqueda" className='headerProducts-search-container__btnImage'/>
-            </button>
+            </Button>
           </div>
           <div className="headerProducts-ContainerAdd" >
             <Link to={"/products/new"}>
-              <button className="headerProducts__btnAdd">
-                Agregar Producto
-              </button>
+              <Button 
+                title={"Agregar Producto"}
+                classN={"headerProducts__btnAdd"}
+              />
             </Link>
           </div>
           <div className="headerProducts-ContainerAdd" >
             <Link to={"/products/new"} ref={containerAddProduct}>
-              <button className="headerProducts__btnAddAlternative">
-                +
-              </button>
+
+              <Button 
+                classN={"headerProducts__btnAddAlternative"}
+                title={"+"}
+              />
             </Link>
           </div>
         </div>

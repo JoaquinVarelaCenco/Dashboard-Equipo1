@@ -7,6 +7,7 @@ import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
+import Button from "../Button/Button";
 
 const Header = () => {
   let buttonMenu = useRef();
@@ -46,19 +47,19 @@ const Header = () => {
   return (
     <div className={`header ${theme}`}>
       <div className={`headerGeneric ${titleContainer}`}>
-        <button
+        
+
+        <Button 
+          click={() => {toggleVisibility()}}
+          classN={"header__hamburguer-menu-btn"}
           ref={buttonMenu}
-          onClick={() => {
-            toggleVisibility();
-          }}
-          className="header__hamburguer-menu-btn"
         >
           <img
             src={menuImage}
             alt="Menú hamburguesa"
             className="header__hamburguer-menu-img"
           />
-        </button>
+        </Button>
         <div className="title">
           <Link to={titleLink}><h2>{pageTitle}</h2></Link>
         </div>

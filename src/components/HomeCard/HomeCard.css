@@ -32,11 +32,9 @@
 }
 
 .itemRow__buttons button{
-    background-color: #5b5d5d ;
     border: none;
     padding: 8px 10px;
     font-size: 14px;
-    color: white;
     border-radius: 15px;
 }
 

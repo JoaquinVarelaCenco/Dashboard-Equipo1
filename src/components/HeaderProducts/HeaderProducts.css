@@ -3,6 +3,10 @@
     opacity: .6;
 }
 
+.dark .search-container__btnSearch{
+    background-color: var(--clear-BlackLight);
+}
+
 .headerProducts{
     display: flex;
     width: 100%;
@@ -102,6 +106,9 @@
     font-weight: 700;
 }
 
+.clear .headerProducts__btnAgregarAlternative{
+    color: var(--clear-Color);
+}
 
 @media (min-width: 1025px){
     .headerProducts__btnAdd{

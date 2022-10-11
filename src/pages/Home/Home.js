@@ -23,7 +23,7 @@ const Home = () => {
         console.log(error);
       })
   }, [])
-  
+
 
   products.sort((a,b) =>{
     if(a.rating.count < b.rating.count){
