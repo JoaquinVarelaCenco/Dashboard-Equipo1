@@ -3,6 +3,10 @@
     opacity: .6;
 }
 
+.dark .search-container__btnSearch{
+    background-color: var(--clear-BlackLight);
+}
+
 .headerProducts{
     display: flex;
     width: 100%;
