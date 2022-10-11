@@ -19,14 +19,14 @@ const ProductsList = () => {
         <select
           name="category"
           required
+          value={context.orderBy}
           className="select-control"
           onChange={context.orderProducts}
         >
           <option value="Mayor precio">Mayor precio</option>
           <option value="Menor precio">Menor precio</option>
-          <option value="Mas relevantes" selected>
-            Mas relevantes
-          </option>
+          <option value="Mas relevantes" selected>Mas relevantes</option>
+          <option value="A-Z">A-Z</option>
         </select>
       </div>
       {context.productsExist ? (
