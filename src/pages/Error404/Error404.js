@@ -6,10 +6,10 @@ const Error404 = () => {
     <>
         <div className='error404__Main'>
             <div className='error404__top'>
-                <p>404</p>
+                <h2>404</h2>
             </div>
             <div className='error404__bottom'>
-                <h3>Disculpa, Página No Encontrada</h3>
+                <p>Disculpa, Página No Encontrada</p>
                 <p>La página que deseas acceder no existe</p>
                 <Link to="/home">
                     <button>Home</button>
