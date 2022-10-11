@@ -12,7 +12,6 @@ import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
 
 
-
 const Header = () => {
   let buttonMenu = useRef();
 
@@ -52,6 +51,8 @@ const Header = () => {
   return (
     <div className={`header ${theme}`}>
       <div className={`headerGeneric ${titleContainer}`}>
+        
+
         <button
           ref={buttonMenu}
           onClick={() => {

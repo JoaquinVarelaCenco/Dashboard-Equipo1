@@ -1,4 +1,5 @@
 import leftArrow from '../../assets/images/chevron-right (1).svg';
+import Button from '../button/Button';
 import './HeaderEditAddProduct.css'
 
 const HeaderEditAddProduct = ({productContent, editProduct}) => {
@@ -10,7 +11,10 @@ const HeaderEditAddProduct = ({productContent, editProduct}) => {
           </div>
           {editProduct?
             <div className="headerEditProduct__btnDeleteContainer">
-            <button className="headerEditProduct__btnDelete">ELIMINAR</button>
+            <Button 
+              classN={"headerEditProduct__btnDelete"}
+              title={"ELIMINAR"}
+            />
           </div>
           :
           ""  

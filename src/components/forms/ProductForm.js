@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
+import Button from "../button/Button";
 import "./ProductForm.css";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
@@ -25,6 +26,9 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         {productId ? (
           <>
             <h2>Productos - #{productId}</h2>
+            <Button
+              title={"Eliminar"}
+            ></Button>
             <button onClick={handleDeleteProd}>Eliminar</button>
           </>
         ) : (

@@ -47,10 +47,23 @@
   .dark textarea::placeholder{
     color: var(--dark-Color);
   }
+
+a{
+  text-decoration: none;
+}
 /* No se tiene q aplicar a los botones con clase headerBtn  */
-  .dark button{
+button{
+  border: none;
+}
+
+button{
+  color: var(--clear-Background);
+  background-color: var(--clear-Black);
+}
+
+.dark button{
     border: none;
-    /* background-color: var(--clear-Black); */
+    background-color: var(--clear-Black);
     color: var(--dark-Color);
   }
 
