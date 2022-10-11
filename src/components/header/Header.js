@@ -1,13 +1,13 @@
-import { SearchContext } from "../../context/SearchContext";
+// import { SearchContext } from "../../context/SearchContext";
+// import searchImage from "../../assets/images/magnify.svg";
+// import leftArrow from '../../assets/images/chevron-right (1).svg'
 import "./Header.css";
 import { useContext, useEffect, useRef, useState } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from "react-router-dom";
-import searchImage from "../../assets/images/magnify.svg";
 import menuImage from "../../assets/images/menu.svg";
 import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
-import leftArrow from '../../assets/images/chevron-right (1).svg'
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
 
@@ -15,14 +15,8 @@ import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduc
 
 const Header = () => {
   let buttonMenu = useRef();
-  // const btnSearch = useRef(null);
-
-  //Estados para cambiar estilos
-  // const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
-  // const [styleDisplayNone, setStyleDisplayNone ] = useState("")
 
   //Contextos : tema - page - buscador
-  // const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
   const { page, currentPage, titleContainer, currentTitleContainer } = useContext(HeaderContext);
 
@@ -31,10 +25,6 @@ const Header = () => {
   let pageTitle = "¡Hola Olivia!";
   let productId = "";
   let titleLink = "/home";
-  
-  // const [productId, setProductId] = useState("");
-  // const actualPage = page;
-  // const pageTitle2 = "Products";
 
   //USe effect para setear la url en la que me encuentro
   useEffect(() => {

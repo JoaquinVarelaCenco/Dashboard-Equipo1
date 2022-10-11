@@ -61,6 +61,7 @@ const closeSearchInput = () => {
 window.onresize = ()=>{
     closeSearchInput();
     if(window.screen.width> 500){ 
+      console.log(window.screen.width);
         inputSearch.current.placeholder = "Buscar productos...";
     }
 }

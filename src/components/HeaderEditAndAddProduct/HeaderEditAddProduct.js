@@ -1,4 +1,5 @@
-import leftArrow from '../../assets/images/chevron-right (1).svg'
+import leftArrow from '../../assets/images/chevron-right (1).svg';
+import './HeaderEditAddProduct.css'
 
 const HeaderEditAddProduct = ({productContent, editProduct}) => {
   return (
@@ -14,7 +15,7 @@ const HeaderEditAddProduct = ({productContent, editProduct}) => {
           :
           ""  
         }
-        </>
+    </>
   )
 }
 

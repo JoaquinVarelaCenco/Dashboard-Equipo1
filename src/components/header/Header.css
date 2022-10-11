@@ -41,33 +41,6 @@
     font-weight:500;
 }
 
-/* HEADER EDIT PRODUCTS */
-.headerEditProduct{
-    display: flex;
-    align-self: center;
-}
-
-.headerEditProduct__btnDeleteContainer{
-    align-self: center;
-    width: 100%;
-    text-align: end;
-}
-
-.headerEditProduct__btnDelete{
-    height: 32px;
-    width: 100px;
-    padding: 8px;
-    
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 16px;
-    margin-left: 10px;
-    
-}
-
-.headerEditProduct h2{
-    font-weight: 500;
-}
-
 /* Inicio mediaqueries */
 .header__menu-hamburguesa{
     margin-top: 22px;
