@@ -82,9 +82,10 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           onChange={handleInputChange}
           required
           class="form-control"
+          defaultValue={product.category}
         >
-          <option value="" disabled selected>
-            Seleccione categoria
+          <option value="" disabled>
+            Seleccione categoria...
           </option>
           <option value="categoria-1">categoria-1</option>
           <option value="categoria-2">categoria-2</option>
@@ -92,8 +93,8 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <option value="categoria-4">categoria-4</option>
         </select>
         <p className="product-new__input-title">Tienda</p>
-        <select name="store" class="form-control">
-          <option value="" disabled selected>
+        <select name="store" class="form-control" defaultValue="">
+          <option value="" disabled>
             Seleccione una tienda
           </option>
           <option value="tienda-1">tienda-1</option>
