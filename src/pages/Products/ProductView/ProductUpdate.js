@@ -8,8 +8,7 @@ import { ProductContext } from "../../../context/ProductContext";
 function ProductUpdate() {
   let productId = useParams().id;
   const navigate = useNavigate();
-  const { product, currentProduct, currentLastProduct } =
-    useContext(ProductContext);
+  const { currentProduct, currentLastProduct } = useContext(ProductContext);
 
   useEffect(() => {
     if (productId) {
@@ -34,7 +33,7 @@ function ProductUpdate() {
     });
   }
 
-  function handleSubmit() {
+  function handleSubmit(product) {
     updateProduct(product).then((res) => {
       console.log(res);
     });

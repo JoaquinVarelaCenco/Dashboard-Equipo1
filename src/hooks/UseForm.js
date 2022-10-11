@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext, useRef } from "react";
 import { ProductContext } from "../context/ProductContext";
 
 const useForm = () => {
-  const { product, currentProduct, lastState } = useContext(ProductContext);
+  const { product, currentProduct } = useContext(ProductContext);
 
   const handleInputChange = ({ target }) => {
     if (target.name === "price") {
@@ -22,28 +22,22 @@ const useForm = () => {
 
   const handleAddImage = () => {
     let imageValue = document.getElementById("input-img-add").value;
-    let aux = product.images;
+    let aux = [...product.images];
     aux.push(imageValue);
     currentProduct({ ...product, images: aux });
   };
 
   const handleRemoveImage = (index) => {
-    let aux = product.images;
+    let aux = [...product.images];
     aux.splice(index, 1);
     currentProduct({ ...product, images: aux });
   };
-
-  function resetCamps() {
-    currentProduct(lastState);
-  }
 
   return {
     handleInputChange,
     handleInputChangeStock,
     handleAddImage,
     handleRemoveImage,
-    resetCamps,
-    lastState,
   };
 };
 

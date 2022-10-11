@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { newProduct } from "../../../services/apiServices";
 import ProductForm from "../../../components/forms/ProductForm";
-import { ProductContext } from "../../../context/ProductContext";
 
 function ProductView() {
   const navigate = useNavigate();
-  const { product } = useContext(ProductContext);
 
-  function handleSubmit() {
+  function handleSubmit(product) {
     newProduct(product).then((res) => {
       console.log(res);
     });

@@ -1,19 +1,23 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
 import "./ProductForm.css";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
-  const { product } = useContext(ProductContext);
+  const { product, resetCamps, resetForm } = useContext(ProductContext);
 
   const {
     handleInputChange,
     handleInputChangeStock,
     handleAddImage,
     handleRemoveImage,
-    resetCamps,
   } = useForm();
+
+  useEffect(() => {
+    return () => {
+      resetForm();
+    };
+  }, []);
 
   return product ? (
     <div className="product-new">
@@ -28,7 +32,10 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         )}
       </div>
       <h1>Informacion</h1>
-      <form onSubmit={handleSubmit} className="product-new__form">
+      <form
+        onSubmit={() => handleSubmit(product)}
+        className="product-new__form"
+      >
         <p className="product-new__input-title">Nombre</p>
         <input
           type="text"
@@ -36,6 +43,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           value={product.title}
           placeholder="Nombre"
           onChange={handleInputChange}
+          minLength="3"
           required
         />
         <p className="product-new__input-title">Valor</p>
@@ -44,6 +52,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           name="price"
           value={product.price}
           onChange={handleInputChange}
+          min="0"
           required
         />
         <p className="product-new__input-title">Stock</p>
@@ -83,7 +92,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
           <option value="categoria-4">categoria-4</option>
         </select>
         <p className="product-new__input-title">Tienda</p>
-        <select name="store" required class="form-control">
+        <select name="store" class="form-control">
           <option value="" disabled selected>
             Seleccione una tienda
           </option>

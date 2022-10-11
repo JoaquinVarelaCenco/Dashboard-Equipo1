@@ -19,12 +19,15 @@ export const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState(defaultValues);
 
   const [lastState, setLastState] = useState(defaultValues);
+  console.log("🚀 ~ file: ProductContext.js ~ line 22 ~ ProductProvider ~ lastState", lastState)
 
   const value = {
     product,
     currentProduct: (p) => setProduct(p),
     lastState,
-    currentLastProduct: (p) => setLastState(p),
+    currentLastProduct: (i) => setLastState(i),
+    resetCamps: () => setProduct(lastState),
+    resetForm: () => setProduct(defaultValues),
   };
 
   return (
