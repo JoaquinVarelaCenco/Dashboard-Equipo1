@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import SwitchToggle from "../SwitchToggle/SwitchToggle";
 import { SideBarContext } from "../../context/SideBarContext";
-import Button from "../button/Button";
+import Button from "../Button/Button";
 
 const Sidebar = () => {
 

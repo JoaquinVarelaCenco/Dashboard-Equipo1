@@ -102,6 +102,9 @@
     font-weight: 700;
 }
 
+.clear .headerProducts__btnAgregarAlternative{
+    color: var(--clear-Color);
+}
 
 @media (min-width: 1025px){
     .headerProducts__btnAgregar{

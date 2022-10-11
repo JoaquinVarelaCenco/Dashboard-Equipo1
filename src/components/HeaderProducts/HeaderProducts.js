@@ -4,7 +4,7 @@ import { SearchContext } from "../../context/SearchContext";
 import { HeaderContext } from '../../context/HeaderContext';
 import searchImage from "../../assets/images/magnify.svg";
 import './HeaderProducts.css'
-import Button from '../button/Button';
+import Button from '../Button/Button';
 
 
 

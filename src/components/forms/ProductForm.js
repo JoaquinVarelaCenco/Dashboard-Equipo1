@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
-import Button from "../button/Button";
+import Button from "../Button/Button";
 import "./ProductForm.css";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {

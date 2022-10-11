@@ -10,7 +10,7 @@ import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
-import Button from "../button/Button";
+import Button from "../Button/Button";
 
 
 const Header = () => {

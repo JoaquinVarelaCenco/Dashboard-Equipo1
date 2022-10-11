@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/button/Button';
+import Button from '../../components/Button/Button';
 import './Error404.css';
 
 const Error404 = () => {

@@ -1,5 +1,5 @@
 import leftArrow from '../../assets/images/chevron-right (1).svg';
-import Button from '../button/Button';
+import Button from '../Button/Button';
 import './HeaderEditAddProduct.css'
 
 const HeaderEditAddProduct = ({productContent, editProduct}) => {
