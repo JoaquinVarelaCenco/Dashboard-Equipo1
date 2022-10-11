@@ -19,19 +19,20 @@ const Header = () => {
   const [styleSearchAnimation, setStyleSearchAnimation] = useState("")
   const [styleDisplayNone, setStyleDisplayNone ] = useState("")
 
-  //Contextos : tema
+  //Contextos : tema - page - buscador
   const context = useContext(SearchContext);
   const { theme } = useContext(ThemeContext);
   const { page, currentPage } = useContext(HeaderContext);
 
-  // const [productId, setProductId] = useState("");
   const location = useLocation();
-
-  const pageTitle2 = "Products";
   const { toggleVisibility } = useContext(SideBarContext);
-  const actualPage = page;
   let pageTitle = "¡Hola Olivia!";
   let productId = "";
+  let titleLink = "/home";
+  
+  // const [productId, setProductId] = useState("");
+  // const actualPage = page;
+  // const pageTitle2 = "Products";
 
   //USe effect para setear la url en la que me encuentro
   useEffect(() => {
@@ -46,12 +47,16 @@ const Header = () => {
 
   if (page === "/products") {
     pageTitle = "Products";
+    titleLink =page;
   } else if (page.includes("/stores")) {
     pageTitle = "Tiendas";
+    titleLink =page;
   } else if (page === "/products/new") {
     pageTitle = "Productos";
+    titleLink ="/products";
   } else if (page.includes("/products/")) {
     pageTitle = "Productos";
+    titleLink ="/products";
     productId = "#" + location.pathname.split("/")[2];
   }
 
@@ -89,7 +94,7 @@ const Header = () => {
     setStyleDisplayNone("hideComponent")
   };
 
-   //al cambiar tamaño de pantalla se ejecutan las funciones 
+   //al cambiar tamaño de pantalla se ejecutan las funciones expand || close search input
    window.onresize = ()=>{
     closeSearchInput();
     if(window.screen.width> 500){ 
@@ -115,7 +120,7 @@ const Header = () => {
           />
         </button>
         <div className="title">
-          <Link to={'/home'}><h2>{pageTitle}</h2></Link>
+          <Link to={titleLink}><h2>{pageTitle}</h2></Link>
         </div>
       </div>
 
