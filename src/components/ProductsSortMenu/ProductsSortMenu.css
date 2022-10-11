@@ -1,18 +1,28 @@
 .productList__container__sort{
-    width: 50%;
-    text-align: left;
-    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .productList__container__sort i{
-  padding-right: 8px;
-}
+    font-size: 13px;
+  }
 
-.select-control{
+.select-control-products{
     background: transparent;
     border: none;
+    padding: 0 0 0 5px;
+    outline: none;
+    font-size: 12px;
 }
 
-.dark .select-control{
+.dark .select-control-products{
     background: transparent;
+}
+
+@media (max-width: 500px) {
+
+    .productList__container__sort-filter i{
+        display: none;
+      }
 }
