@@ -59,6 +59,7 @@ const closeSearchInput = () => {
 
 //al cambiar tamaño de pantalla se ejecutan las funciones expand || close search input
 window.onresize = ()=>{
+  console.log(window.screen.width);
     closeSearchInput();
     if(window.screen.width> 500){ 
       console.log(window.screen.width);
