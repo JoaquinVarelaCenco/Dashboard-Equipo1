@@ -13,6 +13,10 @@
     font-weight: bold;
 }
 
+.productList__container__sort i{
+  padding-right: 8px;
+}
+
 .select-control{
     background: transparent;
     border: none;
@@ -20,4 +24,8 @@
 
 .productList__spinner-container{
    margin-top: 150px;
+}
+
+.dark .select-control{
+    background: transparent;
 }

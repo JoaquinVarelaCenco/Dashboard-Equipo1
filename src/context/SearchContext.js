@@ -14,9 +14,9 @@ export const SearchProvider = ({ children }) => {
     getProducts()
       .then((data) => {
         setProductsExist(true);
-        orderProductsPrueba(data);
         setProducts(data);
         setHelpProducts(data);
+        orderProductsPrueba(data);
       })
       .catch(() => {
         setProductsExist(false);
@@ -69,7 +69,11 @@ export const SearchProvider = ({ children }) => {
 
   const orderByAlphabet = (arrayData) => {
     arrayData.sort((a, b) =>
-      a.title > b.title ? 1 : a.title < b.title ? -1 : 0
+      a.title.toLowerCase() > b.title.toLowerCase()
+        ? 1
+        : a.title.toLowerCase() < b.title.toLowerCase()
+        ? -1
+        : 0
     );
   };
 
@@ -91,11 +95,14 @@ export const SearchProvider = ({ children }) => {
         setOrderBy("A-Z");
         orderByAlphabet(products);
         break;
+      default:
+        setOrderBy("Mas relevantes");
+        orderByMostRelevants(products);
+        break;
     }
   };
 
   const orderProductsPrueba = (data) => {
-    
     switch (orderBy) {
       case "Mayor precio":
         setOrderBy("Mayor precio");
@@ -116,8 +123,6 @@ export const SearchProvider = ({ children }) => {
     }
   };
 
-
-
   useEffect(() => {
     getAllProducts();
   }, []);
@@ -132,7 +137,7 @@ export const SearchProvider = ({ children }) => {
         helpProducts,
         searchTermValue,
         orderBy,
-        orderProducts
+        orderProducts,
       }}
     >
       {children}
