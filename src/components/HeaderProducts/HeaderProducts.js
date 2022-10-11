@@ -72,25 +72,26 @@ const closeSearchInput = () => {
     
     if(widthScreen> 500){ 
       inputSearch.current.placeholder = "Buscar productos...";
-      
     }
-    currentTitleContainer("displayFlex")
-    containerAddProduct.current.style.display = "block";
     
     //Estados para agregar clases al cerar search input (modificacion con css)
     setStyleSearchAnimation('')
     setStyleDisplayNone('')
     setStyleDisplayNone("hideComponent")
-    setStyleCloseSearchAnimation('closeSearchBarAnimation');
+    setStyleCloseSearchAnimation('closeSearchBarAnimation')
+    setTimeout(()=>{
+      currentTitleContainer("displayFlex")
+    }, 200)
+    containerAddProduct.current.style.display = "block";
 };
 
 
 return (
     <div className="headerProducts">
-          <div className={`header__search-container  ${styleSearchAnimation} ${styleCloseSearchAnimation} `} ref={inputSearchContainer}>
+          <div className={`headerProducts__search-container  ${styleSearchAnimation} ${styleCloseSearchAnimation} `} ref={inputSearchContainer}>
             <button
               onClick={closeSearchInput}
-              className={`search-container__btnClose headerBtn ${styleDisplayNone}`}
+              className={`headerProducts-search-container__btnClose headerBtn ${styleDisplayNone}`}
               ref={btnClose}
             >
               X
@@ -104,22 +105,22 @@ return (
             />
             <button
               onClick={expandSearchInput}
-              className="search-container__btnSearch headerBtn"
+              className="headerProducts-search-container__btnSearch headerBtn"
               
             >
-              <img src={searchImage} alt="Lupa de busqueda" className='search-container__btnImage'/>
+              <img src={searchImage} alt="Lupa de busqueda" className='headerProducts-search-container__btnImage'/>
             </button>
           </div>
-          <div className="headerProducts-ContainerAgregar" >
+          <div className="headerProducts-ContainerAdd" >
             <Link to={"/products/new"}>
-              <button className="headerProducts__btnAgregar">
+              <button className="headerProducts__btnAdd">
                 Agregar Producto
               </button>
             </Link>
           </div>
-          <div className="headerProducts-ContainerAgregar" >
+          <div className="headerProducts-ContainerAdd" >
             <Link to={"/products/new"} ref={containerAddProduct}>
-              <button className="headerProducts__btnAgregarAlternative">
+              <button className="headerProducts__btnAddAlternative">
                 +
               </button>
             </Link>

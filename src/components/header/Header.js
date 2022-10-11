@@ -21,7 +21,6 @@ const Header = () => {
   useEffect(() => {
     currentPage(location.pathname);
     currentTitleContainer("displayFlex")
-    
   }, [location]);
   
   let pageTitle = "¡Hola Olivia!";

@@ -1,5 +1,5 @@
 /* HEADER PRODUCTS */
-.search-container__btnImage{
+.headerProducts-search-container__btnImage{
     opacity: .6;
 }
 
@@ -9,18 +9,18 @@
     justify-content: flex-end;
 }
 
-.header__search-container{
+.headerProducts__search-container{
     display: flex;
     align-items: center;
     position: relative;
     width: 42px;
   }
 
-  .header__search-container .hideComponent{
+  .headerProducts__search-container .hideComponent{
     display: none;
 }
 
-.header__search-container .showComponent{
+.headerProducts__search-container .showComponent{
     display: block;
     animation: fadeIn 3.5s;
 }
@@ -33,7 +33,7 @@
     }
 }
 
-  .search-container__btnClose{
+  .headerProducts-search-container__btnClose{
     display: none;
     height: 32px;
     width: 25px;
@@ -46,7 +46,7 @@
     color: white;
   }
   
-.header__search-container input{
+.headerProducts__search-container input{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 16px;
     height: 32px;
@@ -54,29 +54,29 @@
     padding: 0 0 0 20px;
 }
  
-.header__search-container input:placeholder{
+.headerProducts__search-container input:placeholder{
     display: none;
 }
 
-.search-container__btnSearch{
+.headerProducts-search-container__btnSearch{
     position: absolute;
     right: 8px;
     background: none;
     border: none;
 }
 
-.expandSearchBarStyle .search-container__btnSearch{
+.expandSearchBarStyle .headerProducts-search-container__btnSearch{
     animation: fadeIn 3s;
 }
 
-.headerProducts-ContainerAgregar{
+.headerProducts-ContainerAdd{
     align-self: center;
 }
 
-.headerProducts-ContainerAgregar a{
+.headerProducts-ContainerAdd a{
     text-decoration: none;
 }
-.headerProducts__btnAgregar{
+.headerProducts__btnAdd{
     display: none;
     height: 32px;
     width: 150px;
@@ -88,7 +88,7 @@
     text-decoration: none;
 }
 
-.headerProducts__btnAgregarAlternative{
+.headerProducts__btnAddAlternative{
     display: block;
     height: 32px;
     width: 30px;
@@ -104,24 +104,24 @@
 
 
 @media (min-width: 1025px){
-    .headerProducts__btnAgregar{
+    .headerProducts__btnAdd{
         display: block;
     }
 
-    .headerProducts__btnAgregarAlternative{
+    .headerProducts__btnAddAlternative{
         display: none;
     }
 
-    .header__search-container{
+    .headerProducts__search-container{
         width: 280px;
     }
-    .header__search-container input:placeholder{
+    .headerProducts__search-container input:placeholder{
         display: block;
     }
 }
 
 @media (min-width: 501px){
-    .header__search-container{
+    .headerProducts__search-container{
         width: 280px;
     }
 
