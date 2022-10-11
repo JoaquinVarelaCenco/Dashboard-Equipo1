@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import leftArrow from '../../assets/images/chevron-right (1).svg';
+import { deleteProductFunction } from '../../utils/product';
 import Button from '../Button/Button';
 import './HeaderEditAddProduct.css'
 
@@ -11,10 +13,13 @@ const HeaderEditAddProduct = ({productContent, editProduct}) => {
           </div>
           {editProduct?
             <div className="headerEditProduct__btnDeleteContainer">
-            <Button 
-              classN={"headerEditProduct__btnDelete"}
-              title={"ELIMINAR"}
-            />
+              <Link to={"/products"}>
+                <Button 
+                  classN={"headerEditProduct__btnDelete"}
+                  title={"ELIMINAR"}
+                  click={()=>deleteProductFunction(productContent)}
+                />
+              </Link>
           </div>
           :
           ""  
@@ -22,5 +27,6 @@ const HeaderEditAddProduct = ({productContent, editProduct}) => {
     </>
   )
 }
+
 
 export default HeaderEditAddProduct

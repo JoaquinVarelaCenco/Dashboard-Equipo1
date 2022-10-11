@@ -26,19 +26,6 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
 
   return product ? (
     <div className="product-new">
-      <div className="product-new__nav">
-        {productId ? (
-          <>
-            <h2>Productos - #{productId}</h2>
-            <Button
-              title={"Eliminar"}
-              click={handleDeleteProd}
-            ></Button>
-          </>
-        ) : (
-          <h2>Productos - Nuevo Producto</h2>
-        )}
-      </div>
 
       {productId ? (
         <div className="product-new__view-card">
