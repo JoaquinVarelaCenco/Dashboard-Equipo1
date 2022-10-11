@@ -1,73 +1,71 @@
 /* code css */
-.header{
-    position: fixed;
-    width: 100%;
-    height: 72px;
-    display: flex;
-    padding: 0 10px;
-    opacity: .965;
-    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
-    z-index: 100;
-    min-width: 300px;
+.header {
+  position: fixed;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  padding: 0 10px;
+  opacity: 0.965;
+  box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
+  z-index: 100;
+  min-width: 300px;
 }
 
-.header .displayFlex{
-    display: flex;
+.header .displayFlex {
+  display: flex;
 }
 
-.header .displayNone{
-    display: none;
+.header .displayNone {
+  display: none;
 }
 
-.headerGeneric{
-    display: flex;
+.headerGeneric {
+  display: flex;
 }
 
-.headerGeneric button{
-    background: none;
-    border: none;
+.headerGeneric button {
+  background: none;
+  border: none;
 }
 
-.title{
-    align-self: center;
+.title {
+  align-self: center;
 }
 
-.title a{
-    text-decoration: none;
-    color: inherit
+.title a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.title h2{
-    font-weight:500;
+.title h2 {
+  font-weight: 500;
 }
 
 /* Inicio mediaqueries */
-.header__menu-hamburguesa{
-    margin-top: 22px;
-    height: 32px;
-    width: 32px;
-    padding-right: 20px;
+.header__menu-hamburguesa {
+  margin-top: 22px;
+  height: 32px;
+  width: 32px;
+  padding-right: 20px;
 }
 
+@media (min-width: 1025px) {
+  .header {
+    width: calc(100% - 296px);
+  }
 
-@media (min-width: 1025px){
-    .header{
-        width: calc(100% - 296px);
-    }
-    
-    .header__menu-hamburguesa{
-        display: none;
-    }
-
+  .header__menu-hamburguesa {
+    display: none;
+  }
 }
 
 /* Dark Mode */
 
 .dark .headerEditProduct img,
 .dark .header__menu-hamburguesa {
-    filter: invert();
+  filter: invert();
 }
 
-.dark .headerBtn{
-    border: none;
+.dark .headerBtn {
+  border: none;
 }
