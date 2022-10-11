@@ -5,15 +5,17 @@
     justify-content: center;
     text-align: center;
     gap: 15px;
-    height: calc(100vh - 72px);
+    min-height: calc(100vh - 72px);
+    margin-top: 72px;
+    height: 100vh;
     width: 100%;
-    /* color: rgb(199, 199, 199); */
 }
 
 .noImplemented h3{
-    font-size: 70px;
+    font-size: 4.5rem;
     text-transform: uppercase;
 }
+
 .noImplemented h3 span{
     display: block;
 }
@@ -42,21 +44,24 @@
     transition: width 0.25s;
     border-radius: 5px;
     animation-name: loopProgress;
-    animation-duration: 4s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes loopProgress {
     0%{
-        width: 0%;
+        width: 10%;
+    }
+    70%{
+        opacity: 1;
     }
 
     100%{
-        width: 100%;
+        width: 90%;
+        opacity: .2;
     }
 }
-
-
 
 .noImplemented button{
     background-color: #5b5d5d ;
@@ -67,4 +72,21 @@
     margin: 0 6px;
     border-radius: 15px;
     min-width: 150px;
+}
+
+@media ( max-width:560px){
+    .noImplemented h3{
+        font-size: 3rem;
+    }
+
+    .noImplemented p{
+        font-size: 20px;
+    }
+}
+
+@media ( max-width:360px){
+    .noImplemented h3{
+        font-size: 2rem;
+    }
+
 }

@@ -22,6 +22,10 @@
   background-color: var(--dark-Background);
 }
 
+a{
+  text-decoration: none;
+}
+
 /* DarkMode */
 
 .dark{
