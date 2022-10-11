@@ -20,7 +20,7 @@ function WarningMessage({ text, search }) {
         </>
       ) : (
         <>
-          {/* <img src={retryImage} className="textMessageContainer__img" alt="" /> */}
+          <img src={"https://cdn0.iconfinder.com/data/icons/seo-marketing-line-vol-7/52/warning__alert__danger__Error__oops__clod__datastorage-512.png"} className="textMessageContainer__img" alt="" />
           <div className="textMessageContainer__container">
             <p className="textMessageContainer__container__text">{text}</p>
           </div>

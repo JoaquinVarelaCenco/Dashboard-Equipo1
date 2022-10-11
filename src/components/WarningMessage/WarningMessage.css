@@ -4,6 +4,7 @@
   background-color: var(--clear-BlackLight);
   margin: 30px auto;
   border-radius: 5px;
+  /* min-width: 200px; */
 }
 
 .textMessageContainer__container {
