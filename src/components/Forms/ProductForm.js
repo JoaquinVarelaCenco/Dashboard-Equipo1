@@ -2,11 +2,13 @@ import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
 import Button from "../Button/Button";
-import noImage from '../../assets/images/no-image.jpeg'
-import "./ProductForm.css";
+import profilePic from "../../assets/images/ProfilePic.png";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
   const { product, resetCamps, resetForm } = useContext(ProductContext);
+  const { theme } = useContext(ThemeContext);
 
   const {
     handleInputChange,
@@ -21,20 +23,39 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
     };
   }, []);
 
-
   return product ? (
     <div className="product-new">
-
       {productId ? (
         <div className="product-new__view-card">
-          <img src={product.images[0]===undefined ? noImage : product.images[0]} alt="imagen producto" />
+          <img
+            src={product.images[0] === undefined ? noImage : product.images[0]}
+            alt="imagen producto"
+          />
           <div className="product-new__view-card__content">
             <h2>{product.title}</h2>
             <div className="product-new__view-card__info">
-             <div > <p>{product.price}</p>
-              <span>PUNTOS SUPERCLUB</span></div>
-             <div> <p>{product.stock}</p>
-              <span>STOCK DISPONIBLE</span> </div>
+              <div>
+                {" "}
+                <p>{product.price}</p>
+                <span>PUNTOS SUPERCLUB</span>
+              </div>
+              <div>
+                {" "}
+                <p>{product.stock}</p>
+                <span>STOCK DISPONIBLE</span>{" "}
+              </div>
+              <div className="profile-container">
+                <Link to={"/stores"} className={`eachLink-view ${theme}`}>
+                  <Button classN={"user-button-view"}>
+                    <div className="user-button__profile-view">
+                      <img className="user-img-view" src={profilePic} />
+                    </div>
+                    <div>
+                      <p className="user-name-view">Olivia store</p>
+                    </div>
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -65,19 +86,19 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         />
         <p className="product-new__input-title">Stock</p>
         <div className="product-new-form__stock">
-            <Button 
-              click={() => handleInputChangeStock("-")}
-              type={"button"}
-              title={"-"}
-              classN={"noHoverEffect"}
-            />
+          <Button
+            click={() => handleInputChangeStock("-")}
+            type={"button"}
+            title={"-"}
+            classN={"noHoverEffect"}
+          />
           <span>{product.stock}</span>
-            <Button 
-              click={() => handleInputChangeStock("+")}
-              type={"button"}
-              title={"+"}
-              classN={"noHoverEffect"}
-            />
+          <Button
+            click={() => handleInputChangeStock("+")}
+            type={"button"}
+            title={"+"}
+            classN={"noHoverEffect"}
+          />
         </div>
 
         <p className="product-new__input-title">Descripcion</p>
@@ -123,7 +144,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         <p className="product-new__input-title">Nueva imagen</p>
         <div className="prueba">
           <input type="text" name="image" id="input-img-add" />
-          <Button 
+          <Button
             title={"Cargar"}
             click={() => handleAddImage()}
             type="button"
@@ -147,21 +168,11 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         })}
         <div className="product-new__action">
           {productId ? (
-            <Button 
-              type={"submit"}
-              title={"Editar"}
-            />
+            <Button type={"submit"} title={"Editar"} />
           ) : (
-            <Button 
-              type={"submit"}
-              title={"Crear"}
-            />
+            <Button type={"submit"} title={"Crear"} />
           )}
-            <Button 
-              type={"reset"}
-              title={"Cancelar"}
-              click={resetCamps}
-            />
+          <Button type={"reset"} title={"Cancelar"} click={resetCamps} />
         </div>
       </form>
     </div>
