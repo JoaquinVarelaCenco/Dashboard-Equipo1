@@ -33,7 +33,7 @@ function ProductUpdate() {
 
   function handleSubmit(product) {
     updateProduct(product).then((res) => {
-      console.log(res);
+      
     });
     navigate("/products");
   }

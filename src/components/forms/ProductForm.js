@@ -20,9 +20,6 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(product);
-  }, [product]);
 
   return product ? (
     <div className="product-new">
