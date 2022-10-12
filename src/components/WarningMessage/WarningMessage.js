@@ -3,7 +3,6 @@ import "./WarningMessage.css";
 import retryImage from "../../assets/images/Retry-image.png";
 
 function WarningMessage({ text, search }) {
-  console.log("Hola");
 
   return (
     <div className="textMessageContainer">
