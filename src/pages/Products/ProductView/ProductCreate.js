@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { newProduct } from "../../../services/apiServices";
-import ProductForm from "../../../components/forms/ProductForm";
+import ProductForm from "../../../components/Forms/ProductForm";
 
 function ProductView() {
   const navigate = useNavigate();

@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProductById, updateProduct } from "../../../services/apiServices";
-import ProductForm from "../../../components/forms/ProductForm";
-import { deleteProduct } from "../../../services/apiServices";
+import ProductForm from "../../../components/Forms/ProductForm";
 import { ProductContext } from "../../../context/ProductContext";
 import { deleteProductFunction } from "../../../utils/product";
 

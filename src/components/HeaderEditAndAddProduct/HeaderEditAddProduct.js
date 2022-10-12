@@ -4,7 +4,7 @@ import { deleteProductFunction } from '../../utils/product';
 import Button from '../Button/Button';
 import './HeaderEditAddProduct.css'
 
-const HeaderEditAddProduct = ({productContent, editProduct}) => {
+const HeaderEditAddProduct = ({productContent, editProduct, id}) => {
   return (
     <>
           <div className="headerEditProduct">
@@ -17,7 +17,7 @@ const HeaderEditAddProduct = ({productContent, editProduct}) => {
                 <Button 
                   classN={"headerEditProduct__btnDelete"}
                   title={"ELIMINAR"}
-                  click={()=>deleteProductFunction(productContent)}
+                  click={()=>deleteProductFunction(id)}
                 />
               </Link>
           </div>

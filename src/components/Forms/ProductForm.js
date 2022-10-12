@@ -3,6 +3,7 @@ import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
 import Button from "../Button/Button";
 import "./ProductForm.css";
+import noImage from '../../assets/images/no-image.jpeg'
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
   const { product, resetCamps, resetForm } = useContext(ProductContext);
@@ -26,14 +27,14 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
 
       {productId ? (
         <div className="product-new__view-card">
-          <img src={product.images[0]} alt="imagen producto" />
+          <img src={product.images[0]===undefined ? noImage : product.images[0]} alt="imagen producto" />
           <div className="product-new__view-card__content">
             <h2>{product.title}</h2>
             <div className="product-new__view-card__info">
-              <p>{product.price}</p>
-              <span>PUNTOS SUPERCLUB</span>
-              <p>{product.stock}</p>
-              <span>STOCK DISPONIBLE</span>
+             <div > <p>{product.price}</p>
+              <span>PUNTOS SUPERCLUB</span></div>
+             <div> <p>{product.stock}</p>
+              <span>STOCK DISPONIBLE</span> </div>
             </div>
           </div>
         </div>

@@ -1,16 +1,16 @@
 import "./Header.css";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from "react-router-dom";
 import menuImage from "../../assets/images/menu.svg";
-import { SideBarContext, SideBarProvider } from "../../context/SideBarContext";
+import { SideBarContext } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
 import Button from "../Button/Button";
 
 const Header = () => {
-  let buttonMenu = useRef();
+  let buttonMenu = useRef("");
 
   //Contextos : tema - page
   const { theme } = useContext(ThemeContext);
@@ -31,7 +31,7 @@ const Header = () => {
 
   //Lógica para establecer el pathname en que nos encontramos
   if (page === "/products") {
-    pageTitle = "Products";
+    pageTitle = "Productos";
     titleLink =page;
   } else if (page.includes("/stores")) {
     pageTitle = "Tiendas";
@@ -53,8 +53,8 @@ const Header = () => {
 
         <Button 
           click={() => {toggleVisibility()}}
-          classN={"header__hamburguer-menu-btn"}
-          ref={buttonMenu}
+          classN={"header__hamburguer-menu-btn noHoverEffect"}
+          reference={buttonMenu}
         >
           <img
             src={menuImage}
@@ -72,7 +72,7 @@ const Header = () => {
       ) : page === "/products/new" ? (
         <HeaderEditAddProduct productContent="Nuevo Producto" editProduct={false}/>
       ) : page.includes("/products/") ? (
-        <HeaderEditAddProduct productContent={id} editProduct={true}/>
+        <HeaderEditAddProduct productContent={productId} editProduct={true} id={id}/>
       ) : (
         ""
       )}

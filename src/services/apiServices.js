@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/api/";
+const url = "http://localhost:5000/api/";
 const getProducts = () => {
   return fetch(`${url}product`).then((res) => res.json())
 };

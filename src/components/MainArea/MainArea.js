@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./MainArea.css";
-import Header from "../header/Header"
+import Header from "../Header/Header"
 import { ThemeContext } from "../../context/ThemeContext";
 import AppRouter from "../../routes/AppRouter";
 import { SideBarContext } from "../../context/SideBarContext";
