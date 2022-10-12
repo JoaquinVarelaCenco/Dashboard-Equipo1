@@ -8,6 +8,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
 import Button from "../Button/Button";
+import { pathName } from "../../utils/pathName";
 
 const Header = () => {
   let buttonMenu = useRef("");
@@ -23,28 +24,11 @@ const Header = () => {
     currentPage(location.pathname);
     currentTitleContainer("displayFlex")
   }, [location]);
-  
-  let pageTitle = "¡Hola Olivia!";
-  let productId = "";
-  let titleLink = "/home";
-  let id =0
 
-  //Lógica para establecer el pathname en que nos encontramos
-  if (page === "/products") {
-    pageTitle = "Productos";
-    titleLink =page;
-  } else if (page.includes("/stores")) {
-    pageTitle = "Tiendas";
-    titleLink =page;
-  } else if (page === "/products/new") {
-    pageTitle = "Productos";
-    titleLink ="/products";
-  } else if (page.includes("/products/")) {
-    pageTitle = "Productos";
-    titleLink ="/products";
-    productId = "#" + location.pathname.split("/")[2];
-    id = location.pathname.split("/")[2];
-  }
+
+  const [pageTitle, titleLink] = pathName(page);
+  let productId = "#" + location.pathname.split("/")[2];
+  let id = location.pathname.split("/")[2];
 
   return (
     <div className={`header ${theme}`}>
