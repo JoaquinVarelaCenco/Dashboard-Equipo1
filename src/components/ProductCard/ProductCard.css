@@ -1,0 +1,117 @@
+/* TARJETA */
+
+.main-product__related-product-card {
+    display: flex;
+    border-radius: 16px;
+    background-color: var(--clear-Background);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+  }
+  
+.main-product__imageAndDesc{
+  display: flex;
+}
+
+  .section-article__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+  }
+  
+  .main-product__related-product-card img {
+    height: 65px;
+    width: 80px;
+    border-radius: 16px;
+  }
+  
+  .section-article__desc {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    align-self: center;
+    gap: 10px;
+  }
+  
+  .desc {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .desc p {
+    margin-top: 0;
+    padding-top: 0;
+    text-align: left;
+  }
+  
+  .section-article__price {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+  }
+  
+  .section-article__price p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .puntos {
+    font-size: 8px;
+    font-weight: 300;
+  }
+  
+  .button{
+  width: 100%;
+  }
+  
+  .main-product__related-product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+
+  .section-article__goToProduct{
+    display: flex;
+    align-self: center;
+    padding-right: 15px;
+  }
+
+  .section-article__goToProduct img{
+    width: 40px;
+  }
+
+  .product-card-link{
+    text-decoration: none;
+    color: black;
+  }
+
+/* DarkMode */
+
+.dark .main-product__related-product-card {
+  background-color: #3c3c3c;
+  color: var(--dark-Color);
+  box-shadow: 0px 2px 2px rgba(117, 117, 117, 0.35);
+}
+
+.dark .section-article__goToProduct img{
+  filter: invert();
+}
+
+.section-article__image .hideImage, .section-article__image .hideSpinner{
+  display: none;
+}
+
+.section-article__image .showImage, .section-article__image .showImage{
+  display: block;
+}
+
+.spinnerWrapper{
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+   

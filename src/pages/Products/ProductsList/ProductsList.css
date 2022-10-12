@@ -1,0 +1,14 @@
+.productList__container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px auto;
+    padding: 7px;
+    text-align: center;
+}
+
+
+.productList__spinner-container{
+   margin-top: 150px;
+}
+

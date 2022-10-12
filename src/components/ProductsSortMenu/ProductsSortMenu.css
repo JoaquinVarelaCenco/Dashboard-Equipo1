@@ -1,0 +1,29 @@
+.productList__container__sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productList__container__sort i{
+    font-size: 13px;
+    font-style: normal;
+  }
+
+.select-control-products{
+    background: transparent;
+    border: none;
+    padding: 0 0 0 5px;
+    outline: none;
+    font-size: 12px;
+}
+
+.dark .select-control-products{
+    background: transparent;
+}
+
+@media (max-width: 500px) {
+
+    .productList__container__sort-filter i{
+        display: none;
+      }
+}
