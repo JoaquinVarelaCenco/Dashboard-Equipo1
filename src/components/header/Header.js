@@ -27,6 +27,7 @@ const Header = () => {
   let pageTitle = "¡Hola Olivia!";
   let productId = "";
   let titleLink = "/home";
+  let id =0
 
   //Lógica para establecer el pathname en que nos encontramos
   if (page === "/products") {
@@ -42,6 +43,7 @@ const Header = () => {
     pageTitle = "Productos";
     titleLink ="/products";
     productId = "#" + location.pathname.split("/")[2];
+    id = location.pathname.split("/")[2];
   }
 
   return (
@@ -70,7 +72,7 @@ const Header = () => {
       ) : page === "/products/new" ? (
         <HeaderEditAddProduct productContent="Nuevo Producto" editProduct={false}/>
       ) : page.includes("/products/") ? (
-        <HeaderEditAddProduct productContent={productId} editProduct={true}/>
+        <HeaderEditAddProduct productContent={id} editProduct={true}/>
       ) : (
         ""
       )}

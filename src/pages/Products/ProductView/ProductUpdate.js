@@ -4,6 +4,7 @@ import { getProductById, updateProduct } from "../../../services/apiServices";
 import ProductForm from "../../../components/forms/ProductForm";
 import { deleteProduct } from "../../../services/apiServices";
 import { ProductContext } from "../../../context/ProductContext";
+import { deleteProductFunction } from "../../../utils/product";
 
 function ProductUpdate() {
   let productId = useParams().id;
@@ -27,9 +28,7 @@ function ProductUpdate() {
   }, [productId]);
 
   function handleDeleteProd() {
-    deleteProduct(productId).then((res) => {
-      navigate("/products");
-    });
+    deleteProductFunction(productId);
   }
 
   function handleSubmit(product) {

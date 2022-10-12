@@ -23,19 +23,6 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
 
   return product ? (
     <div className="product-new">
-      <div className="product-new__nav">
-        {productId ? (
-          <>
-            <h2>Productos - #{productId}</h2>
-            <Button
-              title={"Eliminar"}
-              click={handleDeleteProd}
-            ></Button>
-          </>
-        ) : (
-          <h2>Productos - Nuevo Producto</h2>
-        )}
-      </div>
 
       {productId ? (
         <div className="product-new__view-card">
@@ -81,12 +68,14 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
               click={() => handleInputChangeStock("-")}
               type={"button"}
               title={"-"}
+              classN={"noHoverEffect"}
             />
           <span>{product.stock}</span>
             <Button 
               click={() => handleInputChangeStock("+")}
               type={"button"}
               title={"+"}
+              classN={"noHoverEffect"}
             />
         </div>
 
@@ -134,7 +123,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
         <div className="prueba">
           <input type="text" name="image" id="input-img-add" />
           <Button 
-            title={"Add"}
+            title={"Cargar"}
             click={() => handleAddImage()}
             type="button"
           />
