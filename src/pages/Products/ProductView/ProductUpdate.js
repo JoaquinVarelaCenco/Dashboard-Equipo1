@@ -28,14 +28,13 @@ function ProductUpdate() {
 
   function handleDeleteProd() {
     deleteProduct(productId).then((res) => {
-      console.log(res);
       navigate("/products");
     });
   }
 
   function handleSubmit(product) {
     updateProduct(product).then((res) => {
-      console.log(res);
+      
     });
     navigate("/products");
   }

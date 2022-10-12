@@ -8,7 +8,6 @@ function ProductView() {
 
   function handleSubmit(product) {
     newProduct(product).then((res) => {
-      console.log(res);
     });
     navigate("/products");
   }
