@@ -2,9 +2,12 @@ import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
 import Button from "../Button/Button";
-import profilePic from "../../assets/images/ProfilePic.png";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext";
+import profilePic from "../../assets/images/ProfilePic.png";
+import noImage from '../../assets/images/no-image.jpeg'
+import "./ProductForm.css";
+
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
   const { product, resetCamps, resetForm } = useContext(ProductContext);
