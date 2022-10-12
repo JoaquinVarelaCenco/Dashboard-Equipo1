@@ -13,6 +13,9 @@ h1 {
   margin-left: 10px;
   min-width: 80px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
 }
 
 .product-new__form {
@@ -133,7 +136,7 @@ textarea {
 .product-new__view-card {
   border-radius: 16px;
   padding: 5px;
-  max-width: 500px;
+  max-width: 700px;
   display: flex;
   align-items: center;
   box-shadow: 0 0 6px var(--clear-BlackLight, 0.75%);
@@ -165,11 +168,30 @@ textarea {
   min-width: 40px;
 }
 
+.product-new__view-card__info button p {
+  font-size: 16px;
+  font-weight: normal;
+}
+
 .product-new__view-card__info div span {
   min-width: 40px;
 }
 
-@media (min-width:500px){
+.profile-container{
+  font-size: 16px;
+  display: flex;
+}
+
+.user-button__profile-view{
+height: 20px;
+}
+
+.user-button__profile-view img{
+height: 20px;
+width: 20px;
+}
+
+@media (min-width:585px){
   .product-new__view-card__info {
     display: flex;
     flex-direction: row;
