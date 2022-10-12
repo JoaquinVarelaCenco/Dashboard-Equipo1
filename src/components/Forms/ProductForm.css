@@ -13,9 +13,6 @@ h1 {
   margin-left: 10px;
   min-width: 80px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-size: 10px;
 }
 
 .product-new__form {
@@ -73,6 +70,12 @@ textarea {
   border: none;
   margin-left: 0px;
   min-width: 0px;
+}
+
+.user-button-view{
+  display: flex;
+  align-items: center;
+  font-size: 10px;
 }
 
 .clear .product-new-form__stock button{
