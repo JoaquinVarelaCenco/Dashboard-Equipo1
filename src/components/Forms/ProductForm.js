@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/ProductContext";
 import useForm from "../../hooks/UseForm";
 import Button from "../Button/Button";
-import "./ProductForm.css";
 import noImage from '../../assets/images/no-image.jpeg'
+import "./ProductForm.css";
 
 const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
   const { product, resetCamps, resetForm } = useContext(ProductContext);

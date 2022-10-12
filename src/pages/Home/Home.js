@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../services/apiServices';
+import { sortByCount, sortByStock } from '../../utils/product';
 import HomeCard from '../../components/HomeCard/HomeCard';
-
-import './Home.css'
 import box from '../../assets/images/package-variant-closed.svg';
 import store from '../../assets/images/store.svg';
 import ChartBar from '../../components/ChartBar/ChartBar';
 import PieCharts from '../../components/ChartPie/ChartPie';
-import { sortByCount, sortByStock } from '../../utils/product';
+import './Home.css'
+
 
 const Home = () => {
 

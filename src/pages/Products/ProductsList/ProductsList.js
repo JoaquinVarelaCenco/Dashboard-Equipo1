@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
+import { SearchContext } from "../../../context/SearchContext";
 import ProductCard from "../../../components/ProductCard/ProductCard";
-import "./ProductsList.css";
 import Spinner from "../../../components/Spinner/Spinner";
 import WarningMessage from "../../../components/WarningMessage/WarningMessage";
-import { SearchContext } from "../../../context/SearchContext";
 import ProductsSortMenu from "../../../components/ProductsSortMenu/ProductsSortMenu";
+import "./ProductsList.css";
 
 const ProductsList = () => {
   const context = useContext(SearchContext);

@@ -1,14 +1,14 @@
-import "./Header.css";
 import { useContext, useEffect, useRef } from "react";
 import { HeaderContext } from "../../context/HeaderContext";
 import { useLocation, Link } from "react-router-dom";
-import menuImage from "../../assets/images/menu.svg";
 import { SideBarContext } from "../../context/SideBarContext";
 import { ThemeContext } from "../../context/ThemeContext";
+import { pathName } from "../../utils/pathName";
 import HeaderProducts from "../HeaderProducts/HeaderProducts";
+import menuImage from "../../assets/images/menu.svg";
 import HeaderEditAddProduct from "../HeaderEditAndAddProduct/HeaderEditAddProduct";
 import Button from "../Button/Button";
-import { pathName } from "../../utils/pathName";
+import "./Header.css";
 
 const Header = () => {
   let buttonMenu = useRef("");
