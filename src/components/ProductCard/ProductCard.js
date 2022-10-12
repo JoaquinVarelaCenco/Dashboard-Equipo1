@@ -50,7 +50,6 @@ const ProductCard = ({ title, price, image, id }) => {
       </div>
     </article>
     </Link>
-    //subir bot
   );
 };
 

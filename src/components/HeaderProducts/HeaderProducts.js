@@ -33,7 +33,6 @@ const HeaderProducts = () => {
     const handleResize = () => {
       closeSearchInput();
       if (widthScreen > 500) {
-        // inputSearch.current.style.width = "280px";
         setStyleCloseSearchAnimation("");
       }
     };

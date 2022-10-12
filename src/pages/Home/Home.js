@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../services/apiServices';
+import { sortByCount, sortByStock } from '../../utils/product';
 import HomeCard from '../../components/HomeCard/HomeCard';
-
-import './Home.css'
 import box from '../../assets/images/package-variant-closed.svg';
 import store from '../../assets/images/store.svg';
 import ChartBar from '../../components/ChartBar/ChartBar';
 import PieCharts from '../../components/ChartPie/ChartPie';
+import './Home.css'
+
 
 const Home = () => {
 
@@ -25,29 +26,9 @@ const Home = () => {
   }, [])
 
 
-  products.sort((a,b) =>{
-    if(a.rating.count < b.rating.count){
-      return 1;
-    }else  if(a.rating.count > b.rating.count){
-      return -1;
-    }else{
-      return 0;
-    }
-  });
+  const eightMostCount = sortByCount(products).slice(0,8);
 
-  const eightMostCount = products.slice(0,8);
-
-  products.sort((a,b) =>{
-    if(a.stock < b.stock){
-      return 1;
-    }else  if(a.stock > b.stock){
-      return -1;
-    }else{
-      return 0;
-    }
-  });
-
-  const eightMostStock = products.slice(0,8);
+  const eightMostStock = sortByStock(products).slice(0,8);
 
   return (
       <div className='home-container'>
