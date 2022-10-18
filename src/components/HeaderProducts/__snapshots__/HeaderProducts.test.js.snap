@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test header de productos Se debe renderizar header products 1`] = `
+<div>
+  <div
+    class="headerProducts"
+  >
+    <div
+      class="headerProducts__search-container   closeSearchBarAnimation "
+    >
+      <button
+        class="headerProducts-search-container__btnClose headerBtn hideComponent noHoverEffect"
+      >
+        X
+      </button>
+      <input
+        class="header__search  "
+        placeholder=""
+        type="text"
+      />
+      <button
+        class="headerProducts-search-container__btnSearch headerBtn noHoverEffect"
+      >
+        <img
+          alt="Lupa de busqueda"
+          class="headerProducts-search-container__btnImage"
+          src="magnify.svg"
+        />
+      </button>
+    </div>
+    <div
+      class="headerProducts-ContainerAdd"
+    >
+      <a
+        href="/products/new"
+      >
+        <button
+          class="headerProducts__btnAdd"
+        >
+          Agregar Producto
+        </button>
+      </a>
+    </div>
+    <div
+      class="headerProducts-ContainerAdd"
+    >
+      <a
+        href="/products/new"
+        style="display: block;"
+      >
+        <button
+          class="headerProducts__btnAddAlternative noHoverEffect"
+        >
+          +
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
