@@ -1,7 +1,6 @@
 import { render, screen, act } from "@testing-library/react";
 import Header from "./Header";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
-import { pathName } from "../../utils/pathName";
+import { MemoryRouter } from "react-router-dom";
 import { HeaderProvider } from "../../context/HeaderContext";
 
 

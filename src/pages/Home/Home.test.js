@@ -3,8 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 import Home from './Home.js'
 import { getProducts } from "../../services/apiServices";
 import productsData from '../../mockData/productsData'
-import HomeCard from "../../components/HomeCard/HomeCard";
-import { sortByCount, sortByStock } from "../../utils/product";
 
 
 
@@ -12,7 +10,7 @@ import { sortByCount, sortByStock } from "../../utils/product";
 jest.mock('../../services/apiServices');
 
 
-
+//mock para recharts - ResponsiveContainer necesita tener un ancho
 jest.mock('recharts', () => {
   const OriginalModule = jest.requireActual('recharts');
 
@@ -28,12 +26,12 @@ jest.mock('recharts', () => {
 
 
 let component;
-let productos
+let products;
 
-describe("Test para la vista Home", () => {
+describe("Tests para la vista Home", () => {
 
   beforeEach( async()=>{
-    productos = await getProducts.mockResolvedValue([...productsData ])
+    products = await getProducts.mockResolvedValue([...productsData ])
 
     await act( async ()=>{
       component = render(<Home />, { wrapper: BrowserRouter })
@@ -41,14 +39,20 @@ describe("Test para la vista Home", () => {
   })
 
 
-  it('Test vacio para prueba', ()=>{
-
-  })
-  
-  
-  it("Se renderiza correctamente", async () => {
+  it("La vista debe renderizarse correctamente", async () => {
     const { container } = component;
 
     expect(container).toMatchSnapshot()
   });
+
+
+  it("Se deben renderizar dos componentes HomeCard", ()=>{
+
+    const imagesInView = screen.getAllByRole('img', name="Icono de Card");
+
+    expect(imagesInView.length).toBe(2);
+    
+  })
+
+
 });

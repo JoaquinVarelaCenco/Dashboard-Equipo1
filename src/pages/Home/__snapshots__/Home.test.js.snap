@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test para la vista Home Se renderiza correctamente 1`] = `
+exports[`Tests para la vista Home La vista debe renderizarse correctamente 1`] = `
 <div>
   <div
     class="home-container"
@@ -15,6 +15,7 @@ exports[`Test para la vista Home Se renderiza correctamente 1`] = `
           class="itemRow__count"
         >
           <img
+            alt="Icono de Card"
             src="package-variant-closed.svg"
           />
           <p>
@@ -51,6 +52,7 @@ exports[`Test para la vista Home Se renderiza correctamente 1`] = `
           class="itemRow__count"
         >
           <img
+            alt="Icono de Card"
             src="store.svg"
           />
           <p>

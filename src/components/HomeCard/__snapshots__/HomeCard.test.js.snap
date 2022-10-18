@@ -9,6 +9,7 @@ exports[`Test formulario de productos El componente debe renderizarse correctame
       class="itemRow__count"
     >
       <img
+        alt="Icono de Card"
         src="as"
       />
       <p>
