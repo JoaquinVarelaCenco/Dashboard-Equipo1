@@ -37,7 +37,13 @@ describe("Test formulario de productos", ()=>{
     test("La cantidad de productos se debe renderizar correctamente",async ()=>{
         getProducts.mockResolvedValue({ json: () => new Promise(resolve => resolve({ ...productsData }) )})
         await act(async ()=> {
-            component = render(<Home/>, { wrapper: BrowserRouter })
+            component = render(<HomeProduct
+                title={"Productos"}
+                linkBtnList= {"/products"}
+                textBtnAdd = {"Agregar Producto"}
+                linkBtnAdd = {"/products/new"}
+                img = {"as"}
+            />, { wrapper: BrowserRouter })
         })
     })
 
