@@ -1,6 +1,7 @@
 button{
     border: none;
     position: relative;
+    cursor: pointer;
 }
 
 button{

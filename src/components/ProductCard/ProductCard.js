@@ -1,5 +1,5 @@
 import "./ProductCard.css";
-import leftArrow from '../../assets/images/chevron-right (1).svg'
+import leftArrow from '../../assets/images/chevron-right.svg'
 import { Link } from "react-router-dom";
 import Spinner from '../Spinner/Spinner';
 import { useState } from "react";

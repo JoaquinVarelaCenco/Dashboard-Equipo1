@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import leftArrow from '../../assets/images/chevron-right (1).svg';
+import leftArrow from '../../assets/images/chevron-right.svg';
 import { deleteProductFunction } from '../../utils/product';
 import Button from '../Button/Button';
 import './HeaderEditAddProduct.css'

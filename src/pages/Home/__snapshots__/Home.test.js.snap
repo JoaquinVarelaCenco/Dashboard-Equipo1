@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test para la vista Home Se renderiza correctamente 1`] = `
+<div>
+  <div
+    class="home-container"
+  >
+    <div
+      class="home-cards"
+    >
+      <div
+        class="itemRow"
+      >
+        <div
+          class="itemRow__count"
+        >
+          <img
+            src="package-variant-closed.svg"
+          />
+          <p>
+            <strong>
+              5
+            </strong>
+             
+            Productos
+          </p>
+        </div>
+        <div
+          class="itemRow__buttons"
+        >
+          <a
+            href="/products"
+          >
+            <button>
+              Ver listado
+            </button>
+          </a>
+          <a
+            href="/products/new"
+          >
+            <button>
+              Agregar Producto
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="itemRow"
+      >
+        <div
+          class="itemRow__count"
+        >
+          <img
+            src="store.svg"
+          />
+          <p>
+            <strong>
+              12
+            </strong>
+             
+            Tiendas
+          </p>
+        </div>
+        <div
+          class="itemRow__buttons"
+        >
+          <a
+            href="/stores"
+          >
+            <button>
+              Ver listado
+            </button>
+          </a>
+          <a
+            href="/stores/new"
+          >
+            <button>
+              Agregar Tiendas
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

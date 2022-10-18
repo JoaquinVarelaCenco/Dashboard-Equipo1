@@ -13,7 +13,8 @@ let component;
 describe("Test formulario de productos", ()=>{
 
     beforeEach( async()=>{
-            await getProducts.mockResolvedValue({ json: () => new Promise(resolve => resolve({ ...productsData }) )})
+
+            // await getProducts.mockResolvedValue({ json: () => new Promise(resolve => resolve({ ...productsData }) )})
             
             component = render(<HomeCard
                 count={productsData.length}
