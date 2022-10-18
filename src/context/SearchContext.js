@@ -96,10 +96,8 @@ export const SearchProvider = ({ children }) => {
     getAllProducts();
   }, []);
 
-  return (
-    <SearchContext.Provider
-      value={{
-        handleSearch,
+  const value = {
+    handleSearch,
         products,
         productsExist,
         getAllProducts,
@@ -107,7 +105,10 @@ export const SearchProvider = ({ children }) => {
         searchTermValue,
         orderBy,
         orderProducts,
-      }}
+  }
+  return (
+    <SearchContext.Provider
+      value={value}
     >
       {children}
     </SearchContext.Provider>

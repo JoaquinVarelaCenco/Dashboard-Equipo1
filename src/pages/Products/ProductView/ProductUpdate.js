@@ -12,20 +12,22 @@ function ProductUpdate() {
 
   useEffect(() => {
     if (productId) {
-      getProductById(productId).then((res) => {
-        if (res.status === 404) {
-          alert("Producto no encontrado");
-          navigate("/");
-        }
-        delete res.isActive;
-        delete res.lastModified;
-        delete res.createdAt;
-        currentProduct(res);
-        currentLastProduct(res);
-      });
-    }
-  }, [productId]);
+      getProductById(productId)
+        .then((res) => {
+          if (res.status === 404) {
+            alert("Producto no encontrado");
+            navigate("/");
+          }
+          delete res.isActive;
+          delete res.lastModified;
+          delete res.createdAt;
+          currentProduct(res);
+          currentLastProduct(res);
 
+        });
+      }
+    }, [productId]);
+    
   function handleDeleteProd() {
     deleteProductFunction(productId);
   }

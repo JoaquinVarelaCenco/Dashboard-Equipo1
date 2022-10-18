@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test formulario de productos Se debe renderiza correctamente 1`] = `
+<div>
+  <div
+    class="sideBar undefined undefined"
+  >
+    <div>
+      <img
+        class="sideBar__img-logo"
+        src="MiEcommerce.png"
+      />
+      <div
+        class="sideBar__Links"
+      >
+        <a
+          class="sideBar_eachLink undefined"
+          href="/home"
+        >
+           
+          <img
+            src="home.svg"
+          />
+          Inicio
+        </a>
+        <a
+          class="sideBar_eachLink undefined"
+          href="/products"
+        >
+           
+          <img
+            src="package-variant-closed.svg"
+          />
+          Productos
+        </a>
+        <a
+          class="sideBar_eachLink undefined"
+          href="/stores"
+        >
+           
+          <img
+            src="store.svg"
+          />
+          Tiendas
+        </a>
+      </div>
+    </div>
+    <div>
+      <label
+        class="switch"
+      >
+        <input
+          type="checkbox"
+        />
+        <span
+          class="slider round"
+        />
+      </label>
+      <a
+        class="sideBar_eachLink undefined"
+        href="/profile"
+      >
+        <button
+          class="sideBar__user-button"
+        >
+          <div
+            class="sideBar__user-button__profile"
+          >
+            <img
+              class="sideBar__user-img"
+              src="ProfilePic.png"
+            />
+          </div>
+          <div>
+            <p
+              class="sideBar__user-name"
+            >
+              Olivia
+            </p>
+          </div>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

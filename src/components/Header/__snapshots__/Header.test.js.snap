@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test formulario de productos El componente debe renderizarse correctamente 1`] = `
+<div>
+  <div
+    class="header undefined"
+  >
+    <div
+      class="headerGeneric displayFlex"
+    >
+      <button
+        class="header__hamburguer-menu-btn noHoverEffect"
+      >
+        <img
+          alt="Menú hamburguesa"
+          class="header__hamburguer-menu-img"
+          src="menu.svg"
+        />
+      </button>
+      <div
+        class="title"
+      >
+        <a
+          href="/home"
+        >
+          <h2>
+            ¡Hola Olivia!
+          </h2>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
