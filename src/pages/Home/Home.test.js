@@ -2,8 +2,7 @@ import { act, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Home from './Home.js'
 import { getProducts } from "../../services/apiServices";
-import productsData from '../../mockData/productsData'
-
+import mockData from '../../mockData/productsData'
 
 
 //mocks
@@ -31,7 +30,7 @@ let products;
 describe("Tests para la vista Home", () => {
 
   beforeEach( async()=>{
-    products = await getProducts.mockResolvedValue([...productsData ])
+    products = await getProducts.mockResolvedValue([...mockData ])
 
     await act( async ()=>{
       component = render(<Home />, { wrapper: BrowserRouter })
