@@ -1,10 +1,10 @@
 import { render, screen, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import React from "react";
 import { SearchContext } from "../../context/SearchContext";
 import HeaderProducts from './HeaderProducts';
 import {BrowserRouter} from 'react-router-dom'
 import { HeaderContext } from "../../context/HeaderContext";
-import userEvent from "@testing-library/user-event";
 import { WidthScreenContext } from "../../context/WidthScreenContext";
 
 
