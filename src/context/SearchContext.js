@@ -92,22 +92,24 @@ export const SearchProvider = ({ children }) => {
     }
   };
 
+  const value = {
+    handleSearch,
+    products,
+    productsExist,
+    getAllProducts,
+    helpProducts,
+    searchTermValue,
+    orderBy,
+    orderProducts,
+  };
+
   useEffect(() => {
     getAllProducts();
   }, []);
 
   return (
     <SearchContext.Provider
-      value={{
-        handleSearch,
-        products,
-        productsExist,
-        getAllProducts,
-        helpProducts,
-        searchTermValue,
-        orderBy,
-        orderProducts,
-      }}
+      value={value}
     >
       {children}
     </SearchContext.Provider>

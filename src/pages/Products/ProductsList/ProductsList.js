@@ -7,18 +7,23 @@ import ProductsSortMenu from "../../../components/ProductsSortMenu/ProductsSortM
 import "./ProductsList.css";
 
 const ProductsList = () => {
-  const context = useContext(SearchContext);
+  const {
+    products,
+    productsExist,
+    getAllProducts,
+    searchTermValue,
+  } = useContext(SearchContext);
 
   useEffect(() => {
-    context.getAllProducts();
+    getAllProducts();
   }, []);
-
+console.log(products);
   return (
     <div className="productList__container">
       <ProductsSortMenu/>
-      {context.productsExist ? (
-        context.products.length !== 0 ? (
-          context.products.map((p) => (
+      {productsExist ? (
+        products.length !== 0 ? (
+          products.map((p) => (
             
             <ProductCard
               title={p.title}
@@ -28,7 +33,7 @@ const ProductsList = () => {
               id={p.id}
             />
           ))
-        ) : context.searchTermValue !== "" && context.products.length === 0 ? (
+        ) : searchTermValue !== "" && products.length === 0 ? (
           <WarningMessage
             text="No hay productos que coincidan con tu busqueda"
             search={true}
