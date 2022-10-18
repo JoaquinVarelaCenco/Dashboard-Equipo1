@@ -116,7 +116,9 @@ exports[`Test formulario de productos Product update se renderiza correctamente 
         >
           -
         </button>
-        <span>
+        <span
+          data-testid="spanProdStock"
+        >
           34
         </span>
         <button
