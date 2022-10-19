@@ -23,6 +23,19 @@ jest.mock('recharts', () => {
   };
 });
 
+// jest.mock('recharts', () => {
+//   const OriginalRechartsModule = jest.requireActual('recharts');
+
+//   return {
+//     ...OriginalRechartsModule,
+//     ResponsiveContainer: ({ height, children }) => (
+//       <div className="recharts-responsive-container" style={{ width: 800, height }}>
+//         {children}
+//       </div>
+//     ),
+//   };
+// });
+
 
 let component;
 let products;
