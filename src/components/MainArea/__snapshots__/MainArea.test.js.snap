@@ -1,0 +1,468 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test formulario de productos renderiza el componente 1`] = `
+<div>
+  <div
+    class="mainArea undefined"
+  >
+    <div
+      class="header undefined"
+    >
+      <div
+        class="headerGeneric displayFlex"
+      >
+        <button
+          class="header__hamburguer-menu-btn noHoverEffect"
+        >
+          <img
+            alt="Menú hamburguesa"
+            class="header__hamburguer-menu-img"
+            src="menu.svg"
+          />
+        </button>
+        <div
+          class="title"
+        >
+          <a
+            href="/products"
+          >
+            <h2>
+              Productos
+            </h2>
+          </a>
+        </div>
+      </div>
+      <div
+        class="headerProducts"
+      >
+        <div
+          class="headerProducts__search-container   closeSearchBarAnimation "
+        >
+          <button
+            class="headerProducts-search-container__btnClose headerBtn hideComponent noHoverEffect"
+          >
+            X
+          </button>
+          <input
+            class="header__search  "
+            placeholder=""
+            type="text"
+          />
+          <button
+            class="headerProducts-search-container__btnSearch headerBtn noHoverEffect"
+          >
+            <img
+              alt="Lupa de busqueda"
+              class="headerProducts-search-container__btnImage"
+              src="magnify.svg"
+            />
+          </button>
+        </div>
+        <div
+          class="headerProducts-ContainerAdd"
+        >
+          <a
+            href="/products/new"
+          >
+            <button
+              class="headerProducts__btnAdd"
+            >
+              Agregar Producto
+            </button>
+          </a>
+        </div>
+        <div
+          class="headerProducts-ContainerAdd"
+        >
+          <a
+            href="/products/new"
+            style="display: block;"
+          >
+            <button
+              class="headerProducts__btnAddAlternative noHoverEffect"
+            >
+              +
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mainArea__content"
+    >
+      <div
+        class="productList__container"
+      >
+        <div
+          class="productList__container__sort"
+        >
+          <div>
+            <i>
+              Ordenar por
+            </i>
+            <select
+              class="select-control-products"
+              name="category"
+            >
+              <option
+                value="Mayor precio"
+              >
+                Mayor precio
+              </option>
+              <option
+                value="Menor precio"
+              >
+                Menor precio
+              </option>
+              <option
+                value="Mas relevantes"
+              >
+                Mas relevantes
+              </option>
+              <option
+                value="A-Z"
+              >
+                A-Z
+              </option>
+            </select>
+          </div>
+          <i>
+            5
+             resultados
+          </i>
+        </div>
+        <a
+          class="product-card-link"
+          href="/products/24"
+        >
+          <article
+            class="main-product__related-product-card"
+          >
+            <div
+              class="main-product__imageAndDesc"
+            >
+              <div
+                class="section-article__image"
+              >
+                <img
+                  alt="Imagen de producto"
+                  class="imagenPrincipal hideImage"
+                  src="https://dummyjson.com/image/i/products/24/1.jpg"
+                />
+                <div
+                  class="spinnerWrapper showSpinner"
+                >
+                  <div
+                    class="spinnerContainer"
+                  >
+                    <div
+                      class="lds-ripple"
+                    >
+                      <div />
+                      <div />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="section-article__desc"
+              >
+                <div
+                  class="desc"
+                >
+                  <p>
+                    cereals muesli fruit nuts
+                  </p>
+                </div>
+                <div
+                  class="section-article__price"
+                >
+                  <p
+                    class="valorNumerico"
+                    data-testid="id-product"
+                  >
+                    #
+                    24
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="section-article__goToProduct"
+            >
+              <img
+                alt=""
+                src="chevron-right-test.svg"
+              />
+            </div>
+          </article>
+        </a>
+        <a
+          class="product-card-link"
+          href="/products/23"
+        >
+          <article
+            class="main-product__related-product-card"
+          >
+            <div
+              class="main-product__imageAndDesc"
+            >
+              <div
+                class="section-article__image"
+              >
+                <img
+                  alt="Imagen de producto"
+                  class="imagenPrincipal hideImage"
+                  src="https://dummyjson.com/image/i/products/23/1.jpg"
+                />
+                <div
+                  class="spinnerWrapper showSpinner"
+                >
+                  <div
+                    class="spinnerContainer"
+                  >
+                    <div
+                      class="lds-ripple"
+                    >
+                      <div />
+                      <div />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="section-article__desc"
+              >
+                <div
+                  class="desc"
+                >
+                  <p>
+                    Orange Essence Food Flavou
+                  </p>
+                </div>
+                <div
+                  class="section-article__price"
+                >
+                  <p
+                    class="valorNumerico"
+                    data-testid="id-product"
+                  >
+                    #
+                    23
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="section-article__goToProduct"
+            >
+              <img
+                alt=""
+                src="chevron-right-test.svg"
+              />
+            </div>
+          </article>
+        </a>
+        <a
+          class="product-card-link"
+          href="/products/3"
+        >
+          <article
+            class="main-product__related-product-card"
+          >
+            <div
+              class="main-product__imageAndDesc"
+            >
+              <div
+                class="section-article__image"
+              >
+                <img
+                  alt="Imagen de producto"
+                  class="imagenPrincipal hideImage"
+                  src="no-image.jpeg"
+                />
+                <div
+                  class="spinnerWrapper showSpinner"
+                >
+                  <div
+                    class="spinnerContainer"
+                  >
+                    <div
+                      class="lds-ripple"
+                    >
+                      <div />
+                      <div />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="section-article__desc"
+              >
+                <div
+                  class="desc"
+                >
+                  <p>
+                    Samsung Universe 9
+                  </p>
+                </div>
+                <div
+                  class="section-article__price"
+                >
+                  <p
+                    class="valorNumerico"
+                    data-testid="id-product"
+                  >
+                    #
+                    3
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="section-article__goToProduct"
+            >
+              <img
+                alt=""
+                src="chevron-right-test.svg"
+              />
+            </div>
+          </article>
+        </a>
+        <a
+          class="product-card-link"
+          href="/products/25"
+        >
+          <article
+            class="main-product__related-product-card"
+          >
+            <div
+              class="main-product__imageAndDesc"
+            >
+              <div
+                class="section-article__image"
+              >
+                <img
+                  alt="Imagen de producto"
+                  class="imagenPrincipal hideImage"
+                  src="https://dummyjson.com/image/i/products/25/1.png"
+                />
+                <div
+                  class="spinnerWrapper showSpinner"
+                >
+                  <div
+                    class="spinnerContainer"
+                  >
+                    <div
+                      class="lds-ripple"
+                    >
+                      <div />
+                      <div />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="section-article__desc"
+              >
+                <div
+                  class="desc"
+                >
+                  <p>
+                    Gulab Powder 50 Gram
+                  </p>
+                </div>
+                <div
+                  class="section-article__price"
+                >
+                  <p
+                    class="valorNumerico"
+                    data-testid="id-product"
+                  >
+                    #
+                    25
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="section-article__goToProduct"
+            >
+              <img
+                alt=""
+                src="chevron-right-test.svg"
+              />
+            </div>
+          </article>
+        </a>
+        <a
+          class="product-card-link"
+          href="/products/2"
+        >
+          <article
+            class="main-product__related-product-card"
+          >
+            <div
+              class="main-product__imageAndDesc"
+            >
+              <div
+                class="section-article__image"
+              >
+                <img
+                  alt="Imagen de producto"
+                  class="imagenPrincipal hideImage"
+                  src="no-image.jpeg"
+                />
+                <div
+                  class="spinnerWrapper showSpinner"
+                >
+                  <div
+                    class="spinnerContainer"
+                  >
+                    <div
+                      class="lds-ripple"
+                    >
+                      <div />
+                      <div />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="section-article__desc"
+              >
+                <div
+                  class="desc"
+                >
+                  <p>
+                    iPhone X
+                  </p>
+                </div>
+                <div
+                  class="section-article__price"
+                >
+                  <p
+                    class="valorNumerico"
+                    data-testid="id-product"
+                  >
+                    #
+                    2
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="section-article__goToProduct"
+            >
+              <img
+                alt=""
+                src="chevron-right-test.svg"
+              />
+            </div>
+          </article>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
