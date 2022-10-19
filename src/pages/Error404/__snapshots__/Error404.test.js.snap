@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test de la vista Error404 La vista debe renderizarse correctamente 1`] = `
+<div>
+  <div
+    class="error404__Main"
+  >
+    <div
+      class="error404__top"
+    >
+      <h2>
+        404
+      </h2>
+    </div>
+    <div
+      class="error404__bottom"
+    >
+      <p>
+        Disculpa, Página No Encontrada
+      </p>
+      <p>
+        La página que deseas acceder no existe
+      </p>
+      <a
+        href="/home"
+      >
+        <button>
+          Inicio
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;

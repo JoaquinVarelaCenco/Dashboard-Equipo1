@@ -24,8 +24,6 @@ jest.mock('react-router-dom', () => {
   
   })
 
-
-
 describe("Test formulario de productos", ()=>{
     let component;
     let data;
@@ -69,30 +67,6 @@ describe("Test formulario de productos", ()=>{
         userEvent.click(btnCancel);
         expect(productTitle.value).toBe(data.title);
     })
-
-    test("Values se actualizan al presionar en 'Editar'", async()=>{
-        let textboxs = screen.getAllByRole("textbox")
-        let productTitle = textboxs[0];
-        let btnEditar = screen.getByRole('button', {name: "Editar"})
-
-        // data.title = "Hola"
-
-
-        // userEvent.click(btnEditar);
-
-        // expect(productTitle.value).toBe(data.title);
-        // userEvent.type(productTitle , '{backspace}World!')
-
-        // expect(productTitle.value).not.toBe(data.title);
-        // expect(productTitle.value).toBe(data.title);
-    })
-
-    //validar eliminar
-    //validar cancelar
-
-
-    //tengo que testear que los botones tengan el valor correcto
-  
 
   test('El input Nombre tiene el valor correcto', () => { 
     let textbox = screen.getByPlaceholderText(/nombre/i)
