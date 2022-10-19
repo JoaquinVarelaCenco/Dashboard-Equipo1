@@ -5,6 +5,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import AppRouter from "../../routes/AppRouter";
 import { SideBarContext } from "../../context/SideBarContext";
 
+
 const MainArea = () => {
   const { theme } = useContext(ThemeContext);
   const {hideSideBar} = useContext(SideBarContext)

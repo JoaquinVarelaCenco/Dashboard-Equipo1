@@ -1,10 +1,11 @@
-import { render, act, screen } from "@testing-library/react";
+import { render, act, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { SearchProvider } from "../../../context/SearchContext";
 import productsData from "../../../mockData/productsData";
 import { getProducts } from "../../../services/apiServices";
 import { orderByAlphabet, orderByHighPrice, orderByLowPrice, orderByMostRelevants } from "../../../utils/product";
+import Error404 from "../../Error404/Error404";
 import ProductsList from "./ProductsList";
 
 jest.mock("../../../services/apiServices");
@@ -192,6 +193,13 @@ it("Se deben renderizar los items filtrados por orden alfabetico de A a la Z",  
   orderProductsData = orderProductsData.map(b => `#${b.id}`);
   expect(orderProductsData).toEqual(arrayProdPivot);
 });
+// test.only('Se debe renderizar el warning message cuando no hay nada en la lista de productos', async () => { 
+//   cleanup()
+//   await getProducts.mockRejectedValue([]);
+//    render(
+//     <MemoryRouter><ProductsList/></MemoryRouter>, { wrapper: SearchProvider });
+// screen.debug()
+//   });
+ })
 
-});
 
