@@ -4,14 +4,11 @@ import Home from './Home.js'
 import { getProducts } from "../../services/apiServices";
 import mockData from '../../mockData/productsData';
 
-
-
 //mocks
 jest.mock('../../services/apiServices');
 
 let component;
 let products;
-
 
 describe("Tests para la vista Home", () => {
 
@@ -20,9 +17,7 @@ describe("Tests para la vista Home", () => {
 
     await act( async ()=>{
       component = render(
-        
         <Home />
-        
         , { wrapper: BrowserRouter })
     })
   })
