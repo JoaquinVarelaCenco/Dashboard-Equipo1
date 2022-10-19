@@ -27,7 +27,6 @@ function renderHeaderProducts(handleSearch, widthScreen) {
      { wrapper: BrowserRouter });
   }
     let btnExpand;
-    let inputSearch;
 
 describe("Test header de productos", ()=>{
 let component;
@@ -37,7 +36,7 @@ let component;
         let width = {widthScreen: 400}
         component = renderHeaderProducts(handleSearch, width)
         btnExpand = document.querySelector('.headerProducts-search-container__btnSearch');
-        inputSearch = screen.getByRole('textbox')
+        
     })
 
     test("Se debe renderizar header products", ()=>{
