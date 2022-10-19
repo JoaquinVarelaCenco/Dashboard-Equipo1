@@ -75,7 +75,6 @@ let component;
         expect(inputSearch).toHaveValue(testWord);
     })
 
-
     test("Los dos botones de agregar producto deben redirigir a /products/new", ()=>{
         const btnsAgregarProducto = screen.getAllByRole('link')
         btnsAgregarProducto.forEach(btn =>{
