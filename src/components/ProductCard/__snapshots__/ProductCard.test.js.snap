@@ -50,6 +50,7 @@ exports[`Test Tarjeta de producto Tarjeta de productos se debe renderiza correct
           >
             <p
               class="valorNumerico"
+              data-testid="id-product"
             >
               #
               2

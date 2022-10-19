@@ -17,17 +17,17 @@ function App() {
 
   return (
     
-    <div className={`App ${theme}`}>
       <BrowserRouter>
+    <div className={`App ${theme}`}>
           <ThemeProvider>
           <SideBarProvider>
             <Sidebar />
             <MainArea />
           </SideBarProvider>
           </ThemeProvider>
+    </div>
       <LocationDisplay/>
       </BrowserRouter>
-    </div>
    
   );
 }
