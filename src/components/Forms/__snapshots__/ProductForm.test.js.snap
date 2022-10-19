@@ -1,74 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test formulario de productos Se renderiza el componente 1`] = `
+exports[`Test formulario de productos para crear un producto Se renderiza el componente 1`] = `
 <div>
   <div
     class="product-new"
   >
-    <div
-      class="product-new__view-card"
-    >
-      <img
-        alt="imagen producto"
-        src="no-image.jpeg"
-      />
-      <div
-        class="product-new__view-card__content"
-      >
-        <h2 />
-        <div
-          class="product-new__view-card__info"
-        >
-          <div>
-             
-            <p>
-              0
-            </p>
-            <span>
-              PUNTOS SUPERCLUB
-            </span>
-          </div>
-          <div>
-             
-            <p>
-              0
-            </p>
-            <span>
-              STOCK DISPONIBLE
-            </span>
-             
-          </div>
-          <div
-            class="profile-container"
-          >
-            <a
-              class="eachLink-view undefined"
-              href="/stores"
-            >
-              <button
-                class="user-button-view"
-              >
-                <div
-                  class="user-button__profile-view"
-                >
-                  <img
-                    class="user-img-view"
-                    src="ProfilePic.png"
-                  />
-                </div>
-                <div>
-                  <p
-                    class="user-name-view"
-                  >
-                    Olivia store
-                  </p>
-                </div>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
     <h1>
       Informacion
     </h1>
@@ -244,7 +180,7 @@ exports[`Test formulario de productos Se renderiza el componente 1`] = `
         <button
           type="submit"
         >
-          Editar
+          Crear
         </button>
         <button
           type="reset"
