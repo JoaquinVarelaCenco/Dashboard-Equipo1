@@ -89,8 +89,34 @@ describe("Test formulario de productos", ()=>{
 
     //validar eliminar
     //validar cancelar
+
+
+    //tengo que testear que los botones tengan el valor correcto
   
 
+  test('El input Nombre tiene el valor correcto', () => { 
+    let textbox = screen.getByPlaceholderText(/nombre/i)
+    expect(textbox).toHaveValue(data.title)
+ })
 
+  test("Se renderiza input price con el valor default", () => {
+    const value = screen.getByRole("spinbutton");
+    expect(value).toHaveValue(data.value);
+  });
 
+  test("Se renderiza span stock con el valor default", () => {
+    const value = screen.getByTestId("spanProdStock");
+    expect(value.innerHTML).toBe(data.stock.toString());
+  });
+
+  test("Se renderiza description con el valor default", () => {
+    const value = screen.getByPlaceholderText(/Descripcion del producto/i);
+    expect(value).toHaveValue(data.description);
+  });
+  test("Se renderiza category con el valor default", () => {
+    const value = screen.getAllByRole("combobox")[0];
+    expect(value).toHaveValue(data.category);
+  });
+
+ 
 })

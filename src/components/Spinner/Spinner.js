@@ -1,3 +1,5 @@
+/* istanbul ignore file */ 
+
 import './Spinner.css'
 
 function App() {
