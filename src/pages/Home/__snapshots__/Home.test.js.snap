@@ -87,6 +87,13 @@ exports[`Tests para la vista Home La vista debe renderizarse correctamente 1`] =
       class="home-charts"
     >
       <div
+        class="home-charts__bar"
+      >
+        <h2>
+          Productos con mayor Stock
+        </h2>
+      </div>
+      <div
         class="home-charts__pie"
       >
         <h2>
