@@ -1,22 +1,23 @@
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, act, cleanup } from "@testing-library/react";
 import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import { ProductProvider } from "../../context/ProductContext";
 import ProductForm from "./ProductForm";
 import productsData from "../../mockData/productsData";
 import { getProducts } from "../../services/apiServices";
 import userEvent from "@testing-library/user-event";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 let component;
 
 jest.mock("../../services/apiServices");
 
-describe("Test formulario de productos", () => {
+describe("Test formulario de productos para crear un producto", () => {
   beforeEach(async () => {
     getProducts.mockResolvedValue([...productsData]);
     await act(async () => {
       component = await render(
         <MemoryRouter>
-          <ProductForm productId={"2"} handleSubmit={() => {}} />
+          <ProductForm productId={null} handleSubmit={() => {}} />
         </MemoryRouter>,
         {
           wrapper: ProductProvider,
@@ -100,7 +101,24 @@ describe("Test formulario de productos", () => {
     expect(imagenes.length).toBe(0);
   });
 
+  it("Se muestra boton crear producto cuando no se recibe un id", () => {
+    const crear = screen.getByText(/crear/i);
+    expect(crear).toBeInTheDocument();
+  });
 
+  it("Se muestra boton editar producto cuando se recibe un id", () => {
+    cleanup();
+    component = render(
+      <MemoryRouter>
+        <ProductForm productId={2} handleSubmit={() => {}} />
+      </MemoryRouter>,
+      {
+        wrapper: ProductProvider,
+      }
+    );
+    const editar = screen.getByText(/editar/i);
+    expect(editar).toBeInTheDocument();
+  });
   //agregar | cancelar -> en caso de addProduct
   //editar  | cancelar | inputs con value -> en caso de editProduct
 });
