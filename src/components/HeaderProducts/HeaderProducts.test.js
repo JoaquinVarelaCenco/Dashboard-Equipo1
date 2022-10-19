@@ -30,7 +30,7 @@ function renderHeaderProducts(handleSearch, widthScreen) {
 
 describe("Test header de productos", ()=>{
 let component;
-
+let inputSearch;
     beforeEach(()=>{
         let handleSearch = ()=>"";
         let width = {widthScreen: 400}
@@ -45,7 +45,7 @@ let component;
     })
 
     test("Se debe expandir inputSearch al presionar sobre el botón de la lupa", ()=>{
-
+        inputSearch = screen.getByRole('textbox')
         //verificamos que el placeholder se muestre vacío en un principio
         expect(inputSearch.getAttribute('placeholder')).toBe("")
         
@@ -57,7 +57,7 @@ let component;
 
     test("Se debe colapsar inputSearch al presionar sobre el botón X", ()=>{
         let btnColapse = screen.getByRole('button', {name: "X"})
-
+        inputSearch = screen.getByRole('textbox')
         //expandimos input para que se muestre el placeHolder
         userEvent.click(btnExpand)
         //colapsamos input para que se oculte el placeHolder
@@ -69,11 +69,10 @@ let component;
 
     test("Se debe poder escribir en el input de busqueda y su valor debe ser el ingresado", ()=>{
         let testWord = "test";
-
+        inputSearch = screen.getByRole('textbox')
         userEvent.type(inputSearch, testWord);
         expect(inputSearch).toHaveValue(testWord);
     })
-
 
     test("Los dos botones de agregar producto deben redirigir a /products/new", ()=>{
         const btnsAgregarProducto = screen.getAllByRole('link')

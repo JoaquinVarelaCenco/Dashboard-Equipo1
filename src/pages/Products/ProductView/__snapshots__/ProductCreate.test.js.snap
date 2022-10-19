@@ -1,76 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test formulario de productos Product update se renderiza correctamente 1`] = `
+exports[`Test formulario de productos Product create se renderiza correctamente 1`] = `
 <div>
   <div
     class="product-new"
   >
-    <div
-      class="product-new__view-card"
-    >
-      <img
-        alt="imagen producto"
-        src="Home.png"
-      />
-      <div
-        class="product-new__view-card__content"
-      >
-        <h2>
-          iPhone X
-        </h2>
-        <div
-          class="product-new__view-card__info"
-        >
-          <div>
-             
-            <p>
-              899
-            </p>
-            <span>
-              PUNTOS SUPERCLUB
-            </span>
-          </div>
-          <div>
-             
-            <p>
-              34
-            </p>
-            <span>
-              STOCK DISPONIBLE
-            </span>
-             
-          </div>
-          <div
-            class="profile-container"
-          >
-            <a
-              class="eachLink-view undefined"
-              href="/stores"
-            >
-              <button
-                class="user-button-view"
-              >
-                <div
-                  class="user-button__profile-view"
-                >
-                  <img
-                    class="user-img-view"
-                    src="ProfilePic.png"
-                  />
-                </div>
-                <div>
-                  <p
-                    class="user-name-view"
-                  >
-                    Olivia store
-                  </p>
-                </div>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
     <h1>
       Informacion
     </h1>
@@ -88,7 +22,7 @@ exports[`Test formulario de productos Product update se renderiza correctamente 
         placeholder="Nombre"
         required=""
         type="text"
-        value="iPhone X"
+        value=""
       />
       <p
         class="product-new__input-title"
@@ -100,7 +34,7 @@ exports[`Test formulario de productos Product update se renderiza correctamente 
         name="price"
         required=""
         type="number"
-        value="899"
+        value="0"
       />
       <p
         class="product-new__input-title"
@@ -119,7 +53,7 @@ exports[`Test formulario de productos Product update se renderiza correctamente 
         <span
           data-testid="spanProdStock"
         >
-          34
+          0
         </span>
         <button
           class="noHoverEffect"
@@ -138,9 +72,7 @@ exports[`Test formulario de productos Product update se renderiza correctamente 
         placeholder="Descripcion del producto"
         required=""
         type="number"
-      >
-        SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...
-      </textarea>
+      />
       <p
         class="product-new__input-title"
       >
@@ -243,28 +175,12 @@ exports[`Test formulario de productos Product update se renderiza correctamente 
         Imagenes actuales
       </p>
       <div
-        class="product-new-form__card-image"
-      >
-        <img
-          alt="imagen producto"
-          src="Home.png"
-        />
-        <p>
-          Home.png
-        </p>
-        <button
-          type="button"
-        >
-          Quitar
-        </button>
-      </div>
-      <div
         class="product-new__action"
       >
         <button
           type="submit"
         >
-          Editar
+          Crear
         </button>
         <button
           type="reset"
