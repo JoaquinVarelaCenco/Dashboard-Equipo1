@@ -41,7 +41,7 @@ const ProductCard = ({ title, image, id }) => {
             </div>
 
             <div className="section-article__price">
-              <p className="valorNumerico">#{id}</p>
+              <p className="valorNumerico" data-testid="id-product">#{id}</p>
             </div>
           </div>
       </div>

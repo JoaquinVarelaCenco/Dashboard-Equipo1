@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { SearchProvider } from "../../../context/SearchContext";
 import productsData from "../../../mockData/productsData";
 import { getProducts } from "../../../services/apiServices";
+import { orderByAlphabet, orderByHighPrice, orderByLowPrice, orderByMostRelevants } from "../../../utils/product";
 import ProductsList from "./ProductsList";
 
 jest.mock("../../../services/apiServices");
@@ -22,17 +23,17 @@ describe("Test formulario de productos", () => {
     });
   });
 
-  it("Se debe renderizar correctamente", async () => {
+  it("Se debe renderizar correctamente",  () => {
     const { container } = component;
     expect(container).toMatchSnapshot();
   });
 
-  it("Se debe renderizar correctamente los items", async () => {
+  it("Se debe renderizar correctamente los items",  () => {
       const items = screen.getAllByRole('article') 
       expect(items.length).toBe(productsData.length)
   });
 
-  it("Seleccion de filtrado predeterminada", async () => {
+  it("Seleccion de filtrado predeterminada",  () => {
      const optionMasRelevantes = screen.getByRole('option', { name: 'Mas relevantes' }).selected;
      const optionMayorPrecio = screen.getByRole('option', { name: 'Mayor precio' }).selected;
      const optionMenorPrecio = screen.getByRole('option', { name: 'Menor precio' }).selected;
@@ -44,7 +45,7 @@ describe("Test formulario de productos", () => {
      expect(optionAZ).toBe(false)
 });
 
-it("Seleccion de filtrado por interaccion del usuario por Mayor precio", async () => {
+it("Seleccion de filtrado por interaccion del usuario por Mayor precio",  () => {
 
   
   userEvent.selectOptions(
@@ -63,7 +64,25 @@ it("Seleccion de filtrado por interaccion del usuario por Mayor precio", async (
   expect(optionMasRelevantes).toBe(false)
 });
 
-it("Seleccion de filtrado por interaccion del usuario por Menor precio", async () => {
+it("Se deben renderizar los items filtrados por Mayor precio",  () => {
+
+  userEvent.selectOptions(
+    screen.getByRole('combobox'),
+    screen.getByRole('option', { name: 'Mayor precio' }),
+  );
+
+  const optionMayorPrecio = screen.getByRole('option', { name: 'Mayor precio' }).selected;
+
+  expect(optionMayorPrecio).toBe(true);
+
+  const arrayProd = screen.getAllByTestId('id-product');
+  const arrayProdPivot = arrayProd.map(a => a.innerHTML);
+  let orderProductsData = orderByHighPrice(productsData);
+  orderProductsData = orderProductsData.map(b => `#${b.id}`);
+  expect(orderProductsData).toEqual(arrayProdPivot);
+});
+
+it("Seleccion de filtrado por interaccion del usuario por Menor precio",  () => {
 
   userEvent.selectOptions(
     screen.getByRole('combobox'),
@@ -82,7 +101,25 @@ it("Seleccion de filtrado por interaccion del usuario por Menor precio", async (
 
 });
 
-it("Seleccion de filtrado por interaccion del usuario por Mas relevantes", async () => {
+it("Se deben renderizar los items filtrados por Menor precio",  () => {
+
+  userEvent.selectOptions(
+    screen.getByRole('combobox'),
+    screen.getByRole('option', { name: 'Menor precio' }),
+  );
+
+  const optionMayorPrecio = screen.getByRole('option', { name: 'Menor precio' }).selected;
+
+  expect(optionMayorPrecio).toBe(true);
+
+  const arrayProd = screen.getAllByTestId('id-product');
+  const arrayProdPivot = arrayProd.map(a => a.innerHTML);
+  let orderProductsData = orderByLowPrice(productsData);
+  orderProductsData = orderProductsData.map(b => `#${b.id}`);
+  expect(orderProductsData).toEqual(arrayProdPivot);
+});
+
+it("Seleccion de filtrado por interaccion del usuario por Mas relevantes",  () => {
 
   userEvent.selectOptions(
     screen.getByRole('combobox'),
@@ -101,7 +138,25 @@ it("Seleccion de filtrado por interaccion del usuario por Mas relevantes", async
 
 });
 
-it("Seleccion de filtrado por interaccion del usuario por A-Z", async () => {
+it("Se deben renderizar los items filtrados por Mas relevantes",  () => {
+
+  userEvent.selectOptions(
+    screen.getByRole('combobox'),
+    screen.getByRole('option', { name: 'Mas relevantes' }),
+  );
+
+  const optionMayorPrecio = screen.getByRole('option', { name: 'Mas relevantes' }).selected;
+
+  expect(optionMayorPrecio).toBe(true);
+
+  const arrayProd = screen.getAllByTestId('id-product');
+  const arrayProdPivot = arrayProd.map(a => a.innerHTML);
+  let orderProductsData = orderByMostRelevants(productsData);
+  orderProductsData = orderProductsData.map(b => `#${b.id}`);
+  expect(orderProductsData).toEqual(arrayProdPivot);
+});
+
+it("Seleccion de filtrado por interaccion del usuario por A-Z",  () => {
 
   userEvent.selectOptions(
     screen.getByRole('combobox'),
@@ -118,6 +173,24 @@ it("Seleccion de filtrado por interaccion del usuario por A-Z", async () => {
   expect(optionAZ).toBe(true)
   expect(optionMasRelevantes).toBe(false)
 
+});
+
+it("Se deben renderizar los items filtrados por orden alfabetico de A a la Z",  () => {
+
+  userEvent.selectOptions(
+    screen.getByRole('combobox'),
+    screen.getByRole('option', { name: 'A-Z' }),
+  );
+
+  const optionMayorPrecio = screen.getByRole('option', { name: 'A-Z' }).selected;
+
+  expect(optionMayorPrecio).toBe(true);
+
+  const arrayProd = screen.getAllByTestId('id-product');
+  const arrayProdPivot = arrayProd.map(a => a.innerHTML);
+  let orderProductsData = orderByAlphabet(productsData);
+  orderProductsData = orderProductsData.map(b => `#${b.id}`);
+  expect(orderProductsData).toEqual(arrayProdPivot);
 });
 
 });

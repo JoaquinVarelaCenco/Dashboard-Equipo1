@@ -91,6 +91,7 @@ exports[`Test formulario de productos Se debe renderizar correctamente 1`] = `
             >
               <p
                 class="valorNumerico"
+                data-testid="id-product"
               >
                 #
                 24
@@ -156,6 +157,7 @@ exports[`Test formulario de productos Se debe renderizar correctamente 1`] = `
             >
               <p
                 class="valorNumerico"
+                data-testid="id-product"
               >
                 #
                 23
@@ -221,6 +223,7 @@ exports[`Test formulario de productos Se debe renderizar correctamente 1`] = `
             >
               <p
                 class="valorNumerico"
+                data-testid="id-product"
               >
                 #
                 3
@@ -286,6 +289,7 @@ exports[`Test formulario de productos Se debe renderizar correctamente 1`] = `
             >
               <p
                 class="valorNumerico"
+                data-testid="id-product"
               >
                 #
                 25
@@ -351,6 +355,7 @@ exports[`Test formulario de productos Se debe renderizar correctamente 1`] = `
             >
               <p
                 class="valorNumerico"
+                data-testid="id-product"
               >
                 #
                 2
