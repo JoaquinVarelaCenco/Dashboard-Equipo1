@@ -3,17 +3,19 @@ import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import { ProductProvider } from "../../context/ProductContext";
 import ProductForm from "./ProductForm";
 import productsData from "../../mockData/productsData";
-import { getProducts } from "../../services/apiServices";
+import { getProducts, updateProduct } from "../../services/apiServices";
 import userEvent from "@testing-library/user-event";
-import { clear } from "@testing-library/user-event/dist/clear";
+import handleSubmit from "../../pages/Products/ProductView/ProductUpdate"
 
 let component;
 
 jest.mock("../../services/apiServices");
+jest.mock("../../pages/Products/ProductView/ProductUpdate");
 
 describe("Test formulario de productos para crear un producto", () => {
   beforeEach(async () => {
-    getProducts.mockResolvedValue([...productsData]);
+    // getProducts.mockResolvedValue([...productsData]);
+    updateProduct.mockResolvedValue({})
     await act(async () => {
       component = await render(
         <MemoryRouter>
@@ -119,6 +121,21 @@ describe("Test formulario de productos para crear un producto", () => {
     const editar = screen.getByText(/editar/i);
     expect(editar).toBeInTheDocument();
   });
-  //agregar | cancelar -> en caso de addProduct
-  //editar  | cancelar | inputs con value -> en caso de editProduct
+
+  it("Se debe hacer una llamada de tipo PUT cuando se le de click al boton editar", async () => {
+    const handleSubmit = jest.fn()
+    cleanup();
+    await act(async () => {component = await render(
+      <MemoryRouter>
+        <ProductForm productId={2} handleSubmit = {handleSubmit} />
+      </MemoryRouter>,
+      {
+        wrapper: ProductProvider,
+      }
+    )});
+    const editar = screen.getByText(/editar/i);
+    await act ( async ()=> await userEvent.click(editar));
+    expect(handleSubmit).toHaveBeenCalledTimes(1)
+  });
 });
+

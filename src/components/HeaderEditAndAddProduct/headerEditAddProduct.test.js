@@ -45,6 +45,4 @@ describe('Test boton eliminar producto del componente Header', ()=>{
     expect(screen.queryByText(/eliminar/i)).not.toBeInTheDocument;
 
   })
-
 })
-
