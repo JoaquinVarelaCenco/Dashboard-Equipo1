@@ -4,23 +4,30 @@ import {BrowserRouter} from 'react-router-dom';
 import { getProducts } from "../../services/apiServices";
 import productsData from '../../mockData/productsData'
 
+
 //mocks
-jest.mock('../../services/apiServices')
+jest.mock('../../services/apiServices');
+
+let component;
 
 describe("Test formulario de productos", ()=>{
-    let component;
-    beforeEach(()=>{
+
+    beforeEach( async()=>{
+            
             component = render(<HomeCard
-            title={"Productos"}
-            linkBtnList= {"/products"}
-            textBtnAdd = {"Agregar Producto"}
-            linkBtnAdd = {"/products/new"}
-            img = {"as"}
-        />, 
+                count={productsData.length}
+                title={"Productos"}
+                linkBtnList= {"/products"}
+                textBtnAdd = {"Agregar Producto"}
+                linkBtnAdd = {"/products/new"}
+                img = {"as"}
+            />, 
         { wrapper: BrowserRouter })
+
+        
     })
 
-    test("Se debe renderiza correctamente", ()=>{
+    test("El componente debe renderizarse correctamente", ()=>{
         const { container } = component
         expect(container).toMatchSnapshot()
     })
@@ -34,17 +41,26 @@ describe("Test formulario de productos", ()=>{
         expect(btnAddProduct.getAttribute('href')).toBe('/products/new');
     })   
 
-    test("La cantidad de productos se debe renderizar correctamente",async ()=>{
-        getProducts.mockResolvedValue({ json: () => new Promise(resolve => resolve({ ...productsData }) )})
-        await act(async ()=> {
-            component = render(<HomeProduct
-                title={"Productos"}
-                linkBtnList= {"/products"}
-                textBtnAdd = {"Agregar Producto"}
-                linkBtnAdd = {"/products/new"}
-                img = {"as"}
-            />, { wrapper: BrowserRouter })
-        })
+    test("Se debe mostrar la cantidad del item correctamente", async ()=>{
+
+        const total = productsData.length
+        const countValue = screen.getByText(total)
+
+        expect(countValue.innerHTML).toBe( (total.toString()))
     })
+
+    //test("La cantidad de productos se debe renderizar correctamente",async ()=>{
+      //  getProducts.mockResolvedValue({ json: () => new Promise(resolve => resolve({ ...productsData }) )})
+        //await act(async ()=> {
+          //  component = render(<HomeProduct
+            //    title={"Productos"}
+              //  linkBtnList= {"/products"}
+                //textBtnAdd = {"Agregar Producto"}
+                //linkBtnAdd = {"/products/new"}
+                //img = {"as"}
+            ///>, { wrapper: BrowserRouter })
+        //})
+
+   
 
 })

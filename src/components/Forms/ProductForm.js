@@ -5,11 +5,10 @@ import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext";
 import profilePic from "../../assets/images/ProfilePic.png";
-import noImage from '../../assets/images/no-image.jpeg'
+import noImage from "../../assets/images/no-image.jpeg";
 import "./ProductForm.css";
 
-
-const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
+const ProductForm = ({ productId, handleSubmit }) => {
   const { product, resetCamps, resetForm } = useContext(ProductContext);
   const { theme } = useContext(ThemeContext);
 
@@ -65,7 +64,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
       ) : null}
       <h1>Informacion</h1>
       <form
-        onSubmit={() => handleSubmit(product)}
+        onSubmit={(event) => handleSubmit(event, product)}
         className="product-new__form"
       >
         <p className="product-new__input-title">Nombre</p>
@@ -95,7 +94,7 @@ const ProductForm = ({ productId, handleDeleteProd, handleSubmit }) => {
             title={"-"}
             classN={"noHoverEffect"}
           />
-          <span>{product.stock}</span>
+          <span data-testid="spanProdStock">{product.stock}</span>
           <Button
             click={() => handleInputChangeStock("+")}
             type={"button"}

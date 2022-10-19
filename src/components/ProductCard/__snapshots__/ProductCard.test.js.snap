@@ -62,7 +62,7 @@ exports[`Test Tarjeta de producto Tarjeta de productos se debe renderiza correct
       >
         <img
           alt=""
-          src="chevron-right-test.svg"
+          src="chevron-right.svg"
         />
       </div>
     </article>

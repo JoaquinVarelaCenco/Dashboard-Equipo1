@@ -52,8 +52,8 @@ const Home = () => {
             img = {store}
           />
         </div>
-
-        {/* <div className='home-charts'>
+{/* 
+        <div className='home-charts'>
 
           <div className='home-charts__bar'>
             <h2>Productos con mayor Stock</h2>

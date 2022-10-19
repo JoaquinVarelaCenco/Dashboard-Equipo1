@@ -26,6 +26,8 @@ function renderHeaderProducts(handleSearch, widthScreen) {
         </WidthScreenContext.Provider>,
      { wrapper: BrowserRouter });
   }
+    let btnExpand;
+    let inputSearch;
 
 describe("Test header de productos", ()=>{
 let component;
@@ -34,6 +36,8 @@ let component;
         let handleSearch = ()=>"";
         let width = {widthScreen: 400}
         component = renderHeaderProducts(handleSearch, width)
+        btnExpand = document.querySelector('.headerProducts-search-container__btnSearch');
+        inputSearch = screen.getByRole('textbox')
     })
 
     test("Se debe renderizar header products", ()=>{
@@ -42,8 +46,6 @@ let component;
     })
 
     test("Se debe expandir inputSearch al presionar sobre el botón de la lupa", ()=>{
-        let btnExpand = document.querySelector('.headerProducts-search-container__btnSearch'); 
-        let inputSearch = screen.getByRole('textbox')
 
         //verificamos que el placeholder se muestre vacío en un principio
         expect(inputSearch.getAttribute('placeholder')).toBe("")
@@ -55,17 +57,24 @@ let component;
     })
 
     test("Se debe colapsar inputSearch al presionar sobre el botón X", ()=>{
-        let btnExpand = document.querySelector('.headerProducts-search-container__btnSearch'); 
         let btnColapse = screen.getByRole('button', {name: "X"})
-        let inputSearch = screen.getByRole('textbox');
 
         //expandimos input para que se muestre el placeHolder
-        userEvent.click(btnExpand);
+        userEvent.click(btnExpand)
         //colapsamos input para que se oculte el placeHolder
         userEvent.click(btnColapse);
 
         expect(inputSearch.getAttribute('placeholder')).toBe("")
     })
+
+
+    test("Se debe poder escribir en el input de busqueda y su valor debe ser el ingresado", ()=>{
+        let testWord = "test";
+
+        userEvent.type(inputSearch, testWord);
+        expect(inputSearch).toHaveValue(testWord);
+    })
+
 
     test("Los dos botones de agregar producto deben redirigir a /products/new", ()=>{
         const btnsAgregarProducto = screen.getAllByRole('link')
@@ -73,8 +82,5 @@ let component;
             expect(btn.getAttribute('href')).toBe('/products/new');
         })
     })
-
-
-
 
 })
