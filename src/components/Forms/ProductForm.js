@@ -64,7 +64,7 @@ const ProductForm = ({ productId, handleSubmit }) => {
       ) : null}
       <h1>Informacion</h1>
       <form
-        onSubmit={() => handleSubmit(product)}
+        onSubmit={(event) => handleSubmit(event, product)}
         className="product-new__form"
       >
         <p className="product-new__input-title">Nombre</p>
