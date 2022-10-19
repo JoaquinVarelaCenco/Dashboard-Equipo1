@@ -4,8 +4,8 @@ import { sortByCount, sortByStock } from '../../utils/product';
 import HomeCard from '../../components/HomeCard/HomeCard';
 import box from '../../assets/images/package-variant-closed.svg';
 import store from '../../assets/images/store.svg';
-// import ChartBar from '../../components/ChartBar/ChartBar';
-// import PieCharts from '../../components/ChartPie/ChartPie';
+import ChartBar from '../../components/ChartBar/ChartBar';
+import PieCharts from '../../components/ChartPie/ChartPie';
 import './Home.css'
 
 
@@ -52,7 +52,7 @@ const Home = () => {
             img = {store}
           />
         </div>
-{/* 
+
         <div className='home-charts'>
 
           <div className='home-charts__bar'>
@@ -69,7 +69,7 @@ const Home = () => {
               />
           </div>
 
-        </div> */}
+        </div>
 
       </div>
   )
