@@ -7,37 +7,39 @@ import { SideBarProvider } from "../../context/SideBarContext";
 
 let component;
 
-describe("Test formulario de productos", ()=>{
+describe("Test formulario de productos", () => {
+  beforeEach(() => {
+    component = render(
+      <MemoryRouter>
+        <SideBarProvider>
+          <Header />
+        </SideBarProvider>
+      </MemoryRouter>,
+      { wrapper: HeaderProvider }
+    );
+  });
 
-    beforeEach(()=>{
-        component = render(
-            <MemoryRouter>
-                <SideBarProvider>
-            <Header />
-            </SideBarProvider>
-        </MemoryRouter>
-            , { wrapper: HeaderProvider })
-    })
+  test("El componente debe renderizarse correctamente", () => {
+    const { container } = component;
 
-    test("El componente debe renderizarse correctamente", ()=>{
-        const { container } = component;
+    expect(container).toMatchSnapshot();
+  });
 
-        expect(container).toMatchSnapshot();
-    })
+  test("El menú hamburguesa debe estar en el componente", () => {
+    const menuHamburguesa = screen.getByRole(
+      "button",
+      (name = "Menú hamburguesa")
+    );
 
-    test('El menú hamburguesa debe estar en el componente', ()=>{
-        const menuHamburguesa = screen.getByRole('button', name="Menú hamburguesa")
+    expect(menuHamburguesa.firstChild).toHaveAccessibleName("Menú hamburguesa");
+  });
 
-        expect(menuHamburguesa.firstChild).toHaveAccessibleName('Menú hamburguesa')
+  test("Click menú hamburguesa", () => {
+    const menuHamburguesa = screen.getByRole(
+      "button",
+      (name = "Menú hamburguesa")
+    );
 
-    })
-
-
-    test(('Click menú hamburguesa'), ()=>{
-        const menuHamburguesa = screen.getByRole('button', name="Menú hamburguesa");
-
-        userEvent.click(menuHamburguesa);
-
-    })
-
-})
+    userEvent.click(menuHamburguesa);
+  });
+});

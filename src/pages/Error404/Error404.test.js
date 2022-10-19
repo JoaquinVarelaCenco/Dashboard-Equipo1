@@ -12,17 +12,17 @@ describe('Test de la vista Error404', ()=>{
         btnInicio = screen.getByRole('link');
     })
 
-    it('La vista debe renderizarse correctamente', ()=>{
+    test('La vista debe renderizarse correctamente', ()=>{
         const { container } = component;
 
         expect(container).toMatchSnapshot();
     });
 
-    it('El boton debe contener la palabra inicio', ()=>{
+    test('El boton debe contener la palabra inicio', ()=>{
         expect(btnInicio).toHaveTextContent(/inicio/i)
     });
 
-    it('El botón debe redirigir a la ruta de Home', ()=>{
+    test('El botón debe redirigir a la ruta de Home', ()=>{
         expect(btnInicio.getAttribute('href')).toBe('/home')
     })
 

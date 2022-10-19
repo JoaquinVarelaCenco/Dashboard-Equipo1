@@ -28,46 +28,46 @@ describe("Test formulario de productos para crear un producto", () => {
     });
   });
 
-  it("Se renderiza el componente", () => {
+  test("Se renderiza el componente", () => {
     const { container } = component;
     expect(container).toMatchSnapshot();
     // screen.debug();
   });
 
   //Validar inputs
-  it("Se renderiza input title con el valor default", () => {
+  test("Se renderiza input title con el valor default", () => {
     const value = screen.getByPlaceholderText(/Nombre/i);
     expect(value).toHaveValue("");
   });
 
-  it("Se renderiza input price con el valor default", () => {
+  test("Se renderiza input price con el valor default", () => {
     const value = screen.getByRole("spinbutton");
     expect(value).toHaveValue(0);
   });
 
-  it("Se renderiza span stock con el valor default", () => {
+  test("Se renderiza span stock con el valor default", () => {
     const value = screen.getByTestId("spanProdStock");
     expect(value.innerHTML).toBe("0");
   });
 
-  it("Se renderiza description con el valor default", () => {
+  test("Se renderiza description con el valor default", () => {
     const value = screen.getByPlaceholderText(/Descripcion del producto/i);
     expect(value).toHaveValue("");
   });
 
-  it("Se renderiza category con el valor default", () => {
+  test("Se renderiza category con el valor default", () => {
     const value = screen.getAllByRole("combobox")[0];
     expect(value).toHaveValue("");
   });
 
-  it("Se renderiza store con el valor default", () => {
+  test("Se renderiza store con el valor default", () => {
     const value = screen.getAllByRole("combobox")[1];
     expect(value).toHaveValue("");
   });
 
   //validar botones
 
-  it("Se da click en boton mas del stock", () => {
+  test("Se da click en boton mas del stock", () => {
     const user = userEvent;
     const suma = screen.getByText("+");
     user.click(suma);
@@ -75,7 +75,7 @@ describe("Test formulario de productos para crear un producto", () => {
     expect(value.innerHTML).toBe("1");
   });
 
-  it("Se da click en boton menos del stock", () => {
+  test("Se da click en boton menos del stock", () => {
     const user = userEvent;
     const suma = screen.getByText("+");
     const resta = screen.getByText("-");
@@ -85,7 +85,7 @@ describe("Test formulario de productos para crear un producto", () => {
     expect(value.innerHTML).toBe("0");
   });
 
-  it("Se da click en boton cargar imagen", () => {
+  test("Se da click en boton cargar imagen", () => {
     const user = userEvent;
     const cargar = screen.getByText(/cargar/i);
     user.click(cargar);
@@ -93,7 +93,7 @@ describe("Test formulario de productos para crear un producto", () => {
     expect(imagenes.length).toBe(1);
   });
 
-  it("Se da click en quitar imagen", () => {
+  test("Se da click en quitar imagen", () => {
     const user = userEvent;
     const cargar = screen.getByText(/cargar/i);
     user.click(cargar);
@@ -103,12 +103,12 @@ describe("Test formulario de productos para crear un producto", () => {
     expect(imagenes.length).toBe(0);
   });
 
-  it("Se muestra boton crear producto cuando no se recibe un id", () => {
+  test("Se muestra boton crear producto cuando no se recibe un id", () => {
     const crear = screen.getByText(/crear/i);
     expect(crear).toBeInTheDocument();
   });
 
-  it("Se muestra boton editar producto cuando se recibe un id", () => {
+  test("Se muestra boton editar producto cuando se recibe un id", () => {
     cleanup();
     component = render(
       <MemoryRouter>
@@ -122,7 +122,7 @@ describe("Test formulario de productos para crear un producto", () => {
     expect(editar).toBeInTheDocument();
   });
 
-  it("Se debe hacer una llamada de tipo PUT cuando se le de click al boton editar", async () => {
+  test("Se debe hacer una llamada de tipo PUT cuando se le de click al boton editar", async () => {
     const handleSubmit = jest.fn()
     cleanup();
     await act(async () => {component = await render(

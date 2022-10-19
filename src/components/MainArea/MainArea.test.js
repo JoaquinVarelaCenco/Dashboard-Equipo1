@@ -12,20 +12,20 @@ import MainArea from "./MainArea";
 jest.mock("../../services/apiServices");
 
 const filterProducts = (searchTerm, arrayProd) => {
-    const newProducts = arrayProd.filter((val) => {
-      if (
-        searchTerm === "" ||
-        val.title.toLowerCase().includes(searchTerm.toLowerCase())
-      ) {
-        return val;
-      } else if (
-        val.description.toLowerCase().includes(searchTerm.toLowerCase())
-      ) {
-        return val;
-      }
-    });
-    return newProducts;
-  };
+  const newProducts = arrayProd.filter((val) => {
+    if (
+      searchTerm === "" ||
+      val.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ) {
+      return val;
+    } else if (
+      val.description.toLowerCase().includes(searchTerm.toLowerCase())
+    ) {
+      return val;
+    }
+  });
+  return newProducts;
+};
 
 describe("Test formulario de productos", () => {
   let component;
@@ -48,35 +48,36 @@ describe("Test formulario de productos", () => {
     });
   });
 
-  it("renderiza el componente", () => {
+  test("renderiza el componente", () => {
     let { container } = component;
     expect(container).toMatchSnapshot();
   });
 
-  it("Se debe poder escribir en el input de busqueda y su valor debe ser el ingresado", ()=>{
+  test("Se debe poder escribir en el input de busqueda y su valor debe ser el ingresado", () => {
     let testWord = "test";
-    let inputSearch = screen.getByRole('textbox')
+    let inputSearch = screen.getByRole("textbox");
     userEvent.type(inputSearch, testWord);
     expect(inputSearch).toHaveValue(testWord);
-})
+  });
 
-it("Se deben renderizar todos los productos cuando el input de busqueda no se ingresaron caracteres", ()=>{
-    const arrayProd = screen.getAllByTestId('id-product');
-    let arrayProdPivot = arrayProd.map(a => a.innerHTML);
+  test("Se deben renderizar todos los productos cuando el input de busqueda no se ingresaron caracteres", () => {
+    const arrayProd = screen.getAllByTestId("id-product");
+    let arrayProdPivot = arrayProd.map((a) => a.innerHTML);
     let returnProductsData = orderByMostRelevants(productsData);
-    returnProductsData = returnProductsData.map(b => `#${b.id}`);
+    returnProductsData = returnProductsData.map((b) => `#${b.id}`);
     expect(returnProductsData).toEqual(arrayProdPivot);
-})
+  });
 
-it("Se deben renderizar las coincidencias de los productos con lo escrito en el input de busqueda", ()=>{
+  test("Se deben renderizar las coincidencias de los productos con lo escrito en el input de busqueda", () => {
     let testWord = "iphone";
-    let inputSearch = screen.getByRole('textbox')
+    let inputSearch = screen.getByRole("textbox");
     userEvent.type(inputSearch, testWord);
     expect(inputSearch.value).toBe(testWord);
-    const arrayProd = screen.getAllByTestId('id-product');
-    let arrayProdPivot = arrayProd.map(a => a.innerHTML);
-    let orderProductsData = filterProducts(testWord, productsData).map(b => `#${b.id}`);
+    const arrayProd = screen.getAllByTestId("id-product");
+    let arrayProdPivot = arrayProd.map((a) => a.innerHTML);
+    let orderProductsData = filterProducts(testWord, productsData).map(
+      (b) => `#${b.id}`
+    );
     expect(orderProductsData).toEqual(arrayProdPivot);
-})
-
+  });
 });
