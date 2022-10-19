@@ -411,7 +411,7 @@ exports[`Test formulario de productos renderiza el componente 1`] = `
                 <img
                   alt="Imagen de producto"
                   class="imagenPrincipal hideImage"
-                  src="no-image.jpeg"
+                  src="Home.png"
                 />
                 <div
                   class="spinnerWrapper showSpinner"
