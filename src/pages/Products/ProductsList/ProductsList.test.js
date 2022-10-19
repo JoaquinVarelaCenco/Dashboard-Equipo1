@@ -25,7 +25,6 @@ describe("Test formulario de productos", () => {
   it("Se debe renderizar correctamente", async () => {
     const { container } = component;
     expect(container).toMatchSnapshot();
-    // screen.debug();
   });
 
   it("Se debe renderizar correctamente los items", async () => {

@@ -6,7 +6,7 @@ module.exports = [
       "price": 899,
       "rating": { "rate": 4.44, "count": 126 },
       "stock": 34,
-      "category": "smartphones",
+      "category": "categoria-1",
       "images": [],
       "lastModified": "2022-10-12T01:07:11.630Z"
     },
@@ -17,7 +17,7 @@ module.exports = [
       "price": 1249,
       "rating": { "rate": 4.09, "count": 845 },
       "stock": 36,
-      "category": "smartphones"
+      "category": "categoria-1"
     },
     {
       "id": 23,
