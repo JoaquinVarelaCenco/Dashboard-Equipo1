@@ -44,7 +44,6 @@ describe('Test boton eliminar producto del componente Header', ()=>{
           <HeaderEditAddProduct editProduct={false}>
           </HeaderEditAddProduct>
           </MemoryRouter>)
-    
 
     expect(screen.queryByText(/eliminar/i)).not.toBeInTheDocument;
 
