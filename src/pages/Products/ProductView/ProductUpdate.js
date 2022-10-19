@@ -32,7 +32,7 @@ function ProductUpdate() {
     deleteProductFunction(productId);
   }
 
-  function handleSubmit(product) {
+  function handleSubmit(event, product) {
     updateProduct(product).then((res) => {
       
     });
