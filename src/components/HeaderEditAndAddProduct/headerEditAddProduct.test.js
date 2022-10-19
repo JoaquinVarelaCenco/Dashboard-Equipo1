@@ -28,11 +28,8 @@ describe('Test boton eliminar producto del componente Header', ()=>{
 
   it('El botón Eliminar debe ejecutar la funcion al hacerse click', ()=>{
     let btnEliminar = screen.getByRole('button');
-
     userEvent.click(btnEliminar);
-
     expect(deleteProductFunction).toHaveBeenCalled();
-
   })
 
 
@@ -49,5 +46,6 @@ describe('Test boton eliminar producto del componente Header', ()=>{
     expect(screen.queryByText(/eliminar/i)).not.toBeInTheDocument;
 
   })
+
 
 })
