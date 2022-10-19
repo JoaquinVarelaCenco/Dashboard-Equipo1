@@ -17,7 +17,7 @@ jest.mock('../pages/NoImplemented/NoImplemented', () => () => <div>Fake NotImple
 jest.mock('../pages/Error404/Error404', () => () => <div>Fake 404 page</div>)
 jest.mock('../pages/Home/Home', () => () => <div>Fake Home page</div>)
 
-describe("Testing de rutas", ()=>{
+describe("Testing de las rutas", ()=>{
 
     it('Debe renderizar <Home /> cuando se accede a la ruta "/"', async ()=>{
         render(
@@ -28,7 +28,7 @@ describe("Testing de rutas", ()=>{
 
         const text = screen.getByText(/fake home/i);
         expect(text).toBeInTheDocument();
-    })
+    });
 
     it('Debe renderizar <Home /> cuando se accede a la ruta "/home"', async ()=>{
         render(
@@ -39,7 +39,7 @@ describe("Testing de rutas", ()=>{
 
         const text = screen.getByText(/fake home/i);
         expect(text).toBeInTheDocument();
-    })
+    });
 
     it('Debe renderizar <ProductList /> cuando se accede a la ruta "/products"', async ()=>{
         render(
@@ -50,7 +50,7 @@ describe("Testing de rutas", ()=>{
 
         const text = screen.getByText(/fake product list/i);
         expect(text).toBeInTheDocument();
-    })
+    });
 
     it('Debe renderizar <NoImplemented /> cuando se accede a la ruta "/stores"', async ()=>{
         render(
@@ -61,7 +61,7 @@ describe("Testing de rutas", ()=>{
 
         const text = screen.getByText(/Fake NotImplemented/i);
         expect(text).toBeInTheDocument();
-    })
+    });
 
     it('Debe renderizar <ProductView /> cuando se accede a la ruta "/products/new"', async ()=>{
         render(
@@ -72,7 +72,7 @@ describe("Testing de rutas", ()=>{
 
         const text = screen.getByText(/Fake Product View/i);
         expect(text).toBeInTheDocument();
-    })
+    });
 
     it('Debe renderizar <NotImplemented /> cuando se accede a la ruta "/profile"', async ()=>{
         render(
@@ -83,11 +83,28 @@ describe("Testing de rutas", ()=>{
 
         const text = screen.getByText(/Fake NotImplemented/i);
         expect(text).toBeInTheDocument();
-    })
+    });
+
+    it('Debe renderizar <Error404 /> cuando se accede a una ruta no existente "/asd"', async ()=>{
+        render(
+            <MemoryRouter initialEntries={['/asd']}>
+                <AppRouter />
+            </MemoryRouter>
+        );
+
+        const text = screen.getByText(/Fake 404/i);
+        expect(text).toBeInTheDocument();
+    });
+
+    it('Debe renderizar <ProductUpdate /> cuando se accede a la ruta "/products/:id"', async ()=>{
+        render(
+            <MemoryRouter initialEntries={['/products/1']}>
+                <AppRouter />
+            </MemoryRouter>
+        );
+
+        const text = screen.getByText(/Fake Product Update/i);
+        expect(text).toBeInTheDocument();
+    });
 
 })
-
-/*
-path="/products/:id" 
-path="/asdas"
-*/
