@@ -30,7 +30,6 @@ describe("Test formulario de productos", ()=>{
     test("Product create se renderiza correctamente", ()=>{
         const { container } = component;
         expect(container).toMatchSnapshot();
-        screen.debug()
     })
   
     test("Se debe ejecutar funcion handleSubmit cuando se le de click al boton Crear", async () => {
