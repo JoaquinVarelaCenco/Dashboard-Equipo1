@@ -124,13 +124,12 @@ describe("Test formulario de productos para crear un producto", () => {
   });
 
   test("Se debe hacer una llamada de tipo PUT cuando se le de click al boton editar", async () => {
-    
-    
-    const handleSubmit = jest.fn()
+    // const onSubmit = jest.fn(e => e.preventDefault);
+    const onSubmit = jest.fn()
     cleanup();
     await act(async () => {component = await render(
       <MemoryRouter>
-        <ProductForm productId={2} handleSubmit = {handleSubmit} />
+        <ProductForm productId={2} handleSubmit = {onSubmit} />
       </MemoryRouter>,
       {
         wrapper: ProductProvider,
@@ -138,7 +137,7 @@ describe("Test formulario de productos para crear un producto", () => {
     )});
     const editar = screen.getByText(/editar/i);
     await act ( async ()=> await userEvent.click(editar));
-    expect(handleSubmit).toHaveBeenCalledTimes(1)
+    expect(onSubmit).toHaveBeenCalledTimes(1)
   });
 });
 
