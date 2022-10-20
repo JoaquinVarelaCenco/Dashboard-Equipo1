@@ -41,6 +41,9 @@
     background-color: var(--clear-BlackLight);
     color: var(--dark-Color);
   }
+  .dark .product-new__view-card{
+    background: transparent;
+  }
 
   .dark input::placeholder,
   .dark select::placeholder,

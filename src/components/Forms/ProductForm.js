@@ -47,7 +47,7 @@ const ProductForm = ({ productId, handleSubmit }) => {
                 <span>STOCK DISPONIBLE</span>{" "}
               </div>
               <div className="profile-container">
-                <Link to={"/stores"} className={`eachLink-view ${theme}`}>
+                <Link to={"/stores"} className={`eachLink-view`}>
                   <Button classN={"user-button-view"}>
                     <div className="user-button__profile-view">
                       <img className="user-img-view" src={profilePic} />
