@@ -13,6 +13,7 @@ jest.mock("../../services/apiServices");
 jest.mock("../../pages/Products/ProductView/ProductUpdate");
 
 describe("Test formulario de productos para crear un producto", () => {
+  
   beforeEach(async () => {
     // getProducts.mockResolvedValue([...productsData]);
     updateProduct.mockResolvedValue({})
@@ -123,6 +124,8 @@ describe("Test formulario de productos para crear un producto", () => {
   });
 
   test("Se debe hacer una llamada de tipo PUT cuando se le de click al boton editar", async () => {
+    
+    
     const handleSubmit = jest.fn()
     cleanup();
     await act(async () => {component = await render(
