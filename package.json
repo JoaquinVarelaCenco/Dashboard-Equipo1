@@ -12,7 +12,8 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.5",
-    "recharts": "^2.1.14",
+    "react-test-renderer": "^18.2.0",
+    "recharts": "^2.1.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -38,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "babel-jest": "^29.2.1",
+    "core-js": "^3.25.5"
   }
 }

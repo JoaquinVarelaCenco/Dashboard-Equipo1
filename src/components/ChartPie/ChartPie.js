@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { useState } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 
@@ -59,7 +60,7 @@ const PieCharts = ({ products })=> {
     };
 
     return (
-        <ResponsiveContainer width="100%" height="80%">
+        <div width="100%" height="80%">
             <PieChart width={400} height={400}>
                 <Pie
                     activeIndex={state}
@@ -74,7 +75,7 @@ const PieCharts = ({ products })=> {
                     onMouseEnter={onPieEnter}
                 />
             </PieChart>
-        </ResponsiveContainer>
+        </div>
     );
 }
 

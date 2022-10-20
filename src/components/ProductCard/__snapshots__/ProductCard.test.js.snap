@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Tarjeta de producto Tarjeta de productos se debe renderiza correctamente 1`] = `
+<div>
+  <a
+    class="product-card-link"
+    href="/products/2"
+  >
+    <article
+      class="main-product__related-product-card"
+    >
+      <div
+        class="main-product__imageAndDesc"
+      >
+        <div
+          class="section-article__image"
+        >
+          <img
+            alt="Imagen de producto"
+            class="imagenPrincipal hideImage"
+            src="no-image.jpeg"
+          />
+          <div
+            class="spinnerWrapper showSpinner"
+          >
+            <div
+              class="spinnerContainer"
+            >
+              <div
+                class="lds-ripple"
+              >
+                <div />
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="section-article__desc"
+        >
+          <div
+            class="desc"
+          >
+            <p>
+              iPhone X
+            </p>
+          </div>
+          <div
+            class="section-article__price"
+          >
+            <p
+              class="valorNumerico"
+              data-testid="id-product"
+            >
+              #
+              2
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="section-article__goToProduct"
+      >
+        <img
+          alt=""
+          src="chevron-right.svg"
+        />
+      </div>
+    </article>
+  </a>
+</div>
+`;

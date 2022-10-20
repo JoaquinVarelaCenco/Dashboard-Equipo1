@@ -1,11 +1,11 @@
 import "./ProductCard.css";
-import leftArrow from '../../assets/images/chevron-right (1).svg'
+import leftArrow from '../../assets/images/chevron-right.svg'
 import { Link } from "react-router-dom";
 import Spinner from '../Spinner/Spinner';
 import { useState } from "react";
 import noImage from '../../assets/images/no-image.jpeg'
 
-const ProductCard = ({ title, price, image, id }) => {
+const ProductCard = ({ title, image, id }) => {
   const [imagePlaceHolder, setImagePlaceHolder] = useState(false);
   const [hideImage, setHideImage] = useState("hideImage")
   const [hideSpinner, setHideSpinner] = useState("showSpinner")
@@ -41,7 +41,7 @@ const ProductCard = ({ title, price, image, id }) => {
             </div>
 
             <div className="section-article__price">
-              <p className="valorNumerico">#{id}</p>
+              <p className="valorNumerico" data-testid="id-product">#{id}</p>
             </div>
           </div>
       </div>

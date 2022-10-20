@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test de la vista NoImplemented La vista debe renderizarse correctamente 1`] = `
+<div>
+  <div
+    class="noImplemented"
+  >
+    <h3>
+      <span>
+        En
+      </span>
+       Construcción
+    </h3>
+    <p>
+      Esta sección estara lista pronto
+    </p>
+    <div
+      class="progress"
+    >
+      <div
+        class="progress-bar"
+      />
+    </div>
+    <a
+      href="/home"
+    >
+      <button>
+        Inicio
+      </button>
+    </a>
+  </div>
+</div>
+`;

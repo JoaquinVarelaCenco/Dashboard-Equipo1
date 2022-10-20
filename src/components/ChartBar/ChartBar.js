@@ -1,10 +1,11 @@
+/* istanbul ignore file */
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 const ChartBar = ({ products })=> {
 
     return (
-        <ResponsiveContainer width="100%" height="80%">
+        <div width="100%" height="80%">
             <BarChart
                 width={500}
                 height={300}
@@ -24,7 +25,7 @@ const ChartBar = ({ products })=> {
                 <Bar dataKey="stock" fill="#605ad2" />
                 <Bar dataKey="rating.rate" fill="#82ca9d" />
             </BarChart>
-        </ResponsiveContainer>
+        </div>
     );
 }
 

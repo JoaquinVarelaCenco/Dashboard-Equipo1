@@ -15,7 +15,7 @@ const HomeCard = (props) => {
     return (
     <div className='itemRow'>
         <div className='itemRow__count'>
-            <img src= {img}/>
+            <img src= {img} alt="Icono de Card"/>
             <p><strong>{count}</strong> {title}</p>
         </div>
         <div className='itemRow__buttons'>

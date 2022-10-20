@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test formulario de productos El componente debe renderizarse correctamente 1`] = `
+<div>
+  <div
+    class="itemRow"
+  >
+    <div
+      class="itemRow__count"
+    >
+      <img
+        alt="Icono de Card"
+        src="as"
+      />
+      <p>
+        <strong>
+          5
+        </strong>
+         
+        Productos
+      </p>
+    </div>
+    <div
+      class="itemRow__buttons"
+    >
+      <a
+        href="/products"
+      >
+        <button>
+          Ver listado
+        </button>
+      </a>
+      <a
+        href="/products/new"
+      >
+        <button>
+          Agregar Producto
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
