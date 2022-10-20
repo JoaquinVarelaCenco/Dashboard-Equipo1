@@ -1,3 +1,4 @@
+import imagen from '../assets/images/Home.png'
 module.exports = [
     {
       "id": 2,
@@ -7,7 +8,9 @@ module.exports = [
       "rating": { "rate": 4.44, "count": 126 },
       "stock": 34,
       "category": "categoria-1",
-      "images": [],
+      "images": [
+        `${imagen}`
+      ],
       "lastModified": "2022-10-12T01:07:11.630Z"
     },
     {

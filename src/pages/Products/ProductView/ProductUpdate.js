@@ -15,7 +15,6 @@ function ProductUpdate() {
       getProductById(productId)
         .then((res) => {
           if (res.status === 404) {
-            alert("Producto no encontrado");
             navigate("/");
           }
           delete res.isActive;
@@ -32,7 +31,7 @@ function ProductUpdate() {
     deleteProductFunction(productId);
   }
 
-  function handleSubmit(event, product) {
+  function handleSubmit(product) {
     updateProduct(product).then((res) => {
       
     });
