@@ -53,4 +53,6 @@ a{
 }
 /* No se tiene q aplicar a los botones con clase headerBtn  */
 
-
+.divPathName{
+  display: none;
+}

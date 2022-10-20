@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 export const LocationDisplay = ()=>{
   const location = useLocation();
-  return <div data-testid="location-display">{location.pathname}</div>;
+  return <div className="divPathName" data-testid="location-display">{location.pathname}</div>;
 }
 
 function App() {
