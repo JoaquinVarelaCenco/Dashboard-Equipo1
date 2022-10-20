@@ -22,14 +22,15 @@ button:before {
     width: 0px;
     height: 100%;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.174);
-    transition: all 1s ease;
-}
-
-button:hover:before {
+    background: none;
+    transition: all .5s ease;
     width: 100%;
 }
 
+button:hover:before {
+    background: rgba(255, 255, 255, 0.174);
+}
+
 .noHoverEffect:hover::before{
-    width: 0;
+    background: none;
 }
